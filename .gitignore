@@ -6,4 +6,10 @@
 ###> Jekyll
 /Gemfile.lock
 /example/vendor
+/example/_site
 ###< Jekyll
+
+###> Node
+/node_modules
+/assets/css/main.css
+###< Node

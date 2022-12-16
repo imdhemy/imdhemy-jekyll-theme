@@ -1,0 +1,16 @@
+{
+  "name": "imdhemy-jekyll-theme",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "https://github.com/imdhemy/imdhemy-jekyll-theme.git",
+  "author": "Mohamad Eldhemy <imdhemy@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "tailwind": "npx tailwindcss -i ./assets/css/main.scss -o ./assets/css/main.css --watch",
+    "rake": "cd example && bundle exec rake preview",
+    "dev": "npm run tailwind & npm run rake"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}
