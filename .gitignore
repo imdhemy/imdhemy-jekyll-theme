@@ -1,0 +1,9 @@
+###> IDEs
+/.idea
+/.vscode
+###< IDEs
+
+###> Jekyll
+/Gemfile.lock
+/example/vendor
+###< Jekyll

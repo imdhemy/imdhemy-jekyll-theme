@@ -1,0 +1,7 @@
+source "https://rubygems.org"
+
+gem "imdhemy-jekyll-theme", path: "../"
+
+gem "jekyll", "~> 4.3"
+
+gem "rake", "~> 13.0"
