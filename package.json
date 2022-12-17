@@ -1,0 +1,11 @@
+{
+  "name": "imdhemy-jekyll-theme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/imdhemy/imdhemy-jekyll-theme.git",
+  "author": "Mohamad Eldhemy <imdhemy@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "cd example && bundle exec rake preview"
+  }
+}
