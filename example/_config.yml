@@ -1,2 +1,6 @@
 theme: "imdhemy-jekyll-theme"
 baseurl: "/example"
+title: "Imdhemy Jekyll Theme"
+description: "A simple and clean Jekyll theme for your blog"
+github:
+  build_revision: "1.0.0"
