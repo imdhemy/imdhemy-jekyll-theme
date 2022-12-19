@@ -2,7 +2,11 @@
 module.exports = {
   content: ['./**/*.html'],
   theme: {
-    extend: {},
+    extend: {
+      FontFamily: {
+        sans: ['Noto Sans Display', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+      }
+    },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
