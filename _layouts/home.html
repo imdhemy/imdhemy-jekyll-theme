@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="container mx-auto">
     <!-- begin header -->
-    <header id="main-header">
+    <header class="relative" id="main-header">
         <div class="p-5 flex">
             <!-- begin logo -->
             <div class="flex-auto">
@@ -23,12 +23,24 @@ layout: default
                 </div>
             </div>
             <!-- end nav button -->
-            <!-- begin mobile nav -->
-            <div class="absolute top-20 right-5 block min-w-fit w-40 bg-white p-5 rounded-md shadow-md ease-linear">
-                lorem ipsum
-            </div>
-            <!-- end mobile nav -->
         </div>
+        <!-- begin mobile nav -->
+        <nav class="absolute top-20 right-6 block min-w-fit w-40 bg-white p-5 rounded-md shadow-md ease-linear">
+            <div class="ml-auto">
+                <ul class="p-0 m-0 flex-column items-center">
+                    {% for page in site.navigation %}
+                    <li class="block flex-1 w-full m-0">
+                        <a href="{{ site.baseurl }}{{ page.url }}"
+                           class="block text-right text-base font-semibold p-2">
+                            {{ page.title }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </nav>
+
+        <!-- end mobile nav -->
     </header>
     <!-- end header -->
 </div>

@@ -4,3 +4,11 @@ title: "Imdhemy"
 description: "A simple and clean Jekyll theme for your blog"
 github:
   build_revision: "1.0.0"
+
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "About"
+    url: "/about"
+  - title: "Contact"
+    url: "/contact"
