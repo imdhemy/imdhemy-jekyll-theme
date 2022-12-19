@@ -9,7 +9,7 @@
     "start": "yarn run rake & yarn run webpack & yarn run tailwind",
     "rake": "cd example && bundle exec rake preview",
     "webpack": "webpack --mode=production --node-env=production --watch",
-    "tailwind": "tailwind build -i ./_sass/tailwind.src.scss -o ./_sass/_tailwind.scss --minify --watch"
+    "tailwind": "tailwind build -i ./_sass/tailwind.src.scss -o ./assets/css/tailwind.css --minify --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
