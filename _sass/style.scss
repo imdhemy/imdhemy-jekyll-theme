@@ -1,4 +1,8 @@
 // Main Header
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
 #main-header {
   ion-icon[name="menu-outline"], ion-icon[name="close-outline"] {
     font-size: 3rem;
