@@ -5,6 +5,13 @@ description: "A simple and clean Jekyll theme for your blog"
 github:
   build_revision: "1.0.0"
 
+author:
+  name: "Dhemy"
+  description: |
+    I'm a software artist, fullstack (BE heavy) with 10 years of experience in software development. 
+    Passionate about open source, blogging, and reading.
+
+
 navigation:
   - title: "Home"
     url: "/"
