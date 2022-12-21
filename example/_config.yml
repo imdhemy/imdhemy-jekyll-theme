@@ -18,3 +18,22 @@ navigation:
     url: "/about"
   - title: "Contact"
     url: "/contact"
+
+testimonials:
+  - name: "John Doe"
+    description: "Product Manager"
+    image: "https://randomuser.me/api/portraits/med/men/9.jpg"
+    content: |
+      lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+  - name: "Martha Stewart"
+    description: "Frontend Developer"
+    image: "https://randomuser.me/api/portraits/med/women/79.jpg"
+    content: |
+      lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+  - name: "Sandra Bullock"
+    description: "Product Manager"
+    image: "https://randomuser.me/api/portraits/med/women/21.jpg"
+    content: |
+      lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

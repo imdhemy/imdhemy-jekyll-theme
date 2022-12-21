@@ -1,0 +1,36 @@
+<section class="mb-8">
+    <div class="container mx-auto">
+        <div class="p-5">
+            <h2 class="text-3xl font-bold text-center mb-8">Testimonials</h2>
+            <div class="grid gap-10 grid-cols-1 lg:grid-cols-3">
+                {% for testimonial in site.testimonials %}
+                <!-- Item start -->
+                <div class="w-full">
+                    <div class="relative p-8 overflow-hidden bg-violet-100 rounded-3xl">
+                        <div class="relative z-1 flex items-center mb-8">
+                            <div class="relative w-[68px] h-[68px] mr-3 border-2 border-indigo-600 rounded-full">
+                                <img class="absolute top-0 left-0 w-full h-full object-cover rounded-full select-none p-[2px]"
+                                     src="{{ testimonial.image }}"
+                                     alt=""/>
+                            </div>
+                            <div>
+                                <h3 class="font-sans mb-1 text-lg font-bold">
+                                    <a href="#">{{ testimonial.name }}</a>
+                                </h3>
+                                <p class="mb-0 text-sm text-gray-500">{{ testimonial.description }}</p>
+                            </div>
+                        </div>
+
+                        <p class="relative text-base mb-0 before:font-sans before:font-serif
+                        before:content-['\0022'] before:absolute before:top-[50px] before:-left-[10px] before:block before:text-[182px] before:opacity-10
+                            ">
+                            {{ testimonial.content }}
+                        </p>
+                    </div>
+                </div>
+                <!-- Item end -->
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
