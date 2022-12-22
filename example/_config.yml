@@ -22,23 +22,23 @@ navigation:
 contributions:
   - name: "Laravel"
     url: "https://laravel.com"
-    logo: "/images/adobe.svg"
+    logo: "/images/contributions/adobe.svg"
 
   - name: "Google Play Billing"
     url: "https://developer.android.com/google/play/billing"
-    logo: "/images/apple.svg"
+    logo: "/images/contributions/apple.svg"
 
   - name: "App Store IAP"
     url: "https://developer.apple.com/in-app-purchase/"
-    logo: "/images/google.svg"
+    logo: "/images/contributions/google.svg"
 
   - name: "Laravel In-app Purchase"
     url: "https://imdhemy.com/laravel-iap-docs/"
-    logo: "/images/netlify.svg"
+    logo: "/images/contributions/netlify.svg"
 
   - name: "Siklid"
     url: "https://docs.siklid.io/"
-    logo: "/images/spotify.svg"
+    logo: "/images/contributions/spotify.svg"
 
 testimonials:
   - name: "John Doe"
