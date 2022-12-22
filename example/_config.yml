@@ -19,6 +19,27 @@ navigation:
   - title: "Contact"
     url: "/contact"
 
+contributions:
+  - name: "Laravel"
+    url: "https://laravel.com"
+    logo: "/images/adobe.svg"
+
+  - name: "Google Play Billing"
+    url: "https://developer.android.com/google/play/billing"
+    logo: "/images/apple.svg"
+
+  - name: "App Store IAP"
+    url: "https://developer.apple.com/in-app-purchase/"
+    logo: "/images/google.svg"
+
+  - name: "Laravel In-app Purchase"
+    url: "https://imdhemy.com/laravel-iap-docs/"
+    logo: "/images/netlify.svg"
+
+  - name: "Siklid"
+    url: "https://docs.siklid.io/"
+    logo: "/images/spotify.svg"
+
 testimonials:
   - name: "John Doe"
     description: "Product Manager"

@@ -5,43 +5,15 @@
 
             <p class="text-center text-2xl text-gray-500 mb-8">I have contributed to some great projects</p>
 
-            <div class="columns-2 lg:columns-6">
-                <div class="mb-0 py-5">
-                    <a href="#" class="block ease-linear">
-                        <img src="{{ site.baseurl }}/assets/images/google.svg"
-                             class="h-8 organization-logo" alt="Google">
+            <div class="grid gap-4 grid-cols-1 lg:grid-cols-5">
+                {% for contribution in site.contributions %}
+                <div class="py-5 flex items-center flex-col">
+                    <a href="{{ contribution.url }}" class="block ease-linear">
+                        <img src="{{ site.baseurl }}{{ contribution.logo }}"
+                             class="h-8 block" alt="{{ contribution.name }}">
                     </a>
                 </div>
-                <div class="mb-0 py-5">
-                    <a href="#" class="block ease-linear">
-                        <img src="{{ site.baseurl }}/assets/images/spotify.svg" class="h-8 organization-logo"
-                             alt="Spotify">
-                    </a>
-                </div>
-                <div class="mb-0 py-5">
-                    <a href="#" class="block ease-linear">
-                        <img src="{{ site.baseurl }}/assets/images/pinterest.svg" class="h-8 organization-logo"
-                             alt="Pinterest">
-                    </a>
-                </div>
-                <div class="mb-0 py-5">
-                    <a href="#" class="block ease-linear">
-                        <img src="{{ site.baseurl }}/assets/images/netlify.svg" class="h-8 organization-logo"
-                             alt="Netlify">
-                    </a>
-                </div>
-                <div class="mb-0 py-5">
-                    <a href="#" class="block ease-linear">
-                        <img src="{{ site.baseurl }}/assets/images/apple.svg" class="h-8 organization-logo"
-                             alt="Apple">
-                    </a>
-                </div>
-                <div class="mb-0 py-5">
-                    <a href="#" class="block ease-linear">
-                        <img src="{{ site.baseurl }}/assets/images/adobe.svg" class="h-8 organization-logo"
-                             alt="Adobe">
-                    </a>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
