@@ -22,23 +22,23 @@ navigation:
 contributions:
   - name: "Laravel"
     url: "https://laravel.com"
-    logo: "/images/contributions/adobe.svg"
+    logo: "/images/theme/adobe.svg"
 
   - name: "Google Play Billing"
     url: "https://developer.android.com/google/play/billing"
-    logo: "/images/contributions/apple.svg"
+    logo: "/images/theme/apple.svg"
 
   - name: "App Store IAP"
     url: "https://developer.apple.com/in-app-purchase/"
-    logo: "/images/contributions/google.svg"
+    logo: "/images/theme/google.svg"
 
   - name: "Laravel In-app Purchase"
     url: "https://imdhemy.com/laravel-iap-docs/"
-    logo: "/images/contributions/netlify.svg"
+    logo: "/images/theme/netlify.svg"
 
   - name: "Siklid"
     url: "https://docs.siklid.io/"
-    logo: "/images/contributions/spotify.svg"
+    logo: "/images/theme/spotify.svg"
 
 testimonials:
   - name: "John Doe"
@@ -58,3 +58,15 @@ testimonials:
     image: "https://randomuser.me/api/portraits/med/women/21.jpg"
     content: |
       lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+footer:
+  bg_image: "/images/theme/social.png"
+  social:
+    - icon: "logo-github"
+      url: "https://github.com/imdhemy"
+    - icon: "logo-twitter"
+      url: "https://twitter.com/imdhemy"
+    - icon: "logo-linkedin"
+      url: "https://www.linkedin.com/in/imdhemy/"
+    - icon: "logo-youtube"
+      url: "https://www.youtube.com/@imdhemy"

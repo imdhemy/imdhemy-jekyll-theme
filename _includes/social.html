@@ -1,0 +1,26 @@
+<section class="mb-8 mt-24">
+    <div class="relative py-16">
+        <div class="max-w-screen-md mx-auto">
+            <div class="p-5 text-center">
+                <h3 class="text-white font-sans font-bold text-5xl">{{ site.author.name }}</h3>
+                <div class="relative mb-5 py-10">
+                    <ul class="flex items-center justify-center flex-wrap m-0 p-0">
+                        {% for social in site.footer.social %}
+                        <li class="mr-5">
+                            <a class="block bg-white relative w-[50px] h-[50px] rounded-full flex items-center justify-center ease-linear duration-300 hover:bg-indigo-600 hover:text-white"
+                               href="{{ social.url }}">
+                                <ion-icon name="{{ social.icon }}" size="large"></ion-icon>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="text-xl text-white drop-shadow-md">
+                    <p>{{ site.author.description }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-[url('{{ site.baseurl }}{{ site.footer.bg_image }}')] opacity-75 absolute top-0 left-0 w-full h-full bg-center bg-cover -z-10"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-black -z-20"></div>
+    </div>
+</section>
