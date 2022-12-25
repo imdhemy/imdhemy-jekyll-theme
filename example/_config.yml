@@ -22,23 +22,27 @@ navigation:
 contributions:
   - name: "Laravel"
     url: "https://laravel.com"
-    logo: "/images/theme/adobe.svg"
+    logo: "/images/theme/laravel.png"
 
-  - name: "Google Play Billing"
-    url: "https://developer.android.com/google/play/billing"
-    logo: "/images/theme/apple.svg"
-
-  - name: "App Store IAP"
-    url: "https://developer.apple.com/in-app-purchase/"
-    logo: "/images/theme/google.svg"
-
-  - name: "Laravel In-app Purchase"
-    url: "https://imdhemy.com/laravel-iap-docs/"
-    logo: "/images/theme/netlify.svg"
+  - name: "Spatie"
+    url: "https://spatie.be/open-source"
+    logo: "/images/theme/spatie.png"
 
   - name: "Siklid"
     url: "https://docs.siklid.io/"
-    logo: "/images/theme/spotify.svg"
+    logo: "/images/theme/siklid.png"
+
+  - name: "Google Play Billing"
+    url: "https://github.com/imdhemy/google-play-billing"
+    logo: "/images/theme/google-play-billing.png"
+
+  - name: "App Store IAP"
+    url: "https://github.com/imdhemy/appstore-iap"
+    logo: "/images/theme/app-store-iap.png"
+
+  - name: "Laravel In-app Purchase"
+    url: "https://imdhemy.com/laravel-iap-docs/"
+    logo: "/images/theme/liap.png"
 
 testimonials:
   - name: "John Doe"
