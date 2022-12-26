@@ -76,3 +76,7 @@ footer:
       url: "https://www.linkedin.com/in/imdhemy/"
     - icon: "logo-youtube"
       url: "https://www.youtube.com/@imdhemy"
+
+
+plugins:
+  - jekyll-feed
