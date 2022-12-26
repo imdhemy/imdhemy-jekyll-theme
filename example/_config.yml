@@ -80,3 +80,7 @@ footer:
 
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+
+paginate: 1
+paginate_path: "/blog/page:num/"
