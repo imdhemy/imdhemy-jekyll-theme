@@ -1,0 +1,9 @@
+<div class="flex mb-5">
+    {% for tag in tags %}
+    {% assign tag_link = tag | slugify %}
+    <a href="{{ site.baseurl }}/tags/{{ tag_link }}"
+       class="text-sm text-gray-500 hover:text-gray-700 mr-3">
+        #{{ tag }}
+    </a>
+    {% endfor %}
+</div>
