@@ -10,6 +10,7 @@ author:
   description: |
     I'm a software artist, fullstack (BE heavy) with 10 years of experience in software development. 
     Passionate about open source, blogging, and reading.
+  avatar: "/images/theme/avatar.jpeg"
 
 navigation:
   - title: "Home"

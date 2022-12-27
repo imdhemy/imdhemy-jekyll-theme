@@ -1,0 +1,32 @@
+<div class="max-w-screen-lg mx-auto bg-white p-5">
+    <h1 class="font-black font-sans text-2xl lg:text-7xl post-title">{{ page.title }}</h1>
+</div>
+
+<div class="max-w-screen-md mx-auto bg-white p-5">
+    <div class="flex justify-between flex-wrap my-2">
+        <div class="flex items-center mr-8">
+            <img src="{{ site.baseurl }}/{{ site.author.avatar }}" alt="{{ author.name }}"
+                 class="rounded-full w-10 h-10 mr-3 block"/>
+            <div>
+                <p class="text-gray-700 text-sm font-bold">{{ site.author.name }}</p>
+                <p class="text-gray-500 text-xs">
+                    {{ page.date | date: "%B %-d, %Y" }} - {{ page.content |
+                    number_of_words | divided_by: 200 }} min read
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        {% assign tags = page.tags %}
+        {% include post-tags.html %}
+    </div>
+
+    {% if page.image %}
+    <div class="relative overflow-hidden">
+        <img src="{{ site.baseurl }}/{{ page.image }}"
+             alt="{{ page.title }}"
+             class="w-full h-auto rounded"/>
+    </div>
+    {% endif %}
+</div>

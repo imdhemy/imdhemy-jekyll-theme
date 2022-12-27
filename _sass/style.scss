@@ -1,6 +1,15 @@
-// Main Header
 * {
   -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #4d41e0;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #4d41e0;
+  color: #fff;
 }
 
 #main-header {
@@ -15,6 +24,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .organization-logo {
   filter: invert(51%) sepia(4%) saturate(1703%) hue-rotate(179deg) brightness(85%) contrast(89%)
+}
+
+.post-title {
+  //line-height: 4rem;
 }
 
 .content {
