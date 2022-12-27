@@ -18,8 +18,6 @@ navigation:
     url: "/blog"
   - title: "About"
     url: "/about"
-  - title: "Contact"
-    url: "/contact"
 
 contributions:
   - name: "Laravel"

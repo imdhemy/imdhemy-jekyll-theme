@@ -16,3 +16,9 @@ h1, h2, h3, h4, h5, h6 {
 .organization-logo {
   filter: invert(51%) sepia(4%) saturate(1703%) hue-rotate(179deg) brightness(85%) contrast(89%)
 }
+
+.content {
+  p {
+    margin-bottom: 1.5rem;
+  }
+}
