@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: page
 title: About
 description: "Okay, you are here now. This is the about page, and you wanted to know more about the guy behind this space on the internet. Well, here you go."
 ---
