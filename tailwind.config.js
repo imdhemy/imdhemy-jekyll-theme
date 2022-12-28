@@ -16,6 +16,9 @@ module.exports = {
         '"Times New Roman"',
         'Times',
         'serif'],
+      mono: [
+        'monospace',
+      ],
     },
   },
   plugins: [require('@tailwindcss/typography')],

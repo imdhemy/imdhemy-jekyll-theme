@@ -24,7 +24,31 @@ $background-color_2: #e3d2d2;
 $background-color_3: #ffdddd;
 $background-color_4: #ddffdd;
 
+figure.highlight, div.highlight {
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  background: #f9f9f9;
+  padding: 1rem;
+  max-width: 100%;
+  overflow: auto;
+  border-radius: 0.25rem;
+}
+
 .highlight {
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+
+  .gutter {
+    float: left;
+    text-align: center;
+    min-width: 1.5rem;
+    padding-right: 0.5rem;
+    color: #999;
+    border-right: 1px solid #eaeaea;
+    margin-right: 0.5rem;
+  }
+
   .hll {
     background-color: $background-color_1;
   }
@@ -44,13 +68,11 @@ $background-color_4: #ddffdd;
   /* Keyword */
   .k {
     color: $color_3;
-    font-weight: bold;
   }
 
   /* Operator */
   .o {
     color: $color_3;
-    font-weight: bold;
   }
 
   /* Comment.Multiline */
@@ -62,7 +84,6 @@ $background-color_4: #ddffdd;
   /* Comment.Preproc */
   .cp {
     color: $color_4;
-    font-weight: bold;
     font-style: italic;
   }
 
@@ -75,7 +96,6 @@ $background-color_4: #ddffdd;
   /* Comment.Special */
   .cs {
     color: $color_4;
-    font-weight: bold;
     font-style: italic;
   }
 
@@ -135,37 +155,31 @@ $background-color_4: #ddffdd;
   /* Keyword.Constant */
   .kc {
     color: $color_3;
-    font-weight: bold;
   }
 
   /* Keyword.Declaration */
   .kd {
     color: $color_3;
-    font-weight: bold;
   }
 
   /* Keyword.Namespace */
   .kn {
     color: $color_3;
-    font-weight: bold;
   }
 
   /* Keyword.Pseudo */
   .kp {
     color: $color_3;
-    font-weight: bold;
   }
 
   /* Keyword.Reserved */
   .kr {
     color: $color_3;
-    font-weight: bold;
   }
 
   /* Keyword.Type */
   .kt {
     color: $color_9;
-    font-weight: bold;
   }
 
   /* Literal.Number */
@@ -191,7 +205,6 @@ $background-color_4: #ddffdd;
   /* Name.Class */
   .nc {
     color: $color_9;
-    font-weight: bold;
   }
 
   /* Name.Constant */
@@ -202,7 +215,6 @@ $background-color_4: #ddffdd;
   /* Name.Decorator */
   .nd {
     color: $color_14;
-    font-weight: bold;
   }
 
   /* Name.Entity */
@@ -213,19 +225,16 @@ $background-color_4: #ddffdd;
   /* Name.Exception */
   .ne {
     color: $color_16;
-    font-weight: bold;
   }
 
   /* Name.Function */
   .nf {
     color: $color_16;
-    font-weight: bold;
   }
 
   /* Name.Label */
   .nl {
     color: $color_16;
-    font-weight: bold;
   }
 
   /* Name.Namespace */
@@ -246,7 +255,6 @@ $background-color_4: #ddffdd;
   /* Operator.Word */
   .ow {
     color: $color_3;
-    font-weight: bold;
   }
 
   /* Text.Whitespace */
