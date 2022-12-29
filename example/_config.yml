@@ -83,3 +83,4 @@ plugins:
 
 paginate: 1
 paginate_path: "/blog/page:num/"
+markdown: kramdown

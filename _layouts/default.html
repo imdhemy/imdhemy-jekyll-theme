@@ -10,6 +10,9 @@
           content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html', '' | absolute_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/main.css?v=' | append: site.github.build_revision | relative_url }}">
+    {% if page.math %}
+    {% include math.html %}
+    {% endif %}
 </head>
 <body class="min-h-screen">
 <div class="min-h-screen">

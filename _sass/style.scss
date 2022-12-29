@@ -151,6 +151,11 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100%;
     margin-bottom: 1.5rem;
   }
+
+  mjx-container {
+    max-width: 100%;
+    overflow: auto;
+  }
 }
 
 @import "highlight";
