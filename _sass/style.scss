@@ -31,6 +31,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .content {
+  color: #333;
+
   p {
     margin-bottom: 1.5rem;
   }
@@ -100,6 +102,11 @@ h1, h2, h3, h4, h5, h6 {
 
   a:hover, a:active {
     text-decoration: none;
+  }
+
+  strong {
+    font-weight: 500;
+    color: #000;
   }
 
   > table {
