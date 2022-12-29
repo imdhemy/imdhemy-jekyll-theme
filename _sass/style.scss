@@ -101,6 +101,46 @@ h1, h2, h3, h4, h5, h6 {
   a:hover, a:active {
     text-decoration: none;
   }
+
+  > table {
+    font-size: 0.9rem;
+    max-width: 100%;
+    overflow: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 1.5rem;
+
+    thead {
+      background: #f9f9f9;
+    }
+
+    th {
+      font-weight: 700;
+      border: 1px solid #eee;
+      padding: 0.5rem;
+      text-align: left;
+    }
+
+    td {
+      padding: 0.5rem;
+    }
+
+    tbody tr:nth-child(odd) {
+      background: #fff;
+
+      td {
+        border: 1px solid #f9f9f9;
+      }
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f9f9f9;
+
+      td {
+        border: 1px solid #eee;
+      }
+    }
+  }
 }
 
 @import "highlight";
