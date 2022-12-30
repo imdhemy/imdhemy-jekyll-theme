@@ -9,3 +9,5 @@ gem "rake", "~> 13.0"
 gem "jekyll-feed", "~> 0.17.0"
 
 gem "jekyll-paginate", "~> 1.1"
+
+gem "jekyll-archives", "~> 2.2"

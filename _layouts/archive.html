@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+{% include archive-header.html %}
+
+<div class="max-w-screen-md mx-auto bg-white p-5">
+    {% for post in page.posts %}
+    {% if post.title != null %}
+    {% include post-item.html %}
+    {% endif %}
+    {% endfor %}
+</div>

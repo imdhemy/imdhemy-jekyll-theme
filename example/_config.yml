@@ -80,7 +80,17 @@ footer:
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-archives
 
 paginate: 1
 paginate_path: "/blog/page:num/"
 markdown: kramdown
+
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layout: "archive"
+  permalinks:
+    tag: '/tag/:name/'
+    category: '/category/:name/'
