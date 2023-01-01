@@ -3,6 +3,9 @@ PATH
   specs:
     imdhemy-jekyll-theme (0.1.0)
       jekyll (~> 4.3)
+      jekyll-archives (~> 2.2)
+      jekyll-feed (~> 0.17.0)
+      jekyll-paginate (~> 1.1)
 
 GEM
   remote: https://rubygems.org/
