@@ -1,0 +1,16 @@
+<!-- Facebook Meta Tags -->
+<meta property="og:title" content="{{ page.title | escape }}">
+<meta property="og:type" content="article">
+<meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ page.image }}">
+<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+<meta property="og:description"
+      content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title | escape }}">
+<meta name="twitter:description"
+      content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+<meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}{{ page.image }}">
+
