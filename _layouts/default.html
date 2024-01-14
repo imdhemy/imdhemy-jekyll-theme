@@ -13,6 +13,11 @@
     {% if page.math %}
     {% include math.html %}
     {% endif %}
+    
+    {% if page.layout == 'post' %}
+    {% include social-media-meta.html %}
+    {% endif %}
+
 </head>
 <body class="min-h-screen">
 <div class="min-h-screen">
