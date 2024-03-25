@@ -25,8 +25,14 @@
     {% if page.image %}
     <div class="relative overflow-hidden">
         <img src="{{ site.baseurl }}{{ page.image }}"
-             alt="{{ page.title }}"
+             alt="{{ page.image_alt | default: page.title }}"
              class="w-full h-auto rounded"/>
+        <!-- Image source -->
+        {% if page.image_source %}
+        <div class="bg-white text-xs text-gray-500 px-2 py-1">
+            Image source: {{ page.image_source }}
+        </div>
+        {% endif %}
     </div>
     {% endif %}
 </div>
