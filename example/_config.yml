@@ -12,6 +12,8 @@ author:
     Passionate about open source, blogging, and reading.
   avatar: "/images/theme/avatar.jpeg"
 
+favicon: "/images/theme/favicon.png"
+
 navigation:
   - title: "Home"
     url: "/"
