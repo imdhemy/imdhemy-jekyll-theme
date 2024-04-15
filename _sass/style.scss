@@ -189,6 +189,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     opacity: .08;
     border-radius: 1rem;
+    pointer-events: none;
   }
 
   blockquote::after, div.note::after, div.tip::after, div.info::after, div.caution::after, div.danger::after {
@@ -200,6 +201,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 3rem;
     line-height: 0;
     color: #4d41e0;
+    pointer-events: none;
   }
 
   blockquote {
