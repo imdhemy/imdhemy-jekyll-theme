@@ -48,30 +48,31 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 2rem;
     margin-top: 2rem;
     font-weight: 800;
+    line-height: 1.5;
   }
 
   h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
     font-size: 2rem;
   }
 
-  h3 {
+  h2 {
     font-size: 1.75rem;
   }
 
-  h4 {
+  h3 {
     font-size: 1.5rem;
   }
 
-  h5 {
+  h4 {
     font-size: 1.25rem;
   }
 
-  h6 {
+  h5 {
     font-size: 1rem;
+  }
+
+  h6 {
+    font-size: 0.9rem;
   }
 
   ul, ol, dd {
@@ -112,26 +113,34 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   > table {
-    font-size: 0.9rem;
+    box-sizing: border-box;
     max-width: 100%;
+    font-size: 0.9rem;
     overflow: auto;
-    border-collapse: collapse;
     border-spacing: 0;
     margin-bottom: 1.5rem;
+    display: block;
 
     thead {
-      background: #f9f9f9;
+      background: #f8fafc;
+      font-size: 1.1em;
+      color: #94a3b8;
+      display: table-header-group;
+      vertical-align: middle;
+      unicode-bidi: isolate;
     }
 
     th {
-      font-weight: 700;
+      font-weight: 500;
       border: 1px solid #eee;
       padding: 0.5rem;
       text-align: left;
+      white-space: nowrap;
     }
 
     td {
       padding: 0.5rem;
+      white-space: nowrap;
     }
 
     tbody tr:nth-child(odd) {
@@ -143,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     tbody tr:nth-child(even) {
-      background: #f9f9f9;
+      background: #f8fafc;
 
       td {
         border: 1px solid #eee;
@@ -188,6 +197,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     opacity: .08;
     border-radius: 1rem;
+    pointer-events: none;
   }
 
   blockquote::after, div.note::after, div.tip::after, div.info::after, div.caution::after, div.danger::after {
@@ -199,6 +209,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 3rem;
     line-height: 0;
     color: #4d41e0;
+    pointer-events: none;
   }
 
   blockquote {
