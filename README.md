@@ -24,8 +24,8 @@ You can find examples in the [example](/example) directory.
 
 ## Development
 
-To set up your environment to develop this theme, run `bundle install`. Then use `yarn` to install the dependencies.
-To start the development server, run `yarn start` and open your browser at `http://127.0.0.1:4000/example/`.
+To set up your environment to develop this theme, run `bundle install`. Then use `npm` to install the dependencies.
+To start the development server, run `npm start` and open your browser at `http://127.0.0.1:4000/example/`.
 
 ## License
 
