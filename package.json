@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run rake & npm run webpack & npm run tailwind",
-    "rake": "bundle exec rake preview",
+    "rake": "bundle exec rake preview --trace",
     "webpack": "webpack --mode=production --node-env=production --watch",
     "tailwind": "tailwind build -i ./_sass/tailwind.src.scss -o ./assets/css/tailwind.css --minify --watch"
   },
