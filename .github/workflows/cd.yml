@@ -29,12 +29,25 @@ jobs:
           cache: 'npm'
 
       - name: Set gem version from tag
-        run: |
-          TAG_VERSION="${GITHUB_REF_NAME}"
-          ruby -i -pe "gsub(/spec\\.version\\s*=\\s*\\\"[^\\\"]+\\\"/, 'spec.version       = \\\"' + ENV.fetch('TAG_VERSION') + '\\\"')" imdhemy-jekyll-theme.gemspec
-          echo "using release version ${TAG_VERSION}"
         env:
           TAG_VERSION: ${{ github.ref_name }}
+        run: |
+          ruby -e '
+            path = "imdhemy-jekyll-theme.gemspec"
+            content = File.read(path)
+            version = ENV.fetch("TAG_VERSION")
+            replacement = %{spec.version       = "#{version}"}
+
+            unless content.sub!(/spec\.version\s*=\s*"[^"]+"/, replacement)
+              abort("spec.version line not found in gemspec")
+            end
+
+            File.write(path, content)
+          '
+
+      - name: Verify patched gemspec
+        run: |
+          ruby -e 'spec = Gem::Specification.load("imdhemy-jekyll-theme.gemspec"); puts "gemspec_version=#{spec.version}"'
 
       - name: Install Node dependencies
         run: npm ci
