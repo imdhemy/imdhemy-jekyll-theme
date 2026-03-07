@@ -49,8 +49,15 @@ Use this sequence every time you start working on the theme locally.
 
 ### 1. Prerequisites
 
-- Ruby + Bundler
-- Node.js + npm
+- Ruby 3.3.4 + Bundler
+- Node.js 24 + npm
+
+The project pins runtime versions in:
+
+- `.ruby-version`
+- `.nvmrc`
+- `.node-version`
+- `.tool-versions`
 
 ### 2. Install dependencies
 

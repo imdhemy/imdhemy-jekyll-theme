@@ -5,6 +5,9 @@
   "repository": "https://github.com/imdhemy/imdhemy-jekyll-theme.git",
   "author": "Mohamad Eldhemy <imdhemy@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "start": "npm run js:watch & npm run rake",
     "rake": "bundle exec rake preview --trace",
