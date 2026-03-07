@@ -49,7 +49,7 @@ npm start
 This runs:
 
 - `bundle exec rake preview` to serve the example site from `http://127.0.0.1:4000/example/`
-- `webpack --watch` to rebuild `assets/js/dist/main.js` on JS changes
+- `vite build --watch` to rebuild `assets/js/dist/main.js` on JS changes
 
 ### 4. Day-to-day workflow
 
@@ -60,8 +60,9 @@ This runs:
 ### 5. Useful standalone commands
 
 ```bash
-npm run rake     # Jekyll preview only
-npm run webpack  # JS watcher only
+npm run rake      # Jekyll preview only
+npm run js:build  # JS production build
+npm run js:watch  # JS watcher only
 ```
 
 ## License

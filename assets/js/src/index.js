@@ -1,5 +1,5 @@
 import { addIcons } from 'ionicons';
-import { defineCustomElements } from 'ionicons/loader';
+import { defineCustomElement as defineIonIcon } from 'ionicons/components/ion-icon.js';
 import {
   close,
   logoGithub,
@@ -8,10 +8,9 @@ import {
   logoYoutube,
   menuOutline,
 } from 'ionicons/icons';
+import { init as initBurgerMenu } from './burger-menu';
 
-const burgerMenu = require('./burger-menu');
-
-defineCustomElements(window);
+defineIonIcon();
 addIcons({
   close,
   'logo-github': logoGithub,
@@ -22,5 +21,5 @@ addIcons({
 });
 
 (() => {
-  burgerMenu.init();
+  initBurgerMenu();
 })();
