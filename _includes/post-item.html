@@ -1,26 +1,30 @@
-<article class="flex flex-col lg:flex-row items-center mb-8 pb-8 border-b border-gray-200">
+{% assign reading_minutes = post.content | number_of_words | divided_by: 200 | at_least: 1 %}
+{% assign read_article_label = site.theme_text.read_article_label | default: "Read article" %}
+<article class="flex flex-col lg:flex-row items-center mb-8 pb-8 border-b border-gray-200 post-card">
     <!-- thumbnail -->
     {% if post.image %}
     <a href="{{ site.baseurl }}{{ post.url }}"
-       class="w-full relative block lg:min-w-[250px] lg:max-w-[250px] lg:max-h-[250px] aspect-square lg:mr-5 mb-5 lg:mb-0 rounded-lg overflow-hidden">
+       class="w-full relative block lg:min-w-[250px] lg:max-w-[250px] lg:max-h-[250px] aspect-square lg:mr-5 mb-5 lg:mb-0 rounded-lg overflow-hidden post-card__image">
         <img src="{{ site.baseurl }}{{ post.image }}"
              class="absolute inset-0 w-full h-full object-cover hover:scale-105 ease-in duration-300"
-             alt="{{ post.title }}"/>
+             alt="{{ post.image_alt | default: post.title }}"/>
     </a>
     {% endif %}
     <!-- content -->
-    <div>
+    <div class="post-card__content">
+        <p class="post-card__meta">{{ post.date | date: "%b %-d, %Y" }} · {{ reading_minutes }} min read</p>
         {% assign tags = post.tags %}
         {% include post-tags.html %}
         <!-- title -->
-        <h2 class="text-3xl font-black mb-5 font-sans">
+        <h2 class="text-3xl font-black mb-5 font-sans post-card__title">
             <a class="border-b-2 border-transparent hover:border-b-violet-600 ease-in duration-300"
                href="{{ site.baseurl }}{{ post.url }}">{{
                 post.title }}</a>
         </h2>
         <!-- excerpt -->
-        <div class="text-gray-500 text-lg mb-0">
+        <div class="text-gray-500 text-lg mb-0 post-card__excerpt">
             {{ post.excerpt | strip_html | truncatewords: 20 }}
         </div>
+        <a class="post-card__read-link" href="{{ site.baseurl }}{{ post.url }}">{{ read_article_label }} &rarr;</a>
     </div>
 </article>

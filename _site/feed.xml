@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/example/feed.xml" rel="self" type="application/atom+xml" /><link href="/example/" rel="alternate" type="text/html" /><updated>2026-03-08T00:23:56+01:00</updated><id>/example/feed.xml</id><title type="html">Imdhemy</title><subtitle>A simple and clean Jekyll theme for your blog</subtitle><author><name>Dhemy</name></author><entry><title type="html">Elements</title><link href="/example/example/2022/12/22/elements.html" rel="alternate" type="text/html" title="Elements" /><published>2022-12-22T00:00:00+01:00</published><updated>2022-12-22T00:00:00+01:00</updated><id>/example/example/2022/12/22/elements</id><content type="html" xml:base="/example/example/2022/12/22/elements.html"><![CDATA[<p>Here is a list of all the elements that are available in the theme.</p>
+
+<p>A paragraph with a <a href="http://example.com/">link</a>. A paragraph with a <a href="http://example.com/">link</a>. Let’s make it longer using lorem ipsum text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</p>
+
+<p>Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
+
+<p>Here is an emoji :smile: and an italic text. Here is an emoji :smile: and an italic text. Let’s make it longer using lorem ipsum text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</p>
+
+<hr />
+
+<h2 id="heading">Heading</h2>
+
+<h1 id="h1-default-style-looks-like-this">H1 default style looks like this</h1>
+<h2 id="h2-default-style-looks-like-this">H2 default style looks like this</h2>
+<h3 id="h3-default-style-looks-like-this">H3 default style looks like this</h3>
+<h4 id="h4-default-style-looks-like-this">H4 default style looks like this</h4>
+<h5 id="h5-default-style-looks-like-this">H5 default style looks like this</h5>
+<h6 id="h6-default-style-looks-like-this">H6 default style looks like this</h6>
+
+<hr />
+
+<h2 id="lists">Lists</h2>
+
+<p><strong>Ordered Lists</strong>:</p>
+
+<ol>
+  <li>John loves Mary</li>
+  <li>Mary loves John</li>
+  <li>Colorless green ideas sleep furiously</li>
+  <li>Sky blue is not a color</li>
+  <li>The quick brown fox jumps over the lazy dog</li>
+</ol>
+
+<p><strong>Unordered Lists</strong>:</p>
+
+<ul>
+  <li>John loves Mary</li>
+  <li>Mary loves John</li>
+  <li>Colorless green ideas sleep furiously</li>
+  <li>Sky blue is not a color</li>
+  <li>The quick brown fox jumps over the lazy dog</li>
+</ul>
+
+<hr />
+
+<h2 id="tables">Tables</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tables</th>
+      <th style="text-align: center">Are</th>
+      <th style="text-align: right">Cool</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Col 1</td>
+      <td style="text-align: center">Col 2</td>
+      <td style="text-align: right">Col 3</td>
+    </tr>
+    <tr>
+      <td>Col 1</td>
+      <td style="text-align: center">Col 2</td>
+      <td style="text-align: right">Col 3</td>
+    </tr>
+    <tr>
+      <td>Col 1</td>
+      <td style="text-align: center">Col 2</td>
+      <td style="text-align: right">Col 3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>A wide table</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>A very long column name</th>
+      <th>Another very long column name</th>
+      <th>A very long column name</th>
+      <th>Another very long column name</th>
+      <th>A very long column name</th>
+      <th>Another very long column name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Col 1</td>
+      <td>Col 2</td>
+      <td>Col 3</td>
+      <td>Col 4</td>
+      <td>Col 5</td>
+      <td>Col 6</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="blockquotes-and-admonitions">Blockquotes and admonitions</h2>
+
+<p><strong>A Blockquote looks like this</strong></p>
+
+<blockquote>
+  <p>Two things are infinite: the universe and human stupidity; and I’m not sure about the universe. - Albert Einstein</p>
+</blockquote>
+
+<p><strong>A note looks like this</strong></p>
+
+<div class="note">
+  <p>Two things are infinite: the universe and human stupidity; and I'm not sure about the universe. - Albert Einstein</p>
+</div>
+
+<p><strong>A tip looks like this</strong></p>
+
+<div class="tip">
+  <p>Two things are infinite: the universe and human stupidity; and I'm not sure about the universe. - Albert Einstein</p>
+</div>
+
+<p><strong>Info</strong></p>
+
+<div class="info">
+  <p>Two things are infinite: the universe and human stupidity; and I'm not sure about the universe. - Albert Einstein</p>
+</div>
+
+<p><strong>Caution</strong></p>
+
+<div class="caution">
+  <p>Two things are infinite: the universe and human stupidity; and I'm not sure about the universe. - Albert Einstein</p>
+</div>
+
+<p><strong>Danger</strong></p>
+
+<div class="danger">
+  <p>Two things are infinite: the universe and human stupidity; and I'm not sure about the universe. - Albert Einstein</p>
+</div>
+
+<p><strong>Renders markdown</strong></p>
+<div class="tip">
+  <p>This is a <strong>bold</strong> text, followed by a link to <a href="https://imdhemy.com">imdhemy.com</a> and an <code class="language-plaintext highlighter-rouge">inline code</code>.</p>
+</div>
+
+<hr />
+
+<h2 id="syntax-highlighting">Syntax Highlighting</h2>
+
+<p><strong>Code blocks</strong>:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">foo</span>
+    <span class="nb">puts</span> <span class="s1">'foo'</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>To marks specific lines:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="hll"><span class="k">def</span> <span class="nf">foo</span>
+</span><span class="hll">    <span class="nb">puts</span> <span class="s1">'foo'</span>
+</span><span class="k">end</span></code></pre></figure>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">ElasticSearchEngineTest</span> <span class="kd">extends</span> <span class="nc">UnitTestCase</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * @test
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">test_it_can_index_a_document</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$handler</span> <span class="o">=</span> <span class="nc">MockHandler</span><span class="o">::</span><span class="nf">mockTemplate</span><span class="p">(</span><span class="s1">'index_document'</span><span class="p">);</span>
+
+        <span class="nv">$builder</span> <span class="o">=</span> <span class="nc">ClientBuilder</span><span class="o">::</span><span class="nf">create</span><span class="p">();</span>
+        <span class="nv">$builder</span><span class="o">-&gt;</span><span class="nf">setHandler</span><span class="p">(</span><span class="nv">$handler</span><span class="p">);</span>
+        <span class="nv">$client</span> <span class="o">=</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="nf">build</span><span class="p">();</span>
+
+
+        <span class="nv">$elasticSearchEngine</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ElasticSearchEngine</span><span class="p">(</span><span class="nv">$client</span><span class="p">);</span>
+        <span class="nv">$document</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">'author'</span> <span class="o">=&gt;</span> <span class="s1">'Albert Einstein'</span><span class="p">,</span>
+            <span class="s1">'quote'</span> <span class="o">=&gt;</span> <span class="s1">'I have no special talents. I am only passionately curious.'</span><span class="p">,</span>
+        <span class="p">];</span>
+
+        <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$elasticSearchEngine</span><span class="o">-&gt;</span><span class="nf">index</span><span class="p">(</span><span class="s1">'quotes_index'</span><span class="p">,</span> <span class="nv">$document</span><span class="p">);</span>
+
+        <span class="nv">$expectedResponse</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getTemplate</span><span class="p">(</span><span class="s1">'index_document'</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">assertEquals</span><span class="p">(</span><span class="nv">$expectedResponse</span><span class="p">,</span> <span class="nv">$response</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Showing diff:</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gi">+ This line is added
+</span><span class="gd">- This line is removed
+</span></code></pre></div></div>
+
+<p>And inline code looks like this: <code class="language-plaintext highlighter-rouge">puts 'foo'</code></p>
+
+<hr />
+
+<h2 id="images">Images</h2>
+
+<p><img src="/example/images/posts/pic-01.jpeg" alt="Image" /></p>
+
+<hr />
+
+<h2 id="videos">Videos</h2>
+
+<p><strong>YouTube embed</strong></p>
+
+<iframe class="w-full aspect-video" src="https://www.youtube.com/embed/8Qn_spdM5Zg" frameborder="0" allowfullscreen=""></iframe>
+
+<p><strong>Vimeo embed</strong></p>
+
+<iframe class="w-full aspect-video" src="https://player.vimeo.com/video/1084537" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+
+<hr />
+
+<h2 id="audio">Audio</h2>
+
+<p><strong>SoundCloud embed</strong></p>
+
+<iframe class="w-full aspect-auto" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/240233494&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+
+<p><strong>Spotify embed</strong></p>
+
+<iframe src="https://embed.spotify.com/?uri=spotify:track:6rqhFgbbKwnb9MLmUQDhG6" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+
+<hr />
+
+<h2 id="math-formulas">Math formulas</h2>
+
+<p>Using MathJax, you can write math formulas like this:</p>
+
+<p><strong>Inline formula</strong> will be rendered like this: $x^2 + y^2 = z^2$.</p>
+
+<p><strong>Block formula</strong></p>
+
+\[\int_0^\infty x^2 dx\]]]></content><author><name>Dhemy</name></author><category term="example" /><category term="elements" /><summary type="html"><![CDATA[Here is a list of all the elements that are available in the theme.]]></summary></entry><entry><title type="html">Another hello world</title><link href="/example/example/category2/2022/12/22/hello-world-2.html" rel="alternate" type="text/html" title="Another hello world" /><published>2022-12-22T00:00:00+01:00</published><updated>2022-12-22T00:00:00+01:00</updated><id>/example/example/category2/2022/12/22/hello-world-2</id><content type="html" xml:base="/example/example/category2/2022/12/22/hello-world-2.html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
+
+<h2 id="header-2">Header 2</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
+
+<h2 id="header-3">Header 3</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>]]></content><author><name>Dhemy</name></author><category term="example" /><category term="category2" /><category term="tag1" /><category term="tag2" /><category term="tag3" /><summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/example/images/posts/pic-02.jpeg" /><media:content medium="image" url="/example/images/posts/pic-02.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">What doesn’t kill us makes us shorter, Super Mario</title><link href="/example/example/category1/2022/12/22/hello-world.html" rel="alternate" type="text/html" title="What doesn’t kill us makes us shorter, Super Mario" /><published>2022-12-22T00:00:00+01:00</published><updated>2022-12-22T00:00:00+01:00</updated><id>/example/example/category1/2022/12/22/hello-world</id><content type="html" xml:base="/example/example/category1/2022/12/22/hello-world.html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
+
+<h2 id="header-2">Header 2</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
+
+<h2 id="header-3">Header 3</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>]]></content><author><name>Dhemy</name></author><category term="example" /><category term="category1" /><category term="tag1" /><category term="tag2" /><category term="tag3" /><category term="two words" /><summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/example/images/posts/pic-01.jpeg" /><media:content medium="image" url="/example/images/posts/pic-01.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

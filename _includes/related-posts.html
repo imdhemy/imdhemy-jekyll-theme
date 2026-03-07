@@ -1,0 +1,49 @@
+{% assign related_limit = 3 %}
+{% assign related_count = 0 %}
+{% assign related_urls = "" %}
+{% assign related_posts_heading = site.theme_text.related_posts_heading | default: "Keep reading" %}
+
+<section class="related-posts-shell">
+    <div class="max-w-screen-md mx-auto bg-white p-5">
+        <h2 class="related-posts__heading">{{ related_posts_heading }}</h2>
+        <div class="related-posts">
+            {% if page.tags and page.tags.size > 0 %}
+            {% for post in site.posts %}
+            {% if post.url != page.url and related_count < related_limit %}
+            {% assign has_shared_tag = false %}
+            {% for tag in page.tags %}
+            {% if post.tags contains tag %}
+            {% assign has_shared_tag = true %}
+            {% break %}
+            {% endif %}
+            {% endfor %}
+            {% if has_shared_tag %}
+            <a class="related-posts__item" href="{{ site.baseurl }}{{ post.url }}">
+                <span class="related-posts__title">{{ post.title }}</span>
+                <span class="related-posts__meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            </a>
+            {% assign related_urls = related_urls | append: "|" | append: post.url %}
+            {% assign related_count = related_count | plus: 1 %}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+
+            {% if related_count < related_limit %}
+            {% for post in site.posts %}
+            {% if post.url != page.url and related_count < related_limit %}
+            {% assign seen_key = "|" | append: post.url %}
+            {% unless related_urls contains seen_key %}
+            <a class="related-posts__item" href="{{ site.baseurl }}{{ post.url }}">
+                <span class="related-posts__title">{{ post.title }}</span>
+                <span class="related-posts__meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            </a>
+            {% assign related_urls = related_urls | append: "|" | append: post.url %}
+            {% assign related_count = related_count | plus: 1 %}
+            {% endunless %}
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</section>

@@ -1,10 +1,10 @@
 <header class="relative" id="main-header">
     <div class="container mx-auto">
-        <div class="flex py-6 lg:py-14 p-5 lg:px-0">
+        <div class="flex py-5 lg:py-6 p-5 lg:px-0 site-header-inner">
             <!-- begin logo -->
             <div class="flex-auto">
                 <div>
-                    <a href="{{ site.baseurl }}/" class="text-gray-900 text-3xl font-bold">
+                    <a href="{{ site.baseurl }}/" class="text-gray-900 text-3xl font-bold site-logo">
                         {{ site.title }}
                     </a>
                 </div>
@@ -13,35 +13,59 @@
             <!-- begin right part -->
             <div class="flex-auto">
                 <div class="flex justify-end lg:hidden">
-                    <button type="button" class="menu-toggle" data-target="#mobile-nav">
+                    <button type="button" class="menu-toggle" data-target="#mobile-nav" aria-controls="mobile-nav"
+                            aria-expanded="false" aria-label="Toggle navigation menu">
                         <ion-icon name="menu-outline"></ion-icon>
                     </button>
                 </div>
 
-                <div class="hidden lg:flex justify-end">
-                    <ul class="flex items-center">
-                        {% for page in site.navigation %}
+                <nav class="hidden lg:flex justify-end" aria-label="Primary navigation">
+                    <ul class="flex items-center site-nav-list">
+                        {% assign current_path = page.url | default: "/" | split: "?" | first | replace: "index.html", "" | replace: ".html", "" %}
+                        {% assign current_norm = current_path | append: "/" | replace: "//", "/" %}
+                        {% for nav_page in site.navigation %}
+                        {% assign nav_path = nav_page.url | default: "/" | split: "?" | first | replace: "index.html", "" | replace: ".html", "" %}
+                        {% assign nav_norm = nav_path | append: "/" | replace: "//", "/" %}
+                        {% assign is_active = false %}
+                        {% if current_norm == nav_norm %}
+                        {% assign is_active = true %}
+                        {% endif %}
+                        {% if nav_norm == "/blog/" and (current_norm contains "/blog/" or current_norm contains "/tag/" or page.layout == "post" or page.layout == "archive" or page.collection == "posts") %}
+                        {% assign is_active = true %}
+                        {% endif %}
                         <li class="ml-10">
-                            <a href="{{ site.baseurl }}{{ page.url }}"
-                               class="text-base font-semibold p-2 text-gray-900 ease-linear hover:text-blue-600 active:text-blue-600">
-                                {{ page.title }}
+                            <a href="{{ site.baseurl }}{{ nav_page.url }}"
+                               class="text-base font-semibold p-2 text-gray-900 ease-linear hover:text-blue-600 active:text-blue-600 nav-link{% if is_active %} is-active{% endif %}">
+                                {{ nav_page.title }}
                             </a>
                         </li>
                         {% endfor %}
                     </ul>
-                </div>
+                </nav>
                 <!-- end right part -->
             </div>
             <!-- begin mobile nav -->
             <nav id="mobile-nav"
-                 class="menu -z-10 opacity-0 absolute top-32 right-6 block min-w-fit w-40 bg-white p-5 rounded-md shadow-md ease-linear">
+                 class="menu -z-10 opacity-0 absolute top-32 right-6 block min-w-fit w-40 bg-white p-5 rounded-md shadow-md ease-linear site-mobile-nav"
+                 aria-label="Mobile navigation">
                 <div class="ml-auto">
                     <ul class="p-0 m-0 flex-column items-center">
-                        {% for page in site.navigation %}
+                        {% assign current_path = page.url | default: "/" | split: "?" | first | replace: "index.html", "" | replace: ".html", "" %}
+                        {% assign current_norm = current_path | append: "/" | replace: "//", "/" %}
+                        {% for nav_page in site.navigation %}
+                        {% assign nav_path = nav_page.url | default: "/" | split: "?" | first | replace: "index.html", "" | replace: ".html", "" %}
+                        {% assign nav_norm = nav_path | append: "/" | replace: "//", "/" %}
+                        {% assign is_active = false %}
+                        {% if current_norm == nav_norm %}
+                        {% assign is_active = true %}
+                        {% endif %}
+                        {% if nav_norm == "/blog/" and (current_norm contains "/blog/" or current_norm contains "/tag/" or page.layout == "post" or page.layout == "archive" or page.collection == "posts") %}
+                        {% assign is_active = true %}
+                        {% endif %}
                         <li class="block flex-1 w-full m-0">
-                            <a href="{{ site.baseurl }}{{ page.url }}"
-                               class="block text-right text-base font-semibold p-2 text-gray-900 ease-linear hover:text-blue-600 active:text-blue-600">
-                                {{ page.title }}
+                            <a href="{{ site.baseurl }}{{ nav_page.url }}"
+                               class="block text-right text-base font-semibold p-2 text-gray-900 ease-linear hover:text-blue-600 active:text-blue-600 nav-link{% if is_active %} is-active{% endif %}">
+                                {{ nav_page.title }}
                             </a>
                         </li>
                         {% endfor %}
