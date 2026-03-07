@@ -10,7 +10,20 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://imdhemy.com"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_data|_layouts|_includes|_sass|LICENSE|README|_config\.yml)!i) }
+  spec.files         = Dir.glob(
+    %w[
+      _data/**/*
+      _includes/**/*
+      _layouts/**/*
+      _sass/**/*
+      assets/css/**/*
+      assets/js/dist/**/*
+      assets/images/**/*
+      LICENSE.txt
+      README.md
+      _config.yml
+    ]
+  ).select { |f| File.file?(f) }
 
   spec.add_runtime_dependency "jekyll", "~> 4.3"
   spec.add_runtime_dependency "jekyll-feed", "~> 0.17.0"
