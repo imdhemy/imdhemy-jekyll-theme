@@ -9,6 +9,8 @@ import {
   menuOutline,
 } from 'ionicons/icons';
 import { init as initBurgerMenu } from './burger-menu';
+import { init as initHeaderState } from './header-state';
+import { init as initReadingProgress } from './reading-progress';
 
 addIcons({
   close,
@@ -22,4 +24,6 @@ defineIonIcon();
 
 (() => {
   initBurgerMenu();
+  initHeaderState();
+  initReadingProgress();
 })();

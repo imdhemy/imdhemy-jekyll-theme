@@ -1,5 +1,7 @@
 {% assign hero_kicker = site.theme_text.hero_kicker | default: "Personal blog and engineering notes" %}
 {% assign hero_cta_label = site.theme_text.hero_cta_label | default: "Start reading" %}
+{% assign hero_secondary_cta_label = site.theme_text.hero_secondary_cta_label | default: "About me" %}
+{% assign hero_secondary_cta_url = site.theme_text.hero_secondary_cta_url | default: "/about" %}
 <section class="hero-section">
     <div class="hero-section__container">
         <div class="hero-section__layout">
@@ -12,8 +14,9 @@
                     <p class="hero-description">
                         {{ site.author.description }}
                     </p>
-                    <div class="hero-cta">
+                    <div class="hero-cta hero-cta--dual">
                         <a href="{{ site.baseurl }}/blog" class="primary-button">{{ hero_cta_label }}</a>
+                        <a href="{{ site.baseurl }}{{ hero_secondary_cta_url }}" class="secondary-button">{{ hero_secondary_cta_label }}</a>
                     </div>
                 </div>
             </div>

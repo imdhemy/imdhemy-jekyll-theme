@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+{% if site.theme_features.reading_progress != false %}
+{% include reading-progress.html %}
+{% endif %}
 {% include post-header.html %}
 
 {% include content.html %}
