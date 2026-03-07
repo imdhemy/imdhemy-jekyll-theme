@@ -1,15 +1,15 @@
 {% assign hero_kicker = site.theme_text.hero_kicker | default: "Personal blog and engineering notes" %}
 {% assign hero_cta_label = site.theme_text.hero_cta_label | default: "Start reading" %}
-<section class="bg-white py-16 hero-section">
-    <div class="container mx-auto">
-        <div class="flex flex-col items-center flex-wrap">
-            <div class="flex-1 px-8 max-w-2xl">
-                <div class="text-center mx-auto">
+<section class="hero-section">
+    <div class="hero-section__container">
+        <div class="hero-section__layout">
+            <div class="hero-section__content">
+                <div class="hero-section__content-inner">
                     <p class="hero-kicker">{{ hero_kicker }}</p>
-                    <h1 class="text-3xl lg:text-6xl mb-8 lg:text-5xl font-bold">
-                        Hi, I'm <span class="text-blue-500">{{ site.author.name }}</span>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="hero-title__accent">{{ site.author.name }}</span>
                     </h1>
-                    <p class="text-lg lg:text-2xl leading-8 lg:leading-10 text-gray-500">
+                    <p class="hero-description">
                         {{ site.author.description }}
                     </p>
                     <div class="hero-cta">

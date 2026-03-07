@@ -59,32 +59,30 @@
     
 
 </head>
-<body class="min-h-screen theme-body">
+<body class="theme-body">
 <a class="skip-link" href="#main-content">Skip to content</a>
-<div class="min-h-screen">
-    <header class="relative" id="main-header">
-    <div class="container mx-auto">
-        <div class="flex py-5 lg:py-6 p-5 lg:px-0 site-header-inner">
+<div class="theme-shell">
+    <header class="site-header" id="main-header">
+    <div class="site-header__container">
+        <div class="site-header__inner">
             <!-- begin logo -->
-            <div class="flex-auto">
-                <div>
-                    <a href="/example/" class="text-gray-900 text-3xl font-bold site-logo">
-                        Imdhemy
-                    </a>
-                </div>
+            <div class="site-header__brand">
+                <a href="/example/" class="site-logo">
+                    Imdhemy
+                </a>
             </div>
             <!-- end logo -->
             <!-- begin right part -->
-            <div class="flex-auto">
-                <div class="flex justify-end lg:hidden">
-                    <button type="button" class="menu-toggle" data-target="#mobile-nav" aria-controls="mobile-nav"
+            <div class="site-header__actions">
+                <div class="site-header__mobile-toggle-wrap">
+                    <button type="button" class="site-header__toggle" data-target="#mobile-nav" aria-controls="mobile-nav"
                             aria-expanded="false" aria-label="Toggle navigation menu">
                         <ion-icon name="menu-outline"></ion-icon>
                     </button>
                 </div>
 
-                <nav class="hidden lg:flex justify-end" aria-label="Primary navigation">
-                    <ul class="flex items-center site-nav-list">
+                <nav class="site-header__desktop-nav" aria-label="Primary navigation">
+                    <ul class="site-nav-list">
                         
                         
                         
@@ -93,9 +91,9 @@
                         
                         
                         
-                        <li class="ml-10">
+                        <li class="site-nav-list__item">
                             <a href="/example/"
-                               class="text-base font-semibold p-2 text-gray-900 ease-linear hover:text-blue-600 active:text-blue-600 nav-link">
+                               class="nav-link">
                                 Home
                             </a>
                         </li>
@@ -105,9 +103,9 @@
                         
                         
                         
-                        <li class="ml-10">
+                        <li class="site-nav-list__item">
                             <a href="/example/blog"
-                               class="text-base font-semibold p-2 text-gray-900 ease-linear hover:text-blue-600 active:text-blue-600 nav-link is-active">
+                               class="nav-link is-active">
                                 Blog
                             </a>
                         </li>
@@ -117,9 +115,9 @@
                         
                         
                         
-                        <li class="ml-10">
+                        <li class="site-nav-list__item">
                             <a href="/example/about"
-                               class="text-base font-semibold p-2 text-gray-900 ease-linear hover:text-blue-600 active:text-blue-600 nav-link">
+                               class="nav-link">
                                 About
                             </a>
                         </li>
@@ -130,10 +128,10 @@
             </div>
             <!-- begin mobile nav -->
             <nav id="mobile-nav"
-                 class="menu -z-10 opacity-0 absolute top-32 right-6 block min-w-fit w-40 bg-white p-5 rounded-md shadow-md ease-linear site-mobile-nav"
+                 class="site-mobile-nav is-hidden"
                  aria-label="Mobile navigation">
-                <div class="ml-auto">
-                    <ul class="p-0 m-0 flex-column items-center">
+                <div class="site-mobile-nav__inner">
+                    <ul class="site-mobile-nav__list">
                         
                         
                         
@@ -142,9 +140,9 @@
                         
                         
                         
-                        <li class="block flex-1 w-full m-0">
+                        <li class="site-mobile-nav__item">
                             <a href="/example/"
-                               class="block text-right text-base font-semibold p-2 text-gray-900 ease-linear hover:text-blue-600 active:text-blue-600 nav-link">
+                               class="site-mobile-nav__link nav-link">
                                 Home
                             </a>
                         </li>
@@ -154,9 +152,9 @@
                         
                         
                         
-                        <li class="block flex-1 w-full m-0">
+                        <li class="site-mobile-nav__item">
                             <a href="/example/blog"
-                               class="block text-right text-base font-semibold p-2 text-gray-900 ease-linear hover:text-blue-600 active:text-blue-600 nav-link is-active">
+                               class="site-mobile-nav__link nav-link is-active">
                                 Blog
                             </a>
                         </li>
@@ -166,9 +164,9 @@
                         
                         
                         
-                        <li class="block flex-1 w-full m-0">
+                        <li class="site-mobile-nav__item">
                             <a href="/example/about"
-                               class="block text-right text-base font-semibold p-2 text-gray-900 ease-linear hover:text-blue-600 active:text-blue-600 nav-link">
+                               class="site-mobile-nav__link nav-link">
                                 About
                             </a>
                         </li>
@@ -184,19 +182,19 @@
     <main id="main-content">
         
 
-<div class="max-w-screen-md mx-auto bg-white p-5">
+<div class="post-header">
     <a class="post-back-link" href="/example/blog">&larr; Back to all posts</a>
-    <h1 class="font-black font-sans text-2xl lg:text-4xl post-title">Elements</h1>
+    <h1 class="post-title">Elements</h1>
 </div>
 
-<div class="max-w-screen-md mx-auto bg-white p-5">
-    <div class="flex justify-between flex-wrap my-2">
-        <div class="flex items-center mr-8">
+<div class="post-meta-card">
+    <div class="post-meta-row">
+        <div class="post-author">
             <img src="/example/images/theme/avatar.jpeg" alt="Dhemy"
-                 class="rounded-full w-10 h-10 mr-3 block"/>
+                 class="post-author__avatar"/>
             <div>
-                <p class="text-gray-700 text-sm font-bold">Dhemy</p>
-                <p class="text-gray-500 text-xs">
+                <p class="post-author__name">Dhemy</p>
+                <p class="post-author__meta">
                     December 22, 2022 - 4 min read
                 </p>
             </div>
@@ -206,11 +204,11 @@
     <div>
         
         
-<div class="flex mb-5 post-tags">
+<div class="post-tags">
     
     
     <a href="/example/tag/elements"
-       class="text-sm text-gray-500 hover:text-gray-700 mr-3 tag-pill">
+       class="tag-pill">
         #elements
     </a>
     
@@ -223,7 +221,7 @@
 </div>
 
 
-<div class="m-auto max-w-screen-md bg-white p-5 text-xl content read-surface">
+<div class="content-shell content read-surface">
     <p>Here is a list of all the elements that are available in the theme.</p>
 
 <p>A paragraph with a <a href="http://example.com/">link</a>. A paragraph with a <a href="http://example.com/">link</a>. Let’s make it longer using lorem ipsum text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</p>
@@ -472,7 +470,7 @@
 
 
 <section class="post-navigation-shell">
-    <div class="max-w-screen-md mx-auto bg-white p-5 post-navigation">
+    <div class="post-navigation-shell__inner post-navigation">
         
         
         <a class="post-navigation__item post-navigation__item--next" href="/example/example/category2/2022/12/22/hello-world-2.html">
@@ -490,7 +488,7 @@
 
 
 <section class="related-posts-shell">
-    <div class="max-w-screen-md mx-auto bg-white p-5">
+    <div class="related-posts-shell__inner">
         <h2 class="related-posts__heading">Keep reading</h2>
         <div class="related-posts">
             
@@ -551,9 +549,9 @@
 
     </main>
     <section class="site-footer">
-    <div class="p-10">
-        <div class="max-w-screen-md mx-auto">
-            <p class="text-center">
+    <div class="site-footer__inner">
+        <div class="site-footer__container">
+            <p class="site-footer__text">
                 <!-- 2001 - jekyll current year -->
                 &copy; 2021 - 2026 . imdhemy.com Published by Jekyll, hosted on GitHub Pages.
             </p>

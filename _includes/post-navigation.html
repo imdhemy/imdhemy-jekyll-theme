@@ -1,7 +1,7 @@
 {% assign previous_article_label = site.theme_text.previous_article_label | default: "Previous article" %}
 {% assign next_article_label = site.theme_text.next_article_label | default: "Next article" %}
 <section class="post-navigation-shell">
-    <div class="max-w-screen-md mx-auto bg-white p-5 post-navigation">
+    <div class="post-navigation-shell__inner post-navigation">
         {% if page.previous.url %}
         <a class="post-navigation__item" href="{{ site.baseurl }}{{ page.previous.url }}">
             <span class="post-navigation__label">{{ previous_article_label }}</span>

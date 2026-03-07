@@ -4,7 +4,7 @@
 {% assign related_posts_heading = site.theme_text.related_posts_heading | default: "Keep reading" %}
 
 <section class="related-posts-shell">
-    <div class="max-w-screen-md mx-auto bg-white p-5">
+    <div class="related-posts-shell__inner">
         <h2 class="related-posts__heading">{{ related_posts_heading }}</h2>
         <div class="related-posts">
             {% if page.tags and page.tags.size > 0 %}

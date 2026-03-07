@@ -27,32 +27,30 @@
     
 
 </head>
-<body class="min-h-screen theme-body">
+<body class="theme-body">
 <a class="skip-link" href="#main-content">Skip to content</a>
-<div class="min-h-screen">
-    <header class="relative" id="main-header">
-    <div class="container mx-auto">
-        <div class="flex py-5 lg:py-6 p-5 lg:px-0 site-header-inner">
+<div class="theme-shell">
+    <header class="site-header" id="main-header">
+    <div class="site-header__container">
+        <div class="site-header__inner">
             <!-- begin logo -->
-            <div class="flex-auto">
-                <div>
-                    <a href="/example/" class="text-gray-900 text-3xl font-bold site-logo">
-                        Imdhemy
-                    </a>
-                </div>
+            <div class="site-header__brand">
+                <a href="/example/" class="site-logo">
+                    Imdhemy
+                </a>
             </div>
             <!-- end logo -->
             <!-- begin right part -->
-            <div class="flex-auto">
-                <div class="flex justify-end lg:hidden">
-                    <button type="button" class="menu-toggle" data-target="#mobile-nav" aria-controls="mobile-nav"
+            <div class="site-header__actions">
+                <div class="site-header__mobile-toggle-wrap">
+                    <button type="button" class="site-header__toggle" data-target="#mobile-nav" aria-controls="mobile-nav"
                             aria-expanded="false" aria-label="Toggle navigation menu">
                         <ion-icon name="menu-outline"></ion-icon>
                     </button>
                 </div>
 
-                <nav class="hidden lg:flex justify-end" aria-label="Primary navigation">
-                    <ul class="flex items-center site-nav-list">
+                <nav class="site-header__desktop-nav" aria-label="Primary navigation">
+                    <ul class="site-nav-list">
                         
                         
                         
@@ -61,9 +59,9 @@
                         
                         
                         
-                        <li class="ml-10">
+                        <li class="site-nav-list__item">
                             <a href="/example/"
-                               class="text-base font-semibold p-2 text-gray-900 ease-linear hover:text-blue-600 active:text-blue-600 nav-link is-active">
+                               class="nav-link is-active">
                                 Home
                             </a>
                         </li>
@@ -73,9 +71,9 @@
                         
                         
                         
-                        <li class="ml-10">
+                        <li class="site-nav-list__item">
                             <a href="/example/blog"
-                               class="text-base font-semibold p-2 text-gray-900 ease-linear hover:text-blue-600 active:text-blue-600 nav-link">
+                               class="nav-link">
                                 Blog
                             </a>
                         </li>
@@ -85,9 +83,9 @@
                         
                         
                         
-                        <li class="ml-10">
+                        <li class="site-nav-list__item">
                             <a href="/example/about"
-                               class="text-base font-semibold p-2 text-gray-900 ease-linear hover:text-blue-600 active:text-blue-600 nav-link">
+                               class="nav-link">
                                 About
                             </a>
                         </li>
@@ -98,10 +96,10 @@
             </div>
             <!-- begin mobile nav -->
             <nav id="mobile-nav"
-                 class="menu -z-10 opacity-0 absolute top-32 right-6 block min-w-fit w-40 bg-white p-5 rounded-md shadow-md ease-linear site-mobile-nav"
+                 class="site-mobile-nav is-hidden"
                  aria-label="Mobile navigation">
-                <div class="ml-auto">
-                    <ul class="p-0 m-0 flex-column items-center">
+                <div class="site-mobile-nav__inner">
+                    <ul class="site-mobile-nav__list">
                         
                         
                         
@@ -110,9 +108,9 @@
                         
                         
                         
-                        <li class="block flex-1 w-full m-0">
+                        <li class="site-mobile-nav__item">
                             <a href="/example/"
-                               class="block text-right text-base font-semibold p-2 text-gray-900 ease-linear hover:text-blue-600 active:text-blue-600 nav-link is-active">
+                               class="site-mobile-nav__link nav-link is-active">
                                 Home
                             </a>
                         </li>
@@ -122,9 +120,9 @@
                         
                         
                         
-                        <li class="block flex-1 w-full m-0">
+                        <li class="site-mobile-nav__item">
                             <a href="/example/blog"
-                               class="block text-right text-base font-semibold p-2 text-gray-900 ease-linear hover:text-blue-600 active:text-blue-600 nav-link">
+                               class="site-mobile-nav__link nav-link">
                                 Blog
                             </a>
                         </li>
@@ -134,9 +132,9 @@
                         
                         
                         
-                        <li class="block flex-1 w-full m-0">
+                        <li class="site-mobile-nav__item">
                             <a href="/example/about"
-                               class="block text-right text-base font-semibold p-2 text-gray-900 ease-linear hover:text-blue-600 active:text-blue-600 nav-link">
+                               class="site-mobile-nav__link nav-link">
                                 About
                             </a>
                         </li>
@@ -152,16 +150,16 @@
     <main id="main-content">
         
 
-<section class="bg-white py-16 hero-section">
-    <div class="container mx-auto">
-        <div class="flex flex-col items-center flex-wrap">
-            <div class="flex-1 px-8 max-w-2xl">
-                <div class="text-center mx-auto">
+<section class="hero-section">
+    <div class="hero-section__container">
+        <div class="hero-section__layout">
+            <div class="hero-section__content">
+                <div class="hero-section__content-inner">
                     <p class="hero-kicker">Personal blog and engineering notes</p>
-                    <h1 class="text-3xl lg:text-6xl mb-8 lg:text-5xl font-bold">
-                        Hi, I'm <span class="text-blue-500">Dhemy</span>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="hero-title__accent">Dhemy</span>
                     </h1>
-                    <p class="text-lg lg:text-2xl leading-8 lg:leading-10 text-gray-500">
+                    <p class="hero-description">
                         I'm a software artist, fullstack (BE heavy) with 10 years of experience in software development. 
 Passionate about open source, blogging, and reading.
 
@@ -177,54 +175,54 @@ Passionate about open source, blogging, and reading.
 
 
 
-<section class="mb-8">
-    <div class="container mx-auto">
-        <div class="p-5 max-w-screen-lg mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8">Contributions</h2>
+<section class="contributions">
+    <div class="contributions__container">
+        <div class="contributions__inner">
+            <h2 class="contributions__title">Contributions</h2>
 
-            <p class="text-center text-2xl text-gray-500 mb-8">I have contributed to some great projects</p>
+            <p class="contributions__subtitle">I have contributed to some great projects</p>
 
-            <div class="grid gap-4 grid-cols-1 lg:grid-cols-3">
+            <div class="contributions__grid">
                 
-                <div class="py-5 flex items-center flex-col">
-                    <a href="https://laravel.com" class="block ease-linear">
+                <div class="contributions__item">
+                    <a href="https://laravel.com" class="contributions__link">
                         <img src="/example/images/theme/laravel.png"
-                             class="h-8 block" alt="Laravel">
+                             class="contributions__logo" alt="Laravel">
                     </a>
                 </div>
                 
-                <div class="py-5 flex items-center flex-col">
-                    <a href="https://spatie.be/open-source" class="block ease-linear">
+                <div class="contributions__item">
+                    <a href="https://spatie.be/open-source" class="contributions__link">
                         <img src="/example/images/theme/spatie.png"
-                             class="h-8 block" alt="Spatie">
+                             class="contributions__logo" alt="Spatie">
                     </a>
                 </div>
                 
-                <div class="py-5 flex items-center flex-col">
-                    <a href="https://docs.siklid.io/" class="block ease-linear">
+                <div class="contributions__item">
+                    <a href="https://docs.siklid.io/" class="contributions__link">
                         <img src="/example/images/theme/siklid.png"
-                             class="h-8 block" alt="Siklid">
+                             class="contributions__logo" alt="Siklid">
                     </a>
                 </div>
                 
-                <div class="py-5 flex items-center flex-col">
-                    <a href="https://github.com/imdhemy/google-play-billing" class="block ease-linear">
+                <div class="contributions__item">
+                    <a href="https://github.com/imdhemy/google-play-billing" class="contributions__link">
                         <img src="/example/images/theme/google-play-billing.png"
-                             class="h-8 block" alt="Google Play Billing">
+                             class="contributions__logo" alt="Google Play Billing">
                     </a>
                 </div>
                 
-                <div class="py-5 flex items-center flex-col">
-                    <a href="https://github.com/imdhemy/appstore-iap" class="block ease-linear">
+                <div class="contributions__item">
+                    <a href="https://github.com/imdhemy/appstore-iap" class="contributions__link">
                         <img src="/example/images/theme/app-store-iap.png"
-                             class="h-8 block" alt="App Store IAP">
+                             class="contributions__logo" alt="App Store IAP">
                     </a>
                 </div>
                 
-                <div class="py-5 flex items-center flex-col">
-                    <a href="https://imdhemy.com/laravel-iap-docs/" class="block ease-linear">
+                <div class="contributions__item">
+                    <a href="https://imdhemy.com/laravel-iap-docs/" class="contributions__link">
                         <img src="/example/images/theme/liap.png"
-                             class="h-8 block" alt="Laravel In-app Purchase">
+                             class="contributions__logo" alt="Laravel In-app Purchase">
                     </a>
                 </div>
                 
@@ -236,33 +234,31 @@ Passionate about open source, blogging, and reading.
 
 
 
-<section class="mb-8">
-    <div class="container mx-auto">
-        <div class="p-5 max-w-screen-lg mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8">Testimonials</h2>
-            <div class="grid gap-5 grid-cols-1 lg:grid-cols-3">
+<section class="testimonials">
+    <div class="testimonials__container">
+        <div class="testimonials__inner">
+            <h2 class="testimonials__title">Testimonials</h2>
+            <div class="testimonials__grid">
                 
                 <!-- Item start -->
-                <div class="w-full">
-                    <div class="relative p-8 overflow-hidden bg-violet-100 rounded-3xl">
-                        <div class="relative z-1 flex items-center mb-8">
-                            <div class="relative min-w-[68px] min-h-[68px] mr-3 border-2 border-indigo-600 rounded-full">
+                <div class="testimonial-card-wrap">
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__header">
+                            <div class="testimonial-card__avatar-frame">
                                 <img width="40px" height="40px"
-                                     class="absolute top-0 left-0 w-full h-full object-cover rounded-full select-none p-[2px]"
+                                     class="testimonial-card__avatar"
                                      src="https://randomuser.me/api/portraits/med/men/9.jpg"
                                      alt=""/>
                             </div>
                             <div>
-                                <h3 class="font-sans mb-1 text-lg font-bold">
+                                <h3 class="testimonial-card__name">
                                     <a href="#">John Doe</a>
                                 </h3>
-                                <p class="mb-0 text-sm text-gray-500">Product Manager</p>
+                                <p class="testimonial-card__role">Product Manager</p>
                             </div>
                         </div>
 
-                        <p class="relative text-base mb-0 before:font-sans before:font-serif
-                        before:content-['\0022'] before:absolute before:top-[50px] before:-left-[10px] before:block before:text-[182px] before:opacity-10
-                            ">
+                        <p class="testimonial-card__content">
                             lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
                         </p>
@@ -271,26 +267,24 @@ Passionate about open source, blogging, and reading.
                 <!-- Item end -->
                 
                 <!-- Item start -->
-                <div class="w-full">
-                    <div class="relative p-8 overflow-hidden bg-violet-100 rounded-3xl">
-                        <div class="relative z-1 flex items-center mb-8">
-                            <div class="relative min-w-[68px] min-h-[68px] mr-3 border-2 border-indigo-600 rounded-full">
+                <div class="testimonial-card-wrap">
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__header">
+                            <div class="testimonial-card__avatar-frame">
                                 <img width="40px" height="40px"
-                                     class="absolute top-0 left-0 w-full h-full object-cover rounded-full select-none p-[2px]"
+                                     class="testimonial-card__avatar"
                                      src="https://randomuser.me/api/portraits/med/women/79.jpg"
                                      alt=""/>
                             </div>
                             <div>
-                                <h3 class="font-sans mb-1 text-lg font-bold">
+                                <h3 class="testimonial-card__name">
                                     <a href="#">Martha Stewart</a>
                                 </h3>
-                                <p class="mb-0 text-sm text-gray-500">Frontend Developer</p>
+                                <p class="testimonial-card__role">Frontend Developer</p>
                             </div>
                         </div>
 
-                        <p class="relative text-base mb-0 before:font-sans before:font-serif
-                        before:content-['\0022'] before:absolute before:top-[50px] before:-left-[10px] before:block before:text-[182px] before:opacity-10
-                            ">
+                        <p class="testimonial-card__content">
                             lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
                         </p>
@@ -299,26 +293,24 @@ Passionate about open source, blogging, and reading.
                 <!-- Item end -->
                 
                 <!-- Item start -->
-                <div class="w-full">
-                    <div class="relative p-8 overflow-hidden bg-violet-100 rounded-3xl">
-                        <div class="relative z-1 flex items-center mb-8">
-                            <div class="relative min-w-[68px] min-h-[68px] mr-3 border-2 border-indigo-600 rounded-full">
+                <div class="testimonial-card-wrap">
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__header">
+                            <div class="testimonial-card__avatar-frame">
                                 <img width="40px" height="40px"
-                                     class="absolute top-0 left-0 w-full h-full object-cover rounded-full select-none p-[2px]"
+                                     class="testimonial-card__avatar"
                                      src="https://randomuser.me/api/portraits/med/women/21.jpg"
                                      alt=""/>
                             </div>
                             <div>
-                                <h3 class="font-sans mb-1 text-lg font-bold">
+                                <h3 class="testimonial-card__name">
                                     <a href="#">Sandra Bullock</a>
                                 </h3>
-                                <p class="mb-0 text-sm text-gray-500">Product Manager</p>
+                                <p class="testimonial-card__role">Product Manager</p>
                             </div>
                         </div>
 
-                        <p class="relative text-base mb-0 before:font-sans before:font-serif
-                        before:content-['\0022'] before:absolute before:top-[50px] before:-left-[10px] before:block before:text-[182px] before:opacity-10
-                            ">
+                        <p class="testimonial-card__content">
                             lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
                         </p>
@@ -334,22 +326,22 @@ Passionate about open source, blogging, and reading.
 
 
 
-<section class="mb-8 latest-posts" id="latest-posts">
-    <div class="container mx-auto">
-        <div class="p-5">
-            <h2 class="text-3xl font-bold text-center mb-8">Latest Posts</h2>
+<section class="latest-posts" id="latest-posts">
+    <div class="latest-posts__container">
+        <div class="latest-posts__inner">
+            <h2 class="latest-posts__title">Latest Posts</h2>
             <p class="section-subtitle">Fresh writing you can read in a few minutes.</p>
-            <div class="max-w-screen-md mx-auto">
+            <div class="latest-posts__list">
                 
                 
 
-<article class="flex flex-col lg:flex-row items-center mb-8 pb-8 border-b border-gray-200 post-card">
+<article class="post-card">
     <!-- thumbnail -->
     
     <a href="/example/example/category1/2022/12/22/hello-world.html"
-       class="w-full relative block lg:min-w-[250px] lg:max-w-[250px] lg:max-h-[250px] aspect-square lg:mr-5 mb-5 lg:mb-0 rounded-lg overflow-hidden post-card__image">
+       class="post-card__image">
         <img src="/example/images/posts/pic-01.jpeg"
-             class="absolute inset-0 w-full h-full object-cover hover:scale-105 ease-in duration-300"
+             class="post-card__image-el"
              alt="Frankfurt"/>
     </a>
     
@@ -358,29 +350,29 @@ Passionate about open source, blogging, and reading.
         <p class="post-card__meta">Dec 22, 2022 · 2 min read</p>
         
         
-<div class="flex mb-5 post-tags">
+<div class="post-tags">
     
     
     <a href="/example/tag/tag1"
-       class="text-sm text-gray-500 hover:text-gray-700 mr-3 tag-pill">
+       class="tag-pill">
         #tag1
     </a>
     
     
     <a href="/example/tag/tag2"
-       class="text-sm text-gray-500 hover:text-gray-700 mr-3 tag-pill">
+       class="tag-pill">
         #tag2
     </a>
     
     
     <a href="/example/tag/tag3"
-       class="text-sm text-gray-500 hover:text-gray-700 mr-3 tag-pill">
+       class="tag-pill">
         #tag3
     </a>
     
     
     <a href="/example/tag/two-words"
-       class="text-sm text-gray-500 hover:text-gray-700 mr-3 tag-pill">
+       class="tag-pill">
         #two words
     </a>
     
@@ -388,12 +380,12 @@ Passionate about open source, blogging, and reading.
 
 
         <!-- title -->
-        <h2 class="text-3xl font-black mb-5 font-sans post-card__title">
-            <a class="border-b-2 border-transparent hover:border-b-violet-600 ease-in duration-300"
+        <h2 class="post-card__title">
+            <a class="post-card__title-link"
                href="/example/example/category1/2022/12/22/hello-world.html">What doesn't kill us makes us shorter, Super Mario</a>
         </h2>
         <!-- excerpt -->
-        <div class="text-gray-500 text-lg mb-0 post-card__excerpt">
+        <div class="post-card__excerpt">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula...
         </div>
         <a class="post-card__read-link" href="/example/example/category1/2022/12/22/hello-world.html">Read article &rarr;</a>
@@ -403,13 +395,13 @@ Passionate about open source, blogging, and reading.
                 
                 
 
-<article class="flex flex-col lg:flex-row items-center mb-8 pb-8 border-b border-gray-200 post-card">
+<article class="post-card">
     <!-- thumbnail -->
     
     <a href="/example/example/category2/2022/12/22/hello-world-2.html"
-       class="w-full relative block lg:min-w-[250px] lg:max-w-[250px] lg:max-h-[250px] aspect-square lg:mr-5 mb-5 lg:mb-0 rounded-lg overflow-hidden post-card__image">
+       class="post-card__image">
         <img src="/example/images/posts/pic-02.jpeg"
-             class="absolute inset-0 w-full h-full object-cover hover:scale-105 ease-in duration-300"
+             class="post-card__image-el"
              alt="Another hello world"/>
     </a>
     
@@ -418,23 +410,23 @@ Passionate about open source, blogging, and reading.
         <p class="post-card__meta">Dec 22, 2022 · 2 min read</p>
         
         
-<div class="flex mb-5 post-tags">
+<div class="post-tags">
     
     
     <a href="/example/tag/tag1"
-       class="text-sm text-gray-500 hover:text-gray-700 mr-3 tag-pill">
+       class="tag-pill">
         #tag1
     </a>
     
     
     <a href="/example/tag/tag2"
-       class="text-sm text-gray-500 hover:text-gray-700 mr-3 tag-pill">
+       class="tag-pill">
         #tag2
     </a>
     
     
     <a href="/example/tag/tag3"
-       class="text-sm text-gray-500 hover:text-gray-700 mr-3 tag-pill">
+       class="tag-pill">
         #tag3
     </a>
     
@@ -442,12 +434,12 @@ Passionate about open source, blogging, and reading.
 
 
         <!-- title -->
-        <h2 class="text-3xl font-black mb-5 font-sans post-card__title">
-            <a class="border-b-2 border-transparent hover:border-b-violet-600 ease-in duration-300"
+        <h2 class="post-card__title">
+            <a class="post-card__title-link"
                href="/example/example/category2/2022/12/22/hello-world-2.html">Another hello world</a>
         </h2>
         <!-- excerpt -->
-        <div class="text-gray-500 text-lg mb-0 post-card__excerpt">
+        <div class="post-card__excerpt">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula...
         </div>
         <a class="post-card__read-link" href="/example/example/category2/2022/12/22/hello-world-2.html">Read article &rarr;</a>
@@ -457,7 +449,7 @@ Passionate about open source, blogging, and reading.
                 
                 
 
-<article class="flex flex-col lg:flex-row items-center mb-8 pb-8 border-b border-gray-200 post-card">
+<article class="post-card">
     <!-- thumbnail -->
     
     <!-- content -->
@@ -465,11 +457,11 @@ Passionate about open source, blogging, and reading.
         <p class="post-card__meta">Dec 22, 2022 · 4 min read</p>
         
         
-<div class="flex mb-5 post-tags">
+<div class="post-tags">
     
     
     <a href="/example/tag/elements"
-       class="text-sm text-gray-500 hover:text-gray-700 mr-3 tag-pill">
+       class="tag-pill">
         #elements
     </a>
     
@@ -477,12 +469,12 @@ Passionate about open source, blogging, and reading.
 
 
         <!-- title -->
-        <h2 class="text-3xl font-black mb-5 font-sans post-card__title">
-            <a class="border-b-2 border-transparent hover:border-b-violet-600 ease-in duration-300"
+        <h2 class="post-card__title">
+            <a class="post-card__title-link"
                href="/example/example/2022/12/22/elements.html">Elements</a>
         </h2>
         <!-- excerpt -->
-        <div class="text-gray-500 text-lg mb-0 post-card__excerpt">
+        <div class="post-card__excerpt">
             Here is a list of all the elements that are available in the theme.
 
         </div>
@@ -492,7 +484,7 @@ Passionate about open source, blogging, and reading.
 
                 
             </div>
-            <div class="mt-16 text-center">
+            <div class="latest-posts__cta">
                 <a href="/example/blog"
                    class="primary-button">
                     All Posts &rarr;
@@ -503,37 +495,37 @@ Passionate about open source, blogging, and reading.
 </section>
 
 
-<section class="mb-0 mt-24">
-    <div class="relative py-16">
-        <div class="max-w-screen-md mx-auto">
-            <div class="p-5 text-center">
-                <h3 class="text-white font-sans font-bold text-5xl">Dhemy</h3>
-                <div class="relative mb-5 py-10">
-                    <ul class="flex items-center justify-center flex-wrap m-0 p-0">
+<section class="social-section">
+    <div class="social-section__inner">
+        <div class="social-section__container">
+            <div class="social-section__content">
+                <h3 class="social-section__title">Dhemy</h3>
+                <div class="social-section__links-wrap">
+                    <ul class="social-section__links">
                         
-                        <li class="mr-5">
-                            <a class="block bg-white relative w-[48px] h-[48px] rounded-full flex items-center justify-center ease-linear duration-300 hover:bg-indigo-600 hover:text-white"
+                        <li class="social-section__item">
+                            <a class="social-section__link"
                                href="https://github.com/imdhemy">
                                 <ion-icon name="logo-github"></ion-icon>
                             </a>
                         </li>
                         
-                        <li class="mr-5">
-                            <a class="block bg-white relative w-[48px] h-[48px] rounded-full flex items-center justify-center ease-linear duration-300 hover:bg-indigo-600 hover:text-white"
+                        <li class="social-section__item">
+                            <a class="social-section__link"
                                href="https://twitter.com/imdhemy">
                                 <ion-icon name="logo-twitter"></ion-icon>
                             </a>
                         </li>
                         
-                        <li class="mr-5">
-                            <a class="block bg-white relative w-[48px] h-[48px] rounded-full flex items-center justify-center ease-linear duration-300 hover:bg-indigo-600 hover:text-white"
+                        <li class="social-section__item">
+                            <a class="social-section__link"
                                href="https://www.linkedin.com/in/imdhemy/">
                                 <ion-icon name="logo-linkedin"></ion-icon>
                             </a>
                         </li>
                         
-                        <li class="mr-5">
-                            <a class="block bg-white relative w-[48px] h-[48px] rounded-full flex items-center justify-center ease-linear duration-300 hover:bg-indigo-600 hover:text-white"
+                        <li class="social-section__item">
+                            <a class="social-section__link"
                                href="https://www.youtube.com/@imdhemy">
                                 <ion-icon name="logo-youtube"></ion-icon>
                             </a>
@@ -541,24 +533,24 @@ Passionate about open source, blogging, and reading.
                         
                     </ul>
                 </div>
-                <div class="text-xl text-white drop-shadow-md">
+                <div class="social-section__description">
                     <p>I'm a software artist, fullstack (BE heavy) with 10 years of experience in software development. 
 Passionate about open source, blogging, and reading.
 </p>
                 </div>
             </div>
         </div>
-        <div class="bg-social opacity-75 absolute top-0 left-0 w-full h-full bg-bottom bg-cover -z-10"></div>
-        <div class="absolute top-0 left-0 w-full h-full bg-black -z-20"></div>
+        <div class="social-section__bg-image social-section__bg-pattern"></div>
+        <div class="social-section__bg-overlay"></div>
     </div>
 </section>
 
 
     </main>
     <section class="site-footer">
-    <div class="p-10">
-        <div class="max-w-screen-md mx-auto">
-            <p class="text-center">
+    <div class="site-footer__inner">
+        <div class="site-footer__container">
+            <p class="site-footer__text">
                 <!-- 2001 - jekyll current year -->
                 &copy; 2021 - 2026 . imdhemy.com Published by Jekyll, hosted on GitHub Pages.
             </p>

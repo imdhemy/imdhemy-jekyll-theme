@@ -1,13 +1,13 @@
-<section class="mb-0 mt-24">
-    <div class="relative py-16">
-        <div class="max-w-screen-md mx-auto">
-            <div class="p-5 text-center">
-                <h3 class="text-white font-sans font-bold text-5xl">{{ site.author.name }}</h3>
-                <div class="relative mb-5 py-10">
-                    <ul class="flex items-center justify-center flex-wrap m-0 p-0">
+<section class="social-section">
+    <div class="social-section__inner">
+        <div class="social-section__container">
+            <div class="social-section__content">
+                <h3 class="social-section__title">{{ site.author.name }}</h3>
+                <div class="social-section__links-wrap">
+                    <ul class="social-section__links">
                         {% for social in site.footer.social %}
-                        <li class="mr-5">
-                            <a class="block bg-white relative w-[48px] h-[48px] rounded-full flex items-center justify-center ease-linear duration-300 hover:bg-indigo-600 hover:text-white"
+                        <li class="social-section__item">
+                            <a class="social-section__link"
                                href="{{ social.url }}">
                                 <ion-icon name="{{ social.icon }}"></ion-icon>
                             </a>
@@ -15,12 +15,12 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <div class="text-xl text-white drop-shadow-md">
+                <div class="social-section__description">
                     <p>{{ site.author.description }}</p>
                 </div>
             </div>
         </div>
-        <div class="bg-social opacity-75 absolute top-0 left-0 w-full h-full bg-bottom bg-cover -z-10"></div>
-        <div class="absolute top-0 left-0 w-full h-full bg-black -z-20"></div>
+        <div class="social-section__bg-image social-section__bg-pattern"></div>
+        <div class="social-section__bg-overlay"></div>
     </div>
 </section>

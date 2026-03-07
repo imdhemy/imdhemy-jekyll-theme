@@ -1,15 +1,15 @@
 {% assign latest_posts_subtitle = site.theme_text.latest_posts_subtitle | default: "Fresh writing you can read in a few minutes." %}
-<section class="mb-8 latest-posts" id="latest-posts">
-    <div class="container mx-auto">
-        <div class="p-5">
-            <h2 class="text-3xl font-bold text-center mb-8">Latest Posts</h2>
+<section class="latest-posts" id="latest-posts">
+    <div class="latest-posts__container">
+        <div class="latest-posts__inner">
+            <h2 class="latest-posts__title">Latest Posts</h2>
             <p class="section-subtitle">{{ latest_posts_subtitle }}</p>
-            <div class="max-w-screen-md mx-auto">
+            <div class="latest-posts__list">
                 {% for post in site.posts limit:3 %}
                 {% include post-item.html %}
                 {% endfor %}
             </div>
-            <div class="mt-16 text-center">
+            <div class="latest-posts__cta">
                 <a href="{{ site.baseurl }}/blog"
                    class="primary-button">
                     All Posts &rarr;

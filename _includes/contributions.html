@@ -1,17 +1,17 @@
 {% if site.contributions.size > 0 %}
-<section class="mb-8">
-    <div class="container mx-auto">
-        <div class="p-5 max-w-screen-lg mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8">Contributions</h2>
+<section class="contributions">
+    <div class="contributions__container">
+        <div class="contributions__inner">
+            <h2 class="contributions__title">Contributions</h2>
 
-            <p class="text-center text-2xl text-gray-500 mb-8">I have contributed to some great projects</p>
+            <p class="contributions__subtitle">I have contributed to some great projects</p>
 
-            <div class="grid gap-4 grid-cols-1 lg:grid-cols-3">
+            <div class="contributions__grid">
                 {% for contribution in site.contributions %}
-                <div class="py-5 flex items-center flex-col">
-                    <a href="{{ contribution.url }}" class="block ease-linear">
+                <div class="contributions__item">
+                    <a href="{{ contribution.url }}" class="contributions__link">
                         <img src="{{ site.baseurl }}{{ contribution.logo }}"
-                             class="h-8 block" alt="{{ contribution.name }}">
+                             class="contributions__logo" alt="{{ contribution.name }}">
                     </a>
                 </div>
                 {% endfor %}
