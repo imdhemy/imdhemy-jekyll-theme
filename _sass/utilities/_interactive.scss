@@ -1,0 +1,100 @@
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+.select-none {
+  user-select: none;
+}
+
+.duration-300 {
+  transition-duration: 0.3s;
+}
+
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.ease-linear {
+  transition-timing-function: linear;
+}
+
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+.hover\:border-indigo-600:hover {
+  border-color: rgb(79 70 229);
+}
+
+.hover\:border-b-violet-600:hover {
+  border-bottom-color: rgb(124 58 237);
+}
+
+.hover\:bg-indigo-600:hover {
+  background-color: rgb(79 70 229);
+}
+
+.hover\:bg-violet-800:hover {
+  background-color: rgb(91 33 182);
+}
+
+.hover\:text-blue-600:hover {
+  color: rgb(37 99 235);
+}
+
+.hover\:text-gray-700:hover {
+  color: rgb(55 65 81);
+}
+
+.hover\:text-white:hover {
+  color: rgb(255 255 255);
+}
+
+.active\:text-blue-600:active {
+  color: rgb(37 99 235);
+}
+
+.before\:absolute::before {
+  content: var(--tw-content);
+  position: absolute;
+}
+
+.before\:-left-\[10px\]::before {
+  content: var(--tw-content);
+  left: -10px;
+}
+
+.before\:top-\[50px\]::before {
+  content: var(--tw-content);
+  top: 50px;
+}
+
+.before\:block::before {
+  content: var(--tw-content);
+  display: block;
+}
+
+.before\:font-sans::before {
+  content: var(--tw-content);
+  font-family: "Noto Sans Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.before\:font-serif::before {
+  content: var(--tw-content);
+  font-family: "Noto Serif", Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.before\:text-\[182px\]::before {
+  content: var(--tw-content);
+  font-size: 182px;
+}
+
+.before\:opacity-10::before {
+  content: var(--tw-content);
+  opacity: 0.1;
+}
+
+.before\:content-\[\'\\0022\'\]::before {
+  --tw-content: "\\0022";
+  content: var(--tw-content);
+}

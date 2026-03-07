@@ -22,10 +22,47 @@ remote_theme: imdhemy/imdhemy-jekyll-theme
 
 You can find examples in the [example](/example) directory.
 
-## Development
+## Development Quick Start
 
-To set up your environment to develop this theme, run `bundle install`. Then use `npm` to install the dependencies.
-To start the development server, run `npm start` and open your browser at `http://127.0.0.1:4000/example/`.
+Use this sequence every time you start working on the theme locally.
+
+### 1. Prerequisites
+
+- Ruby + Bundler
+- Node.js + npm
+
+### 2. Install dependencies
+
+```bash
+bundle install
+npm install
+```
+
+### 3. Start development
+
+Run the theme preview and JS watcher together:
+
+```bash
+npm start
+```
+
+This runs:
+
+- `bundle exec rake preview` to serve the example site from `http://127.0.0.1:4000/example/`
+- `webpack --watch` to rebuild `assets/js/dist/main.js` on JS changes
+
+### 4. Day-to-day workflow
+
+- Edit layouts/includes/styles in the theme root.
+- Edit sample content under `example/` to verify real pages.
+- Keep `npm start` running while you work.
+
+### 5. Useful standalone commands
+
+```bash
+npm run rake     # Jekyll preview only
+npm run webpack  # JS watcher only
+```
 
 ## License
 
