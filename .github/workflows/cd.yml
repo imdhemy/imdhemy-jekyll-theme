@@ -28,18 +28,13 @@ jobs:
           node-version: '24'
           cache: 'npm'
 
-      - name: Validate tag version matches gemspec
+      - name: Set gem version from tag
         run: |
           TAG_VERSION="${GITHUB_REF_NAME}"
-          GEM_VERSION=$(ruby -e "spec = Gem::Specification.load('imdhemy-jekyll-theme.gemspec'); print spec.version")
-
-          echo "tag=${TAG_VERSION}"
-          echo "gemspec=${GEM_VERSION}"
-
-          if [ "${TAG_VERSION}" != "${GEM_VERSION}" ]; then
-            echo "Tag version and gemspec version do not match"
-            exit 1
-          fi
+          ruby -i -pe "gsub(/spec\\.version\\s*=\\s*\\\"[^\\\"]+\\\"/, 'spec.version       = \\\"' + ENV.fetch('TAG_VERSION') + '\\\"')" imdhemy-jekyll-theme.gemspec
+          echo "using release version ${TAG_VERSION}"
+        env:
+          TAG_VERSION: ${{ github.ref_name }}
 
       - name: Install Node dependencies
         run: npm ci
