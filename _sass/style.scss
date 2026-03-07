@@ -1,11 +1,11 @@
-@import "base/reset";
-@import "base/typography";
+@forward "base/reset";
+@forward "base/typography";
 
-@import "utilities/layout";
-@import "utilities/visual";
-@import "utilities/typography";
-@import "utilities/interactive";
-@import "utilities/responsive";
+@forward "utilities/layout";
+@forward "utilities/visual";
+@forward "utilities/typography";
+@forward "utilities/interactive";
+@forward "utilities/responsive";
 
-@import "components/core";
-@import "components/highlight";
+@forward "components/core";
+@forward "components/highlight";
