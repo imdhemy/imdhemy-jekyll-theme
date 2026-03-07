@@ -7,9 +7,10 @@
 /Gemfile.lock
 /example/vendor
 /example/_site
-/imdhemy-jekyll-theme-0.1.0.gem
+/imdhemy-jekyll-theme-*.gem
 ###< Jekyll
 
 ###> Node
 /node_modules
+/assets/js/dist/
 ###< Node
