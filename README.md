@@ -2,21 +2,42 @@
 
 Jekyll theme for my personal website. [imdhemy.com](https://imdhemy.com)
 
-## Installation
+## Installation (Recommended: RubyGem)
 
-Use the Jekyll theme remote theme feature to install this theme.
+Install the theme as a gem and pin a semantic version.
 
-Require the `jekyll-remote-theme` gem in your `Gemfile`:
+Add to your site's `Gemfile`:
 
-```text
-gem "jekyll-remote-theme", "~> 0.4.3"
+```ruby
+gem "imdhemy-jekyll-theme", "1.0.0"
 ```
 
-Add the following to your site's `_config.yml` to activate the theme:
+Set the theme in your site's `_config.yml`:
+
+```yaml
+theme: imdhemy-jekyll-theme
+```
+
+Then run:
+
+```bash
+bundle install
+```
+
+## Migrating From `remote_theme`
+
+If your site currently uses:
 
 ```yaml
 remote_theme: imdhemy/imdhemy-jekyll-theme
 ```
+
+Migrate to the gem flow:
+
+1. Remove `remote_theme` from `_config.yml`.
+2. Add `theme: imdhemy-jekyll-theme` to `_config.yml`.
+3. Add `gem "imdhemy-jekyll-theme", "<semantic-version>"` to your `Gemfile`.
+4. Run `bundle install`.
 
 ## Usage
 
@@ -28,8 +49,15 @@ Use this sequence every time you start working on the theme locally.
 
 ### 1. Prerequisites
 
-- Ruby + Bundler
-- Node.js + npm
+- Ruby 3.3.4 + Bundler
+- Node.js 24 + npm
+
+The project pins runtime versions in:
+
+- `.ruby-version`
+- `.nvmrc`
+- `.node-version`
+- `.tool-versions`
 
 ### 2. Install dependencies
 
