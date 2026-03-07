@@ -10,7 +10,6 @@ import {
 } from 'ionicons/icons';
 import { init as initBurgerMenu } from './burger-menu';
 
-defineIonIcon();
 addIcons({
   close,
   'logo-github': logoGithub,
@@ -19,6 +18,7 @@ addIcons({
   'logo-youtube': logoYoutube,
   'menu-outline': menuOutline,
 });
+defineIonIcon();
 
 (() => {
   initBurgerMenu();
