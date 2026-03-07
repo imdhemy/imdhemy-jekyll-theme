@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Build JavaScript assets
+        run: npm run js:build
+
+      - name: Verify Jekyll build
+        run: bundle exec jekyll build --source example --config example/_config.yml --destination /tmp/imdhemy-theme-site
+
+      - name: Verify gem packaging
+        run: gem build imdhemy-jekyll-theme.gemspec
