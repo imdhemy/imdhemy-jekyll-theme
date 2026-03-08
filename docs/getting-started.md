@@ -1,11 +1,15 @@
 # Getting Started
 
-## 1. Install
+## 1. Install (RubyGem)
+
+Install the theme from RubyGems:
+
+- Gem page: <https://rubygems.org/gems/imdhemy-jekyll-theme>
 
 Add the theme to your site's `Gemfile`:
 
 ```ruby
-gem "imdhemy-jekyll-theme", "1.0.0"
+gem "imdhemy-jekyll-theme"
 ```
 
 Set it in `_config.yml`:
@@ -20,7 +24,22 @@ Then install dependencies:
 bundle install
 ```
 
-## 2. Minimal Site Configuration
+## 2. Migrate From `remote_theme`
+
+If your site currently uses:
+
+```yaml
+remote_theme: imdhemy/imdhemy-jekyll-theme
+```
+
+Migrate to the gem setup:
+
+1. Remove `remote_theme` from `_config.yml`.
+2. Add `theme: imdhemy-jekyll-theme` to `_config.yml`.
+3. Add `gem "imdhemy-jekyll-theme"` to your `Gemfile`.
+4. Run `bundle install`.
+
+## 3. Minimal Site Configuration
 
 ```yaml
 title: "Your Site"
@@ -42,11 +61,11 @@ navigation:
     url: /about
 ```
 
-## 3. Blog Setup
+For all available options, see [Configuration Reference](./configuration.md).
+
+## 4. Blog Setup
 
 Enable pagination and set your blog index page to use the `blog` layout.
-
-Example:
 
 ```yaml
 paginate: 10
@@ -63,21 +82,53 @@ description: Latest posts
 ---
 ```
 
-## 4. Home and Post Experience
+## 5. Home and Post Experience
 
 - Home uses `layout: home` and includes hero, contributions, testimonials, latest posts, and social section.
 - Posts use `layout: post` and include:
   - post header
   - content body
+  - collapsible discussions (Giscus, optional)
   - next/previous navigation
   - related posts
   - optional reading progress bar
 
-## 5. Local Development
+## 6. Local Development
+
+### Prerequisites
+
+- Ruby 3.3.4 + Bundler
+- Node.js 24 + npm
+
+Version pins are defined in:
+
+- `.ruby-version`
+- `.nvmrc`
+- `.node-version`
+- `.tool-versions`
+
+### Install dependencies
 
 ```bash
+bundle install
 npm install
+```
+
+### Start preview + JS watcher
+
+```bash
 npm start
 ```
 
-This runs Jekyll preview and JS watch mode.
+This runs:
+
+- `bundle exec rake preview`
+- `vite build --watch`
+
+### Useful standalone commands
+
+```bash
+npm run rake      # Jekyll preview only
+npm run js:build  # JS production build
+npm run js:watch  # JS watcher only
+```

@@ -53,6 +53,33 @@ theme_features:
   reading_progress: false
 ```
 
+## Comments and Reactions
+
+Use Giscus to enable reactions and comments on post pages:
+
+```yaml
+theme_comments:
+  enabled: true
+  provider: "giscus"
+  giscus:
+    host: "https://giscus.app"
+    repo: "owner/repo"
+    repo_id: "R_kgDOExample"
+    category: "General"
+    category_id: "DIC_kwDOExample4Cc0JvA"
+    mapping: "pathname"
+    term: ""
+    strict: "0"
+    reactions_enabled: "1"
+    emit_metadata: "0"
+    input_position: "bottom"
+    theme: "preferred_color_scheme"
+    lang: "en"
+    loading: "lazy"
+```
+
+Keep `enabled: false` while bootstrapping IDs to avoid empty integrations.
+
 ## Safe Template Overrides
 
 If you override include files in your site:

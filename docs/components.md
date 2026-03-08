@@ -6,7 +6,7 @@
 - `home`: hero + contributions + testimonials + latest posts + social section.
 - `blog`: page header + paginated post list + pagination + social section.
 - `archive`: archive header + filtered post list.
-- `post`: post header + content + post navigation + related posts.
+- `post`: post header + content + comments + post navigation + related posts.
 - `page`: page header + content.
 
 ## Rich Content
@@ -22,6 +22,7 @@
 - `latest-posts.html`: latest post list with card items.
 - `post-item.html`: reusable post card.
 - `post-header.html`: title, author, read time, tags, image.
+- `giscus-comments.html`: configurable Giscus reactions and comments.
 - `post-navigation.html`: previous/next post links.
 - `related-posts.html`: tag-aware related posts.
 - `reading-progress.html`: top progress indicator (post pages).
@@ -42,6 +43,7 @@
 - `site.theme_text` (optional)
 - `site.theme_style` (optional)
 - `site.theme_features` (optional)
+- `site.theme_comments` (optional)
 
 ## Accessibility Notes
 
