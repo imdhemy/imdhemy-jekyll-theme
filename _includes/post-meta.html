@@ -1,0 +1,9 @@
+{% assign meta_class = include.class_name | default: "post-meta" %}
+<p class="{{ meta_class }}">
+    <time datetime="{{ include.date | date_to_xmlschema }}">{{ include.date | date: "%b %-d, %Y" }}</time>
+    <span class="post-meta__separator" aria-hidden="true">&middot;</span>
+    <span class="post-meta__reading-time">
+        <ion-icon class="post-meta__icon" name="time-outline" aria-hidden="true"></ion-icon>
+        <span>{{ include.reading_minutes }} min read</span>
+    </span>
+</p>

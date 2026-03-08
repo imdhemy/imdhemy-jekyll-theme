@@ -7,6 +7,7 @@ import {
   logoTwitter,
   logoYoutube,
   menuOutline,
+  timeOutline,
 } from 'ionicons/icons';
 import { init as initBurgerMenu } from './burger-menu';
 import { init as initHeaderState } from './header-state';
@@ -19,6 +20,7 @@ addIcons({
   'logo-twitter': logoTwitter,
   'logo-youtube': logoYoutube,
   'menu-outline': menuOutline,
+  'time-outline': timeOutline,
 });
 defineIonIcon();
 
