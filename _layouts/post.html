@@ -1,6 +1,15 @@
 ---
 layout: default
 ---
-{% include post-header.html %}
+{% if site.theme_features.reading_progress != false %}
+{% include reading-progress.html %}
+{% endif %}
+<article class="post-page">
+    {% include post-header.html %}
 
-{% include content.html %}
+    {% include content.html %}
+
+    {% include post-navigation.html %}
+
+    {% include related-posts.html %}
+</article>

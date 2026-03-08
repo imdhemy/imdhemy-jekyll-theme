@@ -1,18 +1,18 @@
 {% if paginator.total_pages > 1 %}
-<section class="mx-auto max-w-screen-md px-5">
-    <nav class="flex items-center justify-between">
+<section class="pagination-shell">
+    <nav class="pagination-nav" aria-label="Pagination">
         {% if paginator.previous_page %}
-        <a class="inline-block font-semibold border-b-2 border-transparent hover:border-indigo-600"
+        <a class="pagination-link"
            href="{{ paginator.previous_page_path | relative_url }}">Prev</a>
         {% else %}
-        <span class="inline-block font-semibold text-gray-300 cursor-not-allowed">Previous</span>
+        <span class="pagination-link is-disabled">Previous</span>
         {% endif %}
 
         {% if paginator.next_page %}
-        <a class="inline-block font-semibold border-b-2 border-transparent hover:border-indigo-600"
+        <a class="pagination-link"
            href="{{ paginator.next_page_path | relative_url }}">Next</a>
         {% else %}
-        <span class="inline-block font-semibold text-gray-300 cursor-not-allowed">Next</span>
+        <span class="pagination-link is-disabled">Next</span>
         {% endif %}
     </nav>
 </section>

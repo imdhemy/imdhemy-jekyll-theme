@@ -5,12 +5,12 @@
 }
 
 ::selection {
-  background: #4d41e0;
+  background: var(--color-brand, #3b82f6);
   color: #fff;
 }
 
 ::-moz-selection {
-  background: #4d41e0;
+  background: var(--color-brand, #3b82f6);
   color: #fff;
 }
 
@@ -20,5 +20,5 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Noto Serif", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "Source Serif 4", Georgia, Cambria, "Times New Roman", Times, serif;
 }

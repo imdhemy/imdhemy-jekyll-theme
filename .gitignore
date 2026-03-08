@@ -5,6 +5,7 @@
 
 ###> Jekyll
 /Gemfile.lock
+/_site
 /example/vendor
 /example/_site
 /imdhemy-jekyll-theme-*.gem

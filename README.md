@@ -43,6 +43,42 @@ Migrate to the gem flow:
 
 You can find examples in the [example](/example) directory.
 
+## Customize Theme Copy
+
+The theme exposes UI text keys so users can control the added content from `_config.yml`.
+
+```yaml
+theme_text:
+  hero_kicker: "Personal blog and engineering notes"
+  hero_cta_label: "Start reading"
+  hero_secondary_cta_label: "About me"
+  hero_secondary_cta_url: "/about"
+  latest_posts_subtitle: "Fresh writing you can read in a few minutes."
+  read_article_label: "Read article"
+  back_to_posts_label: "Back to all posts"
+  previous_article_label: "Previous article"
+  next_article_label: "Next article"
+  related_posts_heading: "Keep reading"
+
+theme_features:
+  reading_progress: true
+
+theme_style:
+  accent: "#3b82f6"
+  accent_strong: "#2563eb"
+  accent_soft: "#dbeafe"
+  accent_surface: "#eff6ff"
+  success: "#16a34a"
+  info: "#2563eb"
+  warning: "#d97706"
+  danger: "#dc2626"
+  background: "#eef4ff"
+  surface: "#ffffff"
+  text: "#0f172a"
+  muted: "#475569"
+  border: "#c9d8f2"
+```
+
 ## Development Quick Start
 
 Use this sequence every time you start working on the theme locally.
