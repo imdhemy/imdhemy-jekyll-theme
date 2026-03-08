@@ -1443,6 +1443,13 @@
 }
 
 @media (max-width: 1023px) {
+  .page-header-wrap--blog .page-header-wrap__container,
+  .page-header-wrap--archive .page-header-wrap__container,
+  .latest-posts__container {
+    width: 100%;
+    margin-inline: 0;
+  }
+
   .hero-section {
     padding-top: 2.25rem;
     padding-bottom: 2.5rem;
@@ -1462,12 +1469,32 @@
     display: block;
   }
 
+  .latest-posts__inner {
+    padding: 0.75rem 0;
+  }
+
+  .latest-posts__list {
+    width: min(100% - 2rem, 880px);
+  }
+
   .post-page .post-header {
-    padding: 1.3rem 1.25rem 1.05rem;
+    padding: 1.2rem 1rem 0.95rem;
   }
 
   .post-page .content-shell {
-    padding: 1.35rem 1.25rem 1.2rem;
+    padding: 1.25rem 1rem 1.1rem;
+  }
+
+  .post-page .post-header,
+  .post-page .content-shell,
+  .post-page .post-navigation-shell__inner,
+  .post-page .related-posts-shell__inner {
+    width: min(100% - 2rem, 880px);
+  }
+
+  .post-page .post-navigation-shell__inner,
+  .post-page .related-posts-shell__inner {
+    padding: 0.9rem;
   }
 
   .post-page .post-navigation {
@@ -1488,16 +1515,26 @@
 
   .blog-hub .page-header--blog,
   .archive-hub .page-header--archive-hub {
-    padding: 1.35rem 1.25rem 0.95rem;
+    width: min(100% - 2rem, 880px);
+    padding: 1.05rem 1rem 0.8rem;
   }
 
   .blog-hub .blog-hub__listing,
   .archive-hub .archive-hub__listing {
-    padding: 0.45rem 1rem 0.85rem;
+    width: min(100% - 2rem, 880px);
+    padding: 0.3rem 0.65rem 0.7rem;
   }
 
   .blog-hub .pagination-shell {
-    padding: 0 1rem 1rem;
+    width: min(100% - 2rem, 880px);
+    padding: 0 0.65rem 0.75rem;
+  }
+
+  .blog-hub .page-header__description,
+  .archive-hub .page-header__description {
+    max-width: none;
+    margin-top: 0.6rem;
+    font-size: 1.05rem;
   }
 }
 
