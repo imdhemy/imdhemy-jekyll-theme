@@ -3,12 +3,7 @@
     <time datetime="{{ include.date | date_to_xmlschema }}">{{ include.date | date: "%b %-d, %Y" }}</time>
     <span class="post-meta__separator" aria-hidden="true">&middot;</span>
     <span class="post-meta__reading-time">
-        <svg class="post-meta__icon"
-             viewBox="0 0 24 24"
-             aria-hidden="true"
-             focusable="false">
-            <path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 3a1 1 0 0 1 1 1v3.59l2.7 2.7a1 1 0 1 1-1.4 1.42l-3-3A1 1 0 0 1 11 12V8a1 1 0 0 1 1-1z"/>
-        </svg>
+        <ion-icon class="post-meta__icon" name="time-outline" aria-hidden="true"></ion-icon>
         <span>{{ include.reading_minutes }} min read</span>
     </span>
 </p>
