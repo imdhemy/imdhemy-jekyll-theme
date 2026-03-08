@@ -59,9 +59,30 @@ theme_text:
   previous_article_label: "Previous article"
   next_article_label: "Next article"
   related_posts_heading: "Keep reading"
+  comments_heading: "Discussion"
+  comments_toggle_hint: "Open to view reactions and comments"
 
 theme_features:
   reading_progress: true
+
+theme_comments:
+  enabled: true
+  provider: "giscus"
+  giscus:
+    host: "https://giscus.app"
+    repo: "owner/repo"
+    repo_id: "R_kgDOExample"
+    category: "General"
+    category_id: "DIC_kwDOExample4Cc0JvA"
+    mapping: "pathname"
+    term: ""
+    strict: "0"
+    reactions_enabled: "1"
+    emit_metadata: "0"
+    input_position: "bottom"
+    theme: "preferred_color_scheme"
+    lang: "en"
+    loading: "lazy"
 
 theme_style:
   accent: "#3b82f6"
@@ -78,6 +99,15 @@ theme_style:
   muted: "#475569"
   border: "#c9d8f2"
 ```
+
+## Giscus Setup
+
+1. Enable GitHub Discussions on your repository.
+2. Install the [Giscus app](https://github.com/apps/giscus) for that repository.
+3. Copy `repo_id` and `category_id` from [giscus.app](https://giscus.app/).
+4. Add the `theme_comments` block to your `_config.yml`.
+
+If required Giscus keys are missing, the theme will skip rendering comments.
 
 ## Development Quick Start
 

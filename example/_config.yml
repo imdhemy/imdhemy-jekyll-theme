@@ -93,6 +93,24 @@ theme_style:
   muted: "#475569"
   border: "#c9d8f2"
 
+theme_comments:
+  enabled: true
+  provider: "giscus"
+  giscus:
+    host: "https://giscus.app"
+    repo: "imdhemy/imdhemy-jekyll-theme"
+    repo_id: "R_kgDOIoR9Mg"
+    category: "General"
+    category_id: "DIC_kwDOIoR9Ms4C38z4"
+    mapping: "pathname"
+    term: ""
+    strict: "0"
+    reactions_enabled: "1"
+    emit_metadata: "0"
+    input_position: "bottom"
+    theme: "preferred_color_scheme"
+    lang: "en"
+    loading: "lazy"
 
 plugins:
   - jekyll-feed

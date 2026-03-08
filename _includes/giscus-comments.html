@@ -1,0 +1,44 @@
+{% assign comments = site.theme_comments %}
+{% assign comments_heading = site.theme_text.comments_heading | default: "Discussion" %}
+{% assign comments_toggle_hint = site.theme_text.comments_toggle_hint | default: "Open to view reactions and comments" %}
+{% if comments and comments.enabled and comments.provider == "giscus" %}
+{% assign giscus = comments.giscus %}
+{% assign giscus_host = giscus.host | default: "https://giscus.app" %}
+{% if giscus and giscus.repo and giscus.repo_id and giscus.category and giscus.category_id %}
+<section class="comments-shell" id="comments-section" aria-label="{{ comments_heading }}">
+    <div class="comments-shell__inner comments-collapsible" data-comments-collapsible>
+        <button class="comments-collapsible__toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="comments-panel"
+                data-comments-toggle>
+            <span class="comments-collapsible__copy">
+                <span class="comments-shell__heading">{{ comments_heading }}</span>
+                <span class="comments-collapsible__hint">{{ comments_toggle_hint }}</span>
+            </span>
+            <span class="comments-collapsible__icon-wrap" aria-hidden="true">
+                <ion-icon class="comments-collapsible__icon" name="chevron-down-outline"></ion-icon>
+            </span>
+        </button>
+        <div class="comments-collapsible__panel" id="comments-panel" data-comments-panel hidden>
+            <div class="comments-collapsible__embed"
+                 data-giscus-mount
+                 data-giscus-script-src="{{ giscus_host }}/client.js"
+                 data-giscus-repo="{{ giscus.repo }}"
+                 data-giscus-repo-id="{{ giscus.repo_id }}"
+                 data-giscus-category="{{ giscus.category }}"
+                 data-giscus-category-id="{{ giscus.category_id }}"
+                 data-giscus-mapping="{{ giscus.mapping | default: "pathname" }}"
+                 data-giscus-term="{{ giscus.term }}"
+                 data-giscus-strict="{{ giscus.strict | default: "0" }}"
+                 data-giscus-reactions-enabled="{{ giscus.reactions_enabled | default: "1" }}"
+                 data-giscus-emit-metadata="{{ giscus.emit_metadata | default: "0" }}"
+                 data-giscus-input-position="{{ giscus.input_position | default: "top" }}"
+                 data-giscus-theme="{{ giscus.theme | default: "preferred_color_scheme" }}"
+                 data-giscus-lang="{{ giscus.lang | default: "en" }}"
+                 data-giscus-loading="{{ giscus.loading | default: "lazy" }}"></div>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endif %}

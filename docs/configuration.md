@@ -51,6 +51,8 @@ theme_text:
   previous_article_label: "Previous article"
   next_article_label: "Next article"
   related_posts_heading: "Keep reading"
+  comments_heading: "Discussion"
+  comments_toggle_hint: "Open to view reactions and comments"
 ```
 
 ## Theme Features
@@ -61,6 +63,34 @@ theme_features:
 ```
 
 - Set to `false` to disable the reading progress bar on post pages.
+
+## Comments (Giscus)
+
+```yaml
+theme_comments:
+  enabled: true
+  provider: "giscus"
+  giscus:
+    host: "https://giscus.app"
+    repo: "owner/repo"
+    repo_id: "R_kgDOExample"
+    category: "General"
+    category_id: "DIC_kwDOExample4Cc0JvA"
+    mapping: "pathname"
+    term: ""
+    strict: "0"
+    reactions_enabled: "1"
+    emit_metadata: "0"
+    input_position: "bottom"
+    theme: "preferred_color_scheme"
+    lang: "en"
+    loading: "lazy"
+```
+
+- Comments render only on post pages.
+- Required keys: `repo`, `repo_id`, `category`, `category_id`.
+- `host` and `term` are optional and map to Giscus script options.
+- Reactions are controlled by `reactions_enabled`.
 
 ## Theme Style Tokens
 
