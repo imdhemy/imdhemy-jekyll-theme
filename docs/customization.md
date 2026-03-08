@@ -16,13 +16,19 @@ Use `theme_style` tokens for most visual branding updates:
 
 ```yaml
 theme_style:
-  accent: "#0d9488"
-  accent_strong: "#0f766e"
-  background: "#f7faf9"
+  accent: "#3b82f6"
+  accent_strong: "#2563eb"
+  accent_soft: "#dbeafe"
+  accent_surface: "#eff6ff"
+  success: "#16a34a"
+  info: "#2563eb"
+  warning: "#d97706"
+  danger: "#dc2626"
+  background: "#eef4ff"
   surface: "#ffffff"
   text: "#0f172a"
   muted: "#475569"
-  border: "#dbe4e8"
+  border: "#c9d8f2"
 ```
 
 ## Hero Content

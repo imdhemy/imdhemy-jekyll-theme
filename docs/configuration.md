@@ -65,16 +65,23 @@ theme_features:
 ## Theme Style Tokens
 
 All keys are optional.
+The default scheme is based on primary color `#3b82f6`.
 
 ```yaml
 theme_style:
-  accent: "#364fc7"
-  accent_strong: "#2c42aa"
-  background: "#f3f5fb"
+  accent: "#3b82f6"
+  accent_strong: "#2563eb"
+  accent_soft: "#dbeafe"
+  accent_surface: "#eff6ff"
+  success: "#16a34a"
+  info: "#2563eb"
+  warning: "#d97706"
+  danger: "#dc2626"
+  background: "#eef4ff"
   surface: "#ffffff"
-  text: "#111827"
-  muted: "#4b5563"
-  border: "#dbe1ed"
+  text: "#0f172a"
+  muted: "#475569"
+  border: "#c9d8f2"
 ```
 
 ## Footer Social Links

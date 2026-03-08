@@ -78,6 +78,21 @@ footer:
     - icon: "logo-youtube"
       url: "https://www.youtube.com/@imdhemy"
 
+theme_style:
+  accent: "#3b82f6"
+  accent_strong: "#2563eb"
+  accent_soft: "#dbeafe"
+  accent_surface: "#eff6ff"
+  success: "#16a34a"
+  info: "#2563eb"
+  warning: "#d97706"
+  danger: "#dc2626"
+  background: "#eef4ff"
+  surface: "#ffffff"
+  text: "#0f172a"
+  muted: "#475569"
+  border: "#c9d8f2"
+
 
 plugins:
   - jekyll-feed

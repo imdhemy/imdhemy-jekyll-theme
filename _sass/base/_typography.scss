@@ -5,12 +5,12 @@
 }
 
 ::selection {
-  background: #4d41e0;
+  background: var(--color-brand, #3b82f6);
   color: #fff;
 }
 
 ::-moz-selection {
-  background: #4d41e0;
+  background: var(--color-brand, #3b82f6);
   color: #fff;
 }
 

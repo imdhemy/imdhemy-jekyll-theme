@@ -1,11 +1,17 @@
 :root {
-  --color-bg: #f3f5fb;
+  --color-bg: #eef4ff;
   --color-surface: #ffffff;
-  --color-text: #111827;
-  --color-muted: #4b5563;
-  --color-border: #dbe1ed;
-  --color-brand: #364fc7;
-  --color-brand-strong: #2c42aa;
+  --color-text: #0f172a;
+  --color-muted: #475569;
+  --color-border: #c9d8f2;
+  --color-brand: #3b82f6;
+  --color-brand-strong: #2563eb;
+  --color-brand-soft: #dbeafe;
+  --color-brand-surface: #eff6ff;
+  --color-success: #16a34a;
+  --color-info: #2563eb;
+  --color-warning: #d97706;
+  --color-danger: #dc2626;
   --color-shadow: rgba(17, 24, 39, 0.08);
 }
 
@@ -13,8 +19,8 @@
   margin: 0;
   color: var(--color-text);
   background:
-    radial-gradient(circle at 0% 0%, #edf1ff 0%, rgba(237, 241, 255, 0) 40%),
-    radial-gradient(circle at 100% 0%, #f3faff 0%, rgba(243, 250, 255, 0) 45%),
+    radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--color-brand) 9%, #ffffff 91%) 0%, transparent 40%),
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--color-brand) 5%, #ffffff 95%) 0%, transparent 45%),
     var(--color-bg);
 }
 
@@ -48,7 +54,7 @@
 }
 
 .site-header.is-scrolled {
-  background: color-mix(in srgb, var(--color-surface) 90%, #dbe5ff 10%);
+  background: color-mix(in srgb, var(--color-surface) 90%, var(--color-brand-soft) 10%);
   box-shadow: 0 12px 28px -20px rgba(15, 23, 42, 0.32);
 }
 
@@ -98,12 +104,12 @@
 .site-header__toggle:focus-visible,
 .nav-link:focus-visible,
 .primary-button:focus-visible {
-  outline: 3px solid rgba(54, 79, 199, 0.35);
+  outline: 3px solid color-mix(in srgb, var(--color-brand) 35%, transparent);
   outline-offset: 2px;
 }
 
 .site-logo {
-  color: #111827;
+  color: var(--color-text);
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -129,13 +135,13 @@
   padding: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
-  color: #111827;
+  color: var(--color-text);
   transition: color 0.2s ease;
 }
 
 .nav-link:hover,
 .nav-link:active {
-  color: #2563eb;
+  color: var(--color-brand-strong);
 }
 
 .nav-link.is-active {
@@ -193,7 +199,7 @@
 .hero-section {
   padding: 4rem 0;
   background:
-    radial-gradient(circle at 8% 10%, rgba(54, 79, 199, 0.1), rgba(54, 79, 199, 0) 42%),
+    radial-gradient(circle at 8% 10%, color-mix(in srgb, var(--color-brand) 10%, transparent), transparent 42%),
     var(--color-surface);
 }
 
@@ -231,7 +237,7 @@
 }
 
 .hero-title__accent {
-  color: #3b82f6;
+  color: var(--color-brand);
 }
 
 .hero-description {
@@ -255,7 +261,7 @@
   display: inline-block;
   padding: 0.75rem 1.3rem;
   border-radius: 999px;
-  box-shadow: 0 8px 18px rgba(54, 79, 199, 0.2);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--color-brand) 22%, transparent);
   font-size: 1rem;
   font-weight: 700;
   color: #fff;
@@ -410,7 +416,7 @@
   border-radius: 999px;
   font-size: 0.875rem;
   font-weight: 600;
-  color: #4b5563;
+  color: var(--color-muted);
   background: #f6f8ff;
 }
 
@@ -433,7 +439,7 @@
 }
 
 .post-card__title-link:hover {
-  border-bottom-color: #7c3aed;
+  border-bottom-color: var(--color-brand);
 }
 
 .post-card__excerpt {
@@ -492,7 +498,7 @@
 .post-author__name {
   font-size: 0.875rem;
   font-weight: 700;
-  color: #374151;
+  color: var(--color-text);
 }
 
 .post-author__meta {
@@ -780,12 +786,12 @@
   max-width: 640px;
   font-size: 1.25rem;
   line-height: 1.5;
-  color: #4b5563;
+  color: var(--color-muted);
 }
 
 .page-header__description--centered {
   text-align: center;
-  color: #374151;
+  color: var(--color-muted);
   margin-inline: auto;
 }
 
@@ -824,7 +830,7 @@
 }
 
 .pagination-link:hover {
-  border-bottom-color: #4f46e5;
+  border-bottom-color: var(--color-brand);
 }
 
 .pagination-link.is-disabled {
@@ -853,7 +859,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, var(--color-brand), #6ea0ff);
+  background: linear-gradient(90deg, var(--color-brand), color-mix(in srgb, var(--color-brand) 70%, #ffffff 30%));
   transform: scaleX(0);
   transform-origin: left center;
 }
@@ -899,7 +905,7 @@
   display: block;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--color-text);
 }
 
 .related-posts__heading {
@@ -947,7 +953,7 @@
   padding: 2rem;
   overflow: hidden;
   border-radius: 1.5rem;
-  background: #ede9fe;
+  background: color-mix(in srgb, var(--color-brand) 12%, #ffffff 88%);
 }
 
 .testimonial-card__header {
@@ -963,7 +969,7 @@
   min-width: 68px;
   min-height: 68px;
   margin-right: 0.75rem;
-  border: 2px solid #4f46e5;
+  border: 2px solid var(--color-brand);
   border-radius: 999px;
 }
 
@@ -1051,14 +1057,14 @@
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  color: #111827;
+  color: var(--color-text);
   background: #fff;
   transition: all 0.3s linear;
 }
 
 .social-section__link:hover {
   color: #fff;
-  background: #4f46e5;
+  background: var(--color-brand);
 }
 
 .social-section__description {
@@ -1104,7 +1110,7 @@
 }
 
 .content {
-  color: #1f2937;
+  color: color-mix(in srgb, var(--color-text) 90%, #1e293b 10%);
   font-family: "Source Serif 4", Georgia, Cambria, "Times New Roman", Times, serif;
   font-size: 1.23rem;
   line-height: 1.9;
@@ -1130,7 +1136,7 @@
     font-family: "Source Serif 4", Georgia, Cambria, "Times New Roman", Times, serif;
     font-weight: 700;
     line-height: 1.35;
-    color: #0f172a;
+    color: var(--color-text);
   }
 
   h1 {
@@ -1187,7 +1193,7 @@
     text-decoration: underline;
     text-decoration-thickness: 0.08em;
     text-underline-offset: 0.13em;
-    text-decoration-color: rgba(54, 79, 199, 0.5);
+    text-decoration-color: color-mix(in srgb, var(--color-brand) 50%, transparent);
     transition: all 0.2s ease-in-out;
   }
 
@@ -1198,7 +1204,7 @@
   }
 
   strong {
-    color: #0f172a;
+    color: var(--color-text);
     font-weight: 700;
   }
 
@@ -1350,28 +1356,28 @@
   }
 
   div.tip {
-    --admonition-accent: #166534;
+    --admonition-accent: var(--color-success);
     --admonition-bg: #f0fdf4;
     --admonition-border: #b8e7c7;
     --admonition-label: "Tip";
   }
 
   div.info {
-    --admonition-accent: #1d4ed8;
-    --admonition-bg: #eff6ff;
+    --admonition-accent: var(--color-info);
+    --admonition-bg: var(--color-brand-surface);
     --admonition-border: #bfdbfe;
     --admonition-label: "Info";
   }
 
   div.caution {
-    --admonition-accent: #b45309;
+    --admonition-accent: var(--color-warning);
     --admonition-bg: #fffbeb;
     --admonition-border: #f6d79c;
     --admonition-label: "Caution";
   }
 
   div.danger {
-    --admonition-accent: #b91c1c;
+    --admonition-accent: var(--color-danger);
     --admonition-bg: #fef2f2;
     --admonition-border: #fecaca;
     --admonition-label: "Danger";
