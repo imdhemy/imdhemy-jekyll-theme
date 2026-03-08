@@ -9,6 +9,12 @@
 - `post`: post header + content + post navigation + related posts.
 - `page`: page header + content.
 
+## Rich Content
+
+- Posts and pages support styled blockquotes.
+- Admonitions are supported via `div` blocks with these classes: `note`, `tip`, `info`, `caution`, `danger`.
+- See [Content Elements](./content-elements.md) for usage examples.
+
 ## Key Includes
 
 - `header.html`: desktop/mobile nav, active link state.

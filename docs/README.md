@@ -8,6 +8,7 @@ This directory contains the full user documentation for the theme.
 - [Configuration Reference](./configuration.md)
 - [Customization Guide](./customization.md)
 - [Components and Layouts](./components.md)
+- [Content Elements](./content-elements.md)
 - [Upgrade Guide](../UPGRADE.md)
 
 ## Who Should Read What
