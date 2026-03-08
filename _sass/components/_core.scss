@@ -997,17 +997,6 @@
   font-size: 1rem;
 }
 
-.testimonial-card__content::before {
-  position: absolute;
-  top: 50px;
-  left: -10px;
-  display: block;
-  font-family: "Source Serif 4", Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: 182px;
-  opacity: 0.1;
-  content: "\0022";
-}
-
 .social-section {
   margin-top: 6rem;
 }
