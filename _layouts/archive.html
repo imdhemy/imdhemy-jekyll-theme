@@ -1,13 +1,14 @@
 ---
 layout: default
 ---
+<article class="archive-hub">
+    {% include archive-header.html %}
 
-{% include archive-header.html %}
-
-<div class="post-listing">
-    {% for post in page.posts %}
-    {% if post.title != null %}
-    {% include post-item.html %}
-    {% endif %}
-    {% endfor %}
-</div>
+    <div class="post-listing archive-hub__listing">
+        {% for post in page.posts %}
+        {% if post.title != null %}
+        {% include post-item.html %}
+        {% endif %}
+        {% endfor %}
+    </div>
+</article>

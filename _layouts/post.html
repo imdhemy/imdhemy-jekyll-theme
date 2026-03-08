@@ -4,10 +4,12 @@ layout: default
 {% if site.theme_features.reading_progress != false %}
 {% include reading-progress.html %}
 {% endif %}
-{% include post-header.html %}
+<article class="post-page">
+    {% include post-header.html %}
 
-{% include content.html %}
+    {% include content.html %}
 
-{% include post-navigation.html %}
+    {% include post-navigation.html %}
 
-{% include related-posts.html %}
+    {% include related-posts.html %}
+</article>

@@ -1,16 +1,18 @@
 ---
 layout: default
 ---
-{% include page-header.html %}
+<article class="blog-hub">
+    {% include page-header.html %}
 
-<div class="post-listing">
-    {% for post in paginator.posts %}
-    {% if post.title != null %}
-    {% include post-item.html %}
-    {% endif %}
-    {% endfor %}
-</div>
+    <div class="post-listing blog-hub__listing">
+        {% for post in paginator.posts %}
+        {% if post.title != null %}
+        {% include post-item.html %}
+        {% endif %}
+        {% endfor %}
+    </div>
 
-{% include pagination-links.html %}
+    {% include pagination-links.html %}
+</article>
 
 {% include social.html %}

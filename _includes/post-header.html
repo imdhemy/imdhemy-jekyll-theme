@@ -2,27 +2,12 @@
 {% assign back_to_posts_label = site.theme_text.back_to_posts_label | default: "Back to all posts" %}
 <div class="post-header">
     <a class="post-back-link" href="{{ site.baseurl }}/blog">&larr; {{ back_to_posts_label }}</a>
-    <h1 class="post-title">{{ page.title }}</h1>
-</div>
-
-<div class="post-meta-card">
-    <div class="post-meta-row">
-        <div class="post-author">
-            <img src="{{ site.baseurl }}{{ site.author.avatar }}" alt="{{ site.author.name }}"
-                 class="post-author__avatar"/>
-            <div>
-                <p class="post-author__name">{{ site.author.name }}</p>
-                <p class="post-author__meta">
-                    {{ page.date | date: "%B %-d, %Y" }} - {{ read_minutes }} min read
-                </p>
-            </div>
-        </div>
-    </div>
-
+    <p class="post-header__meta">{{ page.date | date: "%b %-d, %Y" }} · {{ read_minutes }} min read</p>
     <div>
         {% assign tags = page.tags %}
         {% include post-tags.html %}
     </div>
+    <h1 class="post-title">{{ page.title }}</h1>
 
     {% if page.image %}
     <div class="post-image-wrap">
