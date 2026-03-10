@@ -13,6 +13,7 @@ import {
 import { init as initBurgerMenu } from './burger-menu';
 import { init as initCommentsToggle } from './comments-toggle';
 import { init as initHeaderState } from './header-state';
+import { init as initPostSeries } from './post-series';
 import { init as initReadingProgress } from './reading-progress';
 
 addIcons({
@@ -31,5 +32,6 @@ defineIonIcon();
   initBurgerMenu();
   initCommentsToggle();
   initHeaderState();
+  initPostSeries();
   initReadingProgress();
 })();

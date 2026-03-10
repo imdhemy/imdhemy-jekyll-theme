@@ -22,6 +22,7 @@
 - `latest-posts.html`: latest post list with card items.
 - `post-item.html`: reusable post card.
 - `post-header.html`: title, author, read time, tags, image.
+- `post-series.html`: series heading + ordered links for posts sharing `list`, with collapsible/overflow controls.
 - `giscus-comments.html`: configurable Giscus reactions and comments.
 - `post-navigation.html`: previous/next post links.
 - `related-posts.html`: tag-aware related posts.
@@ -31,6 +32,7 @@
 
 - `burger-menu.js`: mobile nav toggle + close behaviors.
 - `header-state.js`: applies `is-scrolled` header state.
+- `post-series.js`: handles post series collapse/expand and overflow reveal.
 - `reading-progress.js`: updates progress bar while reading.
 
 ## Data Dependencies
