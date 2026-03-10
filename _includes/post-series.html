@@ -1,0 +1,194 @@
+{% if page.list %}
+{% assign series_name = page.list %}
+{% assign visible_limit = site.theme_features.series_visible_limit | default: 5 %}
+{% assign series_posts = site.posts | where: "list", series_name | sort: "date" %}
+{% assign series_count = series_posts | size %}
+{% assign has_overflow = false %}
+{% assign overflow_count = 0 %}
+{% assign series_toggle_hint = site.theme_text.series_toggle_hint | default: "Collapse to hide series posts" %}
+{% assign series_part_word = "parts" %}
+{% if series_count == 1 %}
+{% assign series_part_word = "part" %}
+{% endif %}
+{% assign series_key = page.url | slugify %}
+{% assign panel_id = "post-series-panel-" | append: series_key %}
+{% assign list_id = "post-series-list-" | append: series_key %}
+{% assign current_position = 0 %}
+{% assign range_mode = "all" %}
+{% assign visible_start = 1 %}
+{% assign visible_end = series_count %}
+{% assign show_edge_start_count = 0 %}
+{% assign show_edge_end_count = 0 %}
+{% assign hidden_before_count = 0 %}
+{% assign hidden_middle_count = 0 %}
+{% assign hidden_after_count = 0 %}
+{% for post in series_posts %}
+{% if post.url == page.url %}
+{% assign current_position = forloop.index %}
+{% endif %}
+{% endfor %}
+{% if series_count > visible_limit %}
+{% assign has_overflow = true %}
+{% assign overflow_count = series_count | minus: visible_limit %}
+{% assign edge_count = visible_limit | divided_by: 2 %}
+{% assign alt_count = visible_limit | minus: edge_count %}
+{% assign end_threshold = series_count | minus: alt_count %}
+{% if current_position <= alt_count %}
+{% assign range_mode = "split" %}
+{% assign show_edge_start_count = alt_count %}
+{% assign show_edge_end_count = edge_count %}
+{% elsif current_position > end_threshold %}
+{% assign range_mode = "split" %}
+{% assign show_edge_end_count = series_count | minus: current_position %}
+{% assign show_edge_end_count = show_edge_end_count | plus: 1 %}
+{% assign show_edge_start_count = visible_limit | minus: show_edge_end_count %}
+{% else %}
+{% assign range_mode = "window" %}
+{% assign visible_start = current_position | minus: edge_count %}
+{% assign visible_end = visible_start | plus: visible_limit %}
+{% assign visible_end = visible_end | minus: 1 %}
+{% if visible_start < 1 %}
+{% assign visible_start = 1 %}
+{% assign visible_end = visible_limit %}
+{% endif %}
+{% if visible_end > series_count %}
+{% assign visible_end = series_count %}
+{% assign visible_start = series_count | minus: visible_limit %}
+{% assign visible_start = visible_start | plus: 1 %}
+{% endif %}
+{% endif %}
+{% endif %}
+{% if has_overflow %}
+{% if range_mode == "split" %}
+{% assign hidden_middle_count = overflow_count %}
+{% elsif range_mode == "window" %}
+{% assign hidden_before_count = visible_start | minus: 1 %}
+{% assign hidden_after_count = series_count | minus: visible_end %}
+{% endif %}
+{% endif %}
+{% assign has_hidden_overflow = false %}
+{% if overflow_count > 0 %}
+{% assign has_hidden_overflow = true %}
+{% endif %}
+<div class="post-series series-collapsible is-open" data-series-collapsible>
+    <div class="post-series__header">
+        <div class="post-series__heading-wrap">
+            <span class="post-series__heading">{{ series_name }}</span>
+            <span class="post-series__summary">{{ series_count }} {{ series_part_word }}</span>
+        </div>
+        <button class="series-collapsible__toggle"
+                type="button"
+                aria-label="{{ series_toggle_hint }}"
+                aria-expanded="true"
+                aria-controls="{{ panel_id }}"
+                data-series-toggle>
+            <span class="series-collapsible__icon-wrap" aria-hidden="true">
+                <ion-icon class="series-collapsible__icon" name="chevron-down-outline"></ion-icon>
+            </span>
+        </button>
+    </div>
+    <div class="series-collapsible__panel" id="{{ panel_id }}" data-series-panel>
+        <ol class="post-series__list" id="{{ list_id }}">
+            {% assign overflow_middle_toggle_inserted = false %}
+            {% assign overflow_before_toggle_inserted = false %}
+            {% assign overflow_after_toggle_inserted = false %}
+            {% for post in series_posts %}
+            {% assign is_overflow_item = false %}
+            {% assign should_hide = false %}
+            {% assign overflow_group = "" %}
+            {% if has_overflow %}
+            {% if range_mode == "split" %}
+            {% assign split_end_start = series_count | minus: show_edge_end_count %}
+            {% assign split_end_start = split_end_start | plus: 1 %}
+            {% if forloop.index > show_edge_start_count and forloop.index < split_end_start %}
+            {% assign should_hide = true %}
+            {% assign overflow_group = "middle" %}
+            {% endif %}
+            {% elsif range_mode == "window" %}
+            {% if forloop.index < visible_start %}
+            {% assign should_hide = true %}
+            {% assign overflow_group = "before" %}
+            {% elsif forloop.index > visible_end %}
+            {% assign should_hide = true %}
+            {% assign overflow_group = "after" %}
+            {% endif %}
+            {% endif %}
+            {% endif %}
+            {% if should_hide %}
+            {% assign is_overflow_item = true %}
+            {% endif %}
+            {% if has_hidden_overflow and overflow_group == "middle" and overflow_middle_toggle_inserted == false %}
+            {% assign middle_label = "other posts" %}
+            {% if hidden_middle_count == 1 %}
+            {% assign middle_label = "other post" %}
+            {% endif %}
+            <li class="post-series__overflow-item">
+                <button class="post-series__overflow-toggle"
+                        type="button"
+                        aria-controls="{{ list_id }}"
+                        data-series-overflow-group="middle"
+                        data-series-overflow-toggle>
+                    &hellip; {{ hidden_middle_count }} {{ middle_label }}
+                </button>
+            </li>
+            {% assign overflow_middle_toggle_inserted = true %}
+            {% endif %}
+            {% if has_hidden_overflow and overflow_group == "before" and overflow_before_toggle_inserted == false %}
+            {% assign before_label = "previous posts" %}
+            {% if hidden_before_count == 1 %}
+            {% assign before_label = "previous post" %}
+            {% endif %}
+            <li class="post-series__overflow-item">
+                <button class="post-series__overflow-toggle"
+                        type="button"
+                        aria-controls="{{ list_id }}"
+                        data-series-overflow-group="before"
+                        data-series-overflow-toggle>
+                    &hellip; {{ hidden_before_count }} {{ before_label }}
+                </button>
+            </li>
+            {% assign overflow_before_toggle_inserted = true %}
+            {% endif %}
+            {% if has_hidden_overflow and overflow_group == "after" and overflow_after_toggle_inserted == false %}
+            {% assign after_label = "next posts" %}
+            {% if hidden_after_count == 1 %}
+            {% assign after_label = "next post" %}
+            {% endif %}
+            <li class="post-series__overflow-item">
+                <button class="post-series__overflow-toggle"
+                        type="button"
+                        aria-controls="{{ list_id }}"
+                        data-series-overflow-group="after"
+                        data-series-overflow-toggle>
+                    &hellip; {{ hidden_after_count }} {{ after_label }}
+                </button>
+            </li>
+            {% assign overflow_after_toggle_inserted = true %}
+            {% endif %}
+            {% assign item_class = "post-series__item" %}
+            {% if post.url == page.url %}
+            {% assign item_class = item_class | append: " is-current" %}
+            {% endif %}
+            {% if is_overflow_item %}
+            {% assign item_class = item_class | append: " post-series__item--overflow" %}
+            {% endif %}
+            <li class="{{ item_class }}"{% if is_overflow_item %} data-series-overflow-item data-series-overflow-group="{{ overflow_group }}" hidden{% endif %}>
+                {% if post.url == page.url %}
+                <span class="post-series__link"
+                      aria-current="true">
+                    <span class="post-series__index" aria-hidden="true">{{ forloop.index }}</span>
+                    <span class="post-series__title">{{ post.title }}</span>
+                </span>
+                {% else %}
+                <a class="post-series__link"
+                   href="{{ site.baseurl }}{{ post.url }}">
+                    <span class="post-series__index" aria-hidden="true">{{ forloop.index }}</span>
+                    <span class="post-series__title">{{ post.title }}</span>
+                </a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+</div>
+{% endif %}

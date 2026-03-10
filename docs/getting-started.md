@@ -87,6 +87,7 @@ description: Latest posts
 - Home uses `layout: home` and includes hero, contributions, testimonials, latest posts, and social section.
 - Posts use `layout: post` and include:
   - post header
+  - optional post series (when `list` is set in front matter)
   - content body
   - collapsible discussions (Giscus, optional)
   - next/previous navigation

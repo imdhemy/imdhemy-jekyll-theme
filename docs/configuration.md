@@ -50,6 +50,7 @@ theme_text:
   back_to_posts_label: "Back to all posts"
   previous_article_label: "Previous article"
   next_article_label: "Next article"
+  series_toggle_hint: "Collapse to hide series posts"
   related_posts_heading: "Keep reading"
   comments_heading: "Discussion"
   comments_toggle_hint: "Open to view reactions and comments"
@@ -60,9 +61,28 @@ theme_text:
 ```yaml
 theme_features:
   reading_progress: true
+  series_visible_limit: 5
 ```
 
 - Set to `false` to disable the reading progress bar on post pages.
+- `series_visible_limit` defines how many series items are shown before the `... X other posts` reveal control appears.
+
+## Post Series Front Matter
+
+Use `list` in post front matter to group posts into a linked series.
+
+```yaml
+---
+layout: post
+title: "Part 2"
+list: "Building a payment gateway"
+---
+```
+
+- The series block is rendered at the top of the post header.
+- All posts with the same `list` value are listed in chronological order.
+- The current post is highlighted.
+- The series block is open by default and can be collapsed.
 
 ## Comments (Giscus)
 
