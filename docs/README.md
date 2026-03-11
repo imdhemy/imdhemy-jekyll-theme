@@ -7,6 +7,7 @@ This directory contains the full user documentation for the theme.
 - [Getting Started](./getting-started.md)
 - [Configuration Reference](./configuration.md)
 - [Customization Guide](./customization.md)
+- [AI Design System Guide](./ai-design-guide.md)
 - [Components and Layouts](./components.md)
 - [Content Elements](./content-elements.md)
 - [Upgrade Guide](../UPGRADE.md)
@@ -16,4 +17,5 @@ This directory contains the full user documentation for the theme.
 - New users: start with **Getting Started**.
 - Site maintainers: read **Configuration Reference**.
 - Designers/developers: read **Customization Guide** and **Components and Layouts**.
+- AI agents and maintainers reviewing AI-made UI changes: read **AI Design System Guide**.
 - Existing users upgrading to the latest major version: read **Upgrade Guide** first.

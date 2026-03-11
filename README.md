@@ -10,6 +10,7 @@ All documentation lives in the [`docs/`](./docs) directory.
 - [Getting Started](./docs/getting-started.md)
 - [Configuration Reference](./docs/configuration.md)
 - [Customization Guide](./docs/customization.md)
+- [AI Design System Guide](./docs/ai-design-guide.md)
 - [Components and Layouts](./docs/components.md)
 - [Content Elements](./docs/content-elements.md)
 - [Upgrade Guide](./UPGRADE.md)
