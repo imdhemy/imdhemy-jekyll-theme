@@ -190,6 +190,42 @@ Listings should optimize scanability:
 
 Desktop card enhancements must still collapse cleanly to a stacked mobile layout.
 
+For post cards with thumbnails:
+
+- image-first cards are acceptable when the title remains the primary decision anchor
+- the thumbnail should support scanning, not overpower the title or excerpt
+
+### Post Pages
+
+Post pages should preserve a strong reading-oriented hierarchy.
+
+Required order:
+
+1. Back link
+2. Title
+3. Meta
+4. Tags
+5. Series navigation
+6. Image
+7. Content
+
+Rules for post pages:
+
+- the title must remain the first dominant content element
+- series navigation is secondary context, not a pre-title block
+- featured images support the article and should not lead the hierarchy ahead of the title
+- comments should remain secondary to the article body
+
+### Comments
+
+Comments are supporting engagement UI, not primary reading content.
+
+Preferred default:
+
+- keep comments collapsed by default unless the product explicitly prioritizes discussion as the primary post-page goal
+- keep the collapsed state discoverable with clear heading and helper copy
+- preserve keyboard and screen-reader access to the toggle and panel
+
 ### Article and Page Content
 
 The `.content` area is core product UX. Protect:

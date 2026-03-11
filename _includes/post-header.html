@@ -2,13 +2,13 @@
 {% assign back_to_posts_label = site.theme_text.back_to_posts_label | default: "Back to all posts" %}
 <div class="post-header">
     <a class="post-back-link" href="{{ site.baseurl }}/blog">&larr; {{ back_to_posts_label }}</a>
-    {% include post-series.html %}
     <h1 class="post-title">{{ page.title }}</h1>
     {% include post-meta.html date=page.date reading_minutes=read_minutes class_name="post-header__meta post-meta" %}
     <div class="post-header__tags">
         {% assign tags = page.tags %}
         {% include post-tags.html %}
     </div>
+    {% include post-series.html %}
 
     {% if page.image %}
     <div class="post-image-wrap">
