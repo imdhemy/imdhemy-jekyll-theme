@@ -9,16 +9,21 @@ Gem::Specification.new do |spec|
   spec.summary       = "Write a short summary, because Rubygems requires one."
   spec.homepage      = "https://imdhemy.com"
   spec.license       = "MIT"
+  spec.bindir        = "exe"
+  spec.executables   = ["imdhemy-image"]
+  spec.require_paths = ["lib"]
 
   spec.files         = Dir.glob(
     %w[
       _data/**/*
+      exe/*
       _includes/**/*
       _layouts/**/*
       _sass/**/*
       assets/css/**/*
       assets/js/dist/**/*
       assets/images/**/*
+      lib/**/*
       LICENSE.txt
       README.md
       _config.yml

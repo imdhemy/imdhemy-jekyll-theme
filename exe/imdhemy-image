@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative "../lib/imdhemy/jekyll/theme/image_cli"
+
+exit(Imdhemy::Jekyll::Theme::ImageCLI.run(ARGV))

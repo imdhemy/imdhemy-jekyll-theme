@@ -133,3 +133,26 @@ npm run rake      # Jekyll preview only
 npm run js:build  # JS production build
 npm run js:watch  # JS watcher only
 ```
+
+## 7. Optional Image Optimization
+
+The gem ships an optional executable for downstream sites to optimize post images before publishing.
+
+Examples:
+
+```bash
+bundle exec imdhemy-image path/to/image.jpg
+bundle exec imdhemy-image assets/images
+bundle exec imdhemy-image --recursive images/posts
+bundle exec imdhemy-image --dry-run images/posts
+```
+
+Notes:
+
+- it optimizes only the paths you pass in
+- it does not run automatically during Jekyll preview or build
+- it does not rewrite image references
+- it prefers conservative same-format optimization
+- supported formats currently focus on `jpg`, `jpeg`, and `png`
+
+The executable uses available system optimizers when present, such as `jpegoptim`, `oxipng`, `pngcrush`, or `sips`.
