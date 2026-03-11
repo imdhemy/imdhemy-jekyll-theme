@@ -147,12 +147,6 @@ bundle exec imdhemy-image --recursive images/posts
 bundle exec imdhemy-image --dry-run images/posts
 ```
 
-Inside this theme repository itself, use:
-
-```bash
-./bin/imdhemy-image assets/images/social.png
-```
-
 Notes:
 
 - it optimizes only the paths you pass in

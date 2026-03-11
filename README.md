@@ -27,12 +27,6 @@ bundle exec imdhemy-image --dry-run path/to/images
 
 The tool is opt-in and intended for projects using the theme. It is not part of the theme render pipeline.
 
-Inside this theme repository during development, use the local wrapper instead:
-
-```bash
-./bin/imdhemy-image assets/images/social.png
-```
-
 ## Example Site
 
 A complete runnable example is available in [`example/`](./example).
