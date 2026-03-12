@@ -1,0 +1,42 @@
+---
+layout: null
+---
+[
+{%- assign search_content_limit = site.theme_search.content_limit | default: 6000 -%}
+{%- assign searchable_documents = site.posts | concat: site.pages -%}
+{%- assign first_result = true -%}
+{%- for doc in searchable_documents -%}
+  {%- assign excluded = false -%}
+  {%- if doc.search == false or doc.sitemap == false -%}
+    {%- assign excluded = true -%}
+  {%- endif -%}
+  {%- if doc.url == '/assets/search.json' or doc.url == '/feed.xml' or doc.url == '/robots.txt' -%}
+    {%- assign excluded = true -%}
+  {%- endif -%}
+  {%- if doc.title == nil or doc.title == empty -%}
+    {%- assign excluded = true -%}
+  {%- endif -%}
+  {%- unless excluded -%}
+    {%- assign doc_type = 'page' -%}
+    {%- assign doc_date = '' -%}
+    {%- if doc.collection == 'posts' -%}
+      {%- assign doc_type = 'post' -%}
+    {%- endif -%}
+    {%- if doc.date -%}
+      {%- assign doc_date = doc.date | date_to_xmlschema -%}
+    {%- endif -%}
+    {%- assign doc_content = doc.content | markdownify | strip_html | normalize_whitespace | truncate: search_content_limit, '' -%}
+    {%- unless first_result -%},{%- endunless -%}
+    {
+      "title": {{ doc.title | normalize_whitespace | jsonify }},
+      "url": {{ doc.url | relative_url | jsonify }},
+      "content": {{ doc_content | jsonify }},
+      "tags": {{ doc.tags | jsonify }},
+      "categories": {{ doc.categories | jsonify }},
+      "date": {{ doc_date | jsonify }},
+      "type": {{ doc_type | jsonify }}
+    }
+    {%- assign first_result = false -%}
+  {%- endunless -%}
+{%- endfor -%}
+]

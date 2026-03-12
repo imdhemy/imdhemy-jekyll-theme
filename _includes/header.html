@@ -1,6 +1,10 @@
 <header class="site-header" id="main-header">
     <div class="site-header__container">
         <div class="site-header__inner">
+            {% assign search_enabled = true %}
+            {% if site.theme_search.enabled == false %}
+            {% assign search_enabled = false %}
+            {% endif %}
             <!-- begin logo -->
             <div class="site-header__brand">
                 <a href="{{ site.baseurl }}/" class="site-logo">
@@ -10,13 +14,6 @@
             <!-- end logo -->
             <!-- begin right part -->
             <div class="site-header__actions">
-                <div class="site-header__mobile-toggle-wrap">
-                    <button type="button" class="site-header__toggle" data-target="#mobile-nav" aria-controls="mobile-nav"
-                            aria-expanded="false" aria-label="Toggle navigation menu">
-                        <ion-icon name="menu-outline"></ion-icon>
-                    </button>
-                </div>
-
                 <nav class="site-header__desktop-nav" aria-label="Primary navigation">
                     <ul class="site-nav-list">
                         {% assign current_path = page.url | default: "/" | split: "?" | first | replace: "index.html", "" | replace: ".html", "" %}
@@ -40,6 +37,17 @@
                         {% endfor %}
                     </ul>
                 </nav>
+
+                {% if search_enabled %}
+                {% include site-search.html variant="desktop" %}
+                {% endif %}
+
+                <div class="site-header__mobile-toggle-wrap">
+                    <button type="button" class="site-header__toggle" data-target="#mobile-nav" aria-controls="mobile-nav"
+                            aria-expanded="false" aria-label="Toggle navigation menu">
+                        <ion-icon name="menu-outline"></ion-icon>
+                    </button>
+                </div>
                 <!-- end right part -->
             </div>
             <!-- begin mobile nav -->
@@ -47,6 +55,9 @@
                  class="site-mobile-nav is-hidden"
                  aria-label="Mobile navigation">
                 <div class="site-mobile-nav__inner">
+                    {% if search_enabled %}
+                    {% include site-search.html variant="mobile" %}
+                    {% endif %}
                     <ul class="site-mobile-nav__list">
                         {% assign current_path = page.url | default: "/" | split: "?" | first | replace: "index.html", "" | replace: ".html", "" %}
                         {% assign current_norm = current_path | append: "/" | replace: "//", "/" %}

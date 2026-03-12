@@ -93,6 +93,13 @@ theme_style:
   muted: "#475569"
   border: "#c9d8f2"
 
+theme_search:
+  enabled: true
+  min_query_length: 2
+  max_results: 8
+  content_limit: 6000
+  content_preview_length: 140
+
 theme_comments:
   enabled: true
   provider: "giscus"
