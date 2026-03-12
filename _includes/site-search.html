@@ -1,0 +1,66 @@
+{% assign search_placeholder = site.theme_text.search_placeholder | default: "Search" %}
+{% assign search_clear_label = site.theme_text.search_clear_label | default: "Clear search" %}
+{% assign search_submit_label = site.theme_text.search_submit_label | default: "Search site content" %}
+{% assign search_idle_text = site.theme_text.search_idle_text | default: "Start typing to search the site." %}
+{% assign search_too_short_text = site.theme_text.search_too_short_text | default: "Type at least %d characters to search." %}
+{% assign search_loading_text = site.theme_text.search_loading_text | default: "Loading search index..." %}
+{% assign search_empty_text = site.theme_text.search_empty_text | default: "No results found." %}
+{% assign search_error_text = site.theme_text.search_error_text | default: "Search is unavailable right now." %}
+{% assign variant = include.variant | default: "desktop" %}
+{% assign max_results = site.theme_search.max_results | default: 8 %}
+{% assign min_query_length = site.theme_search.min_query_length | default: 2 %}
+{% assign content_preview_length = site.theme_search.content_preview_length | default: 140 %}
+{% assign root_class = "site-search" %}
+{% if variant == "mobile" %}
+{% assign root_class = root_class | append: " site-search--mobile" %}
+{% else %}
+{% assign root_class = root_class | append: " site-search--desktop" %}
+{% endif %}
+{% assign input_id = "site-search-input-" | append: variant %}
+{% assign panel_id = "site-search-panel-" | append: variant %}
+{% assign status_id = "site-search-status-" | append: variant %}
+
+<section class="{{ root_class }}"
+         data-search-root
+         data-search-url="{{ '/assets/search.json' | relative_url }}"
+         data-search-max-results="{{ max_results }}"
+         data-search-min-query-length="{{ min_query_length }}"
+         data-search-content-preview-length="{{ content_preview_length }}"
+         data-search-idle-text="{{ search_idle_text }}"
+         data-search-too-short-text="{{ search_too_short_text }}"
+         data-search-loading-text="{{ search_loading_text }}"
+         data-search-empty-text="{{ search_empty_text }}"
+         data-search-error-text="{{ search_error_text }}">
+    <form class="site-search__form" role="search" action="{{ '/assets/search.json' | relative_url }}" onsubmit="return false;">
+        <label class="site-search__label" for="{{ input_id }}">Search</label>
+        <div class="site-search__field-wrap">
+            <ion-icon class="site-search__icon" name="search-outline" aria-hidden="true"></ion-icon>
+            <input id="{{ input_id }}"
+                   class="site-search__input"
+                   type="search"
+                   name="q"
+                   placeholder="{{ search_placeholder }}"
+                   autocomplete="off"
+                   spellcheck="false"
+                   aria-controls="{{ panel_id }}"
+                   aria-expanded="false"
+                   aria-describedby="{{ status_id }}"
+                   data-search-input>
+            <button type="button"
+                    class="site-search__clear"
+                    aria-label="{{ search_clear_label }}"
+                    data-search-clear
+                    hidden>
+                <span aria-hidden="true">Clear</span>
+            </button>
+            <button type="submit" class="site-search__submit" aria-label="{{ search_submit_label }}">
+                <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+            </button>
+        </div>
+    </form>
+
+    <div id="{{ panel_id }}" class="site-search__panel" data-search-panel hidden>
+        <p id="{{ status_id }}" class="site-search__status" data-search-status>{{ search_idle_text }}</p>
+        <ul class="site-search__results" data-search-results></ul>
+    </div>
+</section>

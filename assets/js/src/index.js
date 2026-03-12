@@ -8,6 +8,7 @@ import {
   logoTwitter,
   logoYoutube,
   menuOutline,
+  searchOutline,
   timeOutline,
 } from 'ionicons/icons';
 import { init as initBurgerMenu } from './burger-menu';
@@ -15,6 +16,7 @@ import { init as initCommentsToggle } from './comments-toggle';
 import { init as initHeaderState } from './header-state';
 import { init as initPostSeries } from './post-series';
 import { init as initReadingProgress } from './reading-progress';
+import { init as initSearch } from './search';
 
 addIcons({
   'chevron-down-outline': chevronDownOutline,
@@ -24,6 +26,7 @@ addIcons({
   'logo-twitter': logoTwitter,
   'logo-youtube': logoYoutube,
   'menu-outline': menuOutline,
+  'search-outline': searchOutline,
   'time-outline': timeOutline,
 });
 defineIonIcon();
@@ -34,4 +37,5 @@ defineIonIcon();
   initHeaderState();
   initPostSeries();
   initReadingProgress();
+  initSearch();
 })();

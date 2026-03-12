@@ -54,6 +54,14 @@ theme_text:
   related_posts_heading: "Keep reading"
   comments_heading: "Discussion"
   comments_toggle_hint: "Open to view reactions and comments"
+  search_placeholder: "Search"
+  search_clear_label: "Clear search"
+  search_submit_label: "Search site content"
+  search_idle_text: "Start typing to search the site."
+  search_too_short_text: "Type at least %d characters to search."
+  search_loading_text: "Loading search index..."
+  search_empty_text: "No results found."
+  search_error_text: "Search is unavailable right now."
 ```
 
 ## Theme Features
@@ -66,6 +74,24 @@ theme_features:
 
 - Set to `false` to disable the reading progress bar on post pages.
 - `series_visible_limit` defines how many series items are shown before the `... X other posts` reveal control appears.
+
+## Search
+
+```yaml
+theme_search:
+  enabled: true
+  min_query_length: 2
+  max_results: 8
+  content_limit: 6000
+  content_preview_length: 140
+```
+
+- Search is client-side and reads from the generated `/assets/search.json` index.
+- The search box appears in the desktop navbar and inside the mobile menu.
+- Posts and pages are indexed by default.
+- Set `search: false` in front matter to exclude a page or post from the search index.
+- `content_limit` truncates indexed body text per document to reduce payload size.
+- `content_preview_length` controls the result snippet length shown in the UI.
 
 ## Post Series Front Matter
 
