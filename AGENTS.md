@@ -1,5 +1,6 @@
 ## Generate instructions
 - Follow instructions in ~/.codex/AGENTS.md as a general instructions if they exist.
+- The theme is used through the published Gem as a remote theme. So take this in consideration when introducing features, or fixing bugs.
 
 ## UI/UX changes
 - Follow [the AI Design Guide](./docs/ai-design-guide.md).

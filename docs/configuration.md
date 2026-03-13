@@ -123,6 +123,7 @@ Behavior:
 - Blog and archive pages get `CollectionPage` structured data.
 - Breadcrumb structured data is enabled by default.
 - `default_image` is used when a page or post does not provide `image`.
+- Social image metadata includes `og:image`, `og:image:secure_url` for HTTPS images, conservative `og:image:type` hints for common file extensions, and both OG/Twitter image alt text when `image_alt` or `default_image_alt` is provided.
 
 Recommended post/page front matter:
 
