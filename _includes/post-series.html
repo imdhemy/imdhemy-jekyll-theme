@@ -73,7 +73,7 @@
 <div class="post-series series-collapsible is-open" data-series-collapsible>
     <div class="post-series__header">
         <div class="post-series__heading-wrap">
-            <span class="post-series__heading">{{ series_name }}</span>
+            <h2 class="post-series__heading">{{ series_name }}</h2>
             <span class="post-series__summary">{{ series_count }} {{ series_part_word }}</span>
         </div>
         <button class="series-collapsible__toggle"
@@ -125,6 +125,7 @@
             <li class="post-series__overflow-item">
                 <button class="post-series__overflow-toggle"
                         type="button"
+                        aria-expanded="false"
                         aria-controls="{{ list_id }}"
                         data-series-overflow-group="middle"
                         data-series-overflow-toggle>
@@ -141,6 +142,7 @@
             <li class="post-series__overflow-item">
                 <button class="post-series__overflow-toggle"
                         type="button"
+                        aria-expanded="false"
                         aria-controls="{{ list_id }}"
                         data-series-overflow-group="before"
                         data-series-overflow-toggle>
@@ -157,6 +159,7 @@
             <li class="post-series__overflow-item">
                 <button class="post-series__overflow-toggle"
                         type="button"
+                        aria-expanded="false"
                         aria-controls="{{ list_id }}"
                         data-series-overflow-group="after"
                         data-series-overflow-toggle>
@@ -175,7 +178,7 @@
             <li class="{{ item_class }}"{% if is_overflow_item %} data-series-overflow-item data-series-overflow-group="{{ overflow_group }}" hidden{% endif %}>
                 {% if post.url == page.url %}
                 <span class="post-series__link"
-                      aria-current="true">
+                      aria-current="step">
                     <span class="post-series__index" aria-hidden="true">{{ forloop.index }}</span>
                     <span class="post-series__title">{{ post.title }}</span>
                 </span>

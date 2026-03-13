@@ -19,8 +19,10 @@
 {% assign input_id = "site-search-input-" | append: variant %}
 {% assign panel_id = "site-search-panel-" | append: variant %}
 {% assign status_id = "site-search-status-" | append: variant %}
+{% assign results_label = site.theme_text.search_results_label | default: "Search results" %}
 
 <section class="{{ root_class }}"
+         aria-label="Site search"
          data-search-root
          data-search-url="{{ '/assets/search.json' | relative_url }}"
          data-search-max-results="{{ max_results }}"
@@ -32,7 +34,7 @@
          data-search-empty-text="{{ search_empty_text }}"
          data-search-error-text="{{ search_error_text }}">
     <form class="site-search__form" role="search" action="{{ '/assets/search.json' | relative_url }}" onsubmit="return false;">
-        <label class="site-search__label" for="{{ input_id }}">Search</label>
+        <label class="site-search__label" for="{{ input_id }}">Search site content</label>
         <div class="site-search__field-wrap">
             <ion-icon class="site-search__icon" name="search-outline" aria-hidden="true"></ion-icon>
             <input id="{{ input_id }}"
@@ -44,6 +46,8 @@
                    spellcheck="false"
                    aria-controls="{{ panel_id }}"
                    aria-expanded="false"
+                   aria-haspopup="list"
+                   aria-autocomplete="list"
                    aria-describedby="{{ status_id }}"
                    data-search-input>
             <button type="button"
@@ -59,8 +63,12 @@
         </div>
     </form>
 
-    <div id="{{ panel_id }}" class="site-search__panel" data-search-panel hidden>
-        <p id="{{ status_id }}" class="site-search__status" data-search-status>{{ search_idle_text }}</p>
+    <div id="{{ panel_id }}"
+         class="site-search__panel"
+         aria-label="{{ results_label }}"
+         data-search-panel
+         hidden>
+        <p id="{{ status_id }}" class="site-search__status" role="status" aria-live="polite" data-search-status>{{ search_idle_text }}</p>
         <ul class="site-search__results" data-search-results></ul>
     </div>
 </section>

@@ -145,6 +145,11 @@ Every UI change should protect or improve:
 - Do not communicate meaning by color alone.
 - Respect `prefers-reduced-motion`.
 - Avoid low-contrast text on decorative surfaces.
+- Keep touch targets comfortably usable on mobile; small icon-only buttons should be enlarged with padding or a larger hit area.
+- Keep keyboard and pointer states in parity; hover-only affordances must have an equivalent focus-visible or persistent state.
+- Prefer explicit live-region messaging for dynamic UI such as search status, async loading, and disclosure updates when the state is not otherwise obvious.
+- Use `aria-current` for active navigation and current-position patterns where applicable.
+- When multiple links in the same card target the same destination, make the screen-reader experience intentional and avoid repetitive, ambiguous link text.
 
 Existing examples in the theme:
 
@@ -247,6 +252,7 @@ When implementing UI changes:
 4. If markup changes are required, keep accessibility hooks and interaction contracts intact.
 5. Treat desktop-only requests as responsive tasks and verify mobile behavior explicitly.
 6. Keep changes local to the relevant component unless there is a clear shared-system reason to generalize.
+7. After accessibility-related changes, verify keyboard order, focus visibility, and reduced-motion behavior before considering the task complete.
 
 When introducing a new component:
 
