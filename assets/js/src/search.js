@@ -232,6 +232,7 @@ const openPanel = (root) => {
 
   panel.hidden = false;
   input.setAttribute('aria-expanded', 'true');
+  panel.setAttribute('aria-hidden', 'false');
 };
 
 const closePanel = (root) => {
@@ -240,6 +241,7 @@ const closePanel = (root) => {
 
   panel.hidden = true;
   input.setAttribute('aria-expanded', 'false');
+  panel.setAttribute('aria-hidden', 'true');
 };
 
 const focusResultLink = (root, direction) => {
@@ -318,7 +320,12 @@ const bindSearchRoot = (root) => {
         return;
       }
 
-      renderResults(root, results, query, `${results.length} result${results.length === 1 ? '' : 's'}`);
+      renderResults(
+        root,
+        results,
+        query,
+        `${results.length} result${results.length === 1 ? '' : 's'} for "${query}"`,
+      );
     } catch {
       resetResults();
       setStatus(errorText);
@@ -338,6 +345,9 @@ const bindSearchRoot = (root) => {
   input.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowDown') {
       event.preventDefault();
+      if (root.querySelector('.site-search__result-link')) {
+        openPanel(root);
+      }
       focusResultLink(root, 1);
     }
 
@@ -395,6 +405,8 @@ const bindSearchRoot = (root) => {
       closePanel(root);
     }
   });
+
+  closePanel(root);
 };
 
 export const init = () => {

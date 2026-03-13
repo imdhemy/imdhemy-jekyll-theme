@@ -40,6 +40,7 @@ export const init = () => {
         overflowItems.forEach((item) => {
           item.hidden = false;
         });
+        overflowToggle.setAttribute('aria-expanded', 'true');
         overflowToggle.hidden = true;
       });
     });

@@ -5,9 +5,11 @@
             {% if site.theme_search.enabled == false %}
             {% assign search_enabled = false %}
             {% endif %}
+            {% assign open_menu_label = site.theme_text.open_menu_label | default: "Open navigation menu" %}
+            {% assign close_menu_label = site.theme_text.close_menu_label | default: "Close navigation menu" %}
             <!-- begin logo -->
             <div class="site-header__brand">
-                <a href="{{ site.baseurl }}/" class="site-logo">
+                <a href="{{ site.baseurl }}/" class="site-logo" aria-label="{{ site.title }} home">
                     {{ site.title }}
                 </a>
             </div>
@@ -30,7 +32,7 @@
                         {% endif %}
                         <li class="site-nav-list__item">
                             <a href="{{ site.baseurl }}{{ nav_page.url }}"
-                               class="nav-link{% if is_active %} is-active{% endif %}">
+                               class="nav-link{% if is_active %} is-active{% endif %}"{% if is_active %} aria-current="page"{% endif %}>
                                 {{ nav_page.title }}
                             </a>
                         </li>
@@ -43,9 +45,16 @@
                 {% endif %}
 
                 <div class="site-header__mobile-toggle-wrap">
-                    <button type="button" class="site-header__toggle" data-target="#mobile-nav" aria-controls="mobile-nav"
-                            aria-expanded="false" aria-label="Toggle navigation menu">
-                        <ion-icon name="menu-outline"></ion-icon>
+                    <button type="button"
+                            class="site-header__toggle"
+                            data-target="#mobile-nav"
+                            data-open-label="{{ open_menu_label }}"
+                            data-close-label="{{ close_menu_label }}"
+                            aria-controls="mobile-nav"
+                            aria-expanded="false"
+                            aria-label="{{ open_menu_label }}">
+                        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+                        <span class="sr-only">{{ open_menu_label }}</span>
                     </button>
                 </div>
                 <!-- end right part -->
@@ -53,7 +62,8 @@
             <!-- begin mobile nav -->
             <nav id="mobile-nav"
                  class="site-mobile-nav is-hidden"
-                 aria-label="Mobile navigation">
+                 aria-label="Mobile navigation"
+                 hidden>
                 <div class="site-mobile-nav__inner">
                     {% if search_enabled %}
                     {% include site-search.html variant="mobile" %}
@@ -73,7 +83,7 @@
                         {% endif %}
                         <li class="site-mobile-nav__item">
                             <a href="{{ site.baseurl }}{{ nav_page.url }}"
-                               class="site-mobile-nav__link nav-link{% if is_active %} is-active{% endif %}">
+                               class="site-mobile-nav__link nav-link{% if is_active %} is-active{% endif %}"{% if is_active %} aria-current="page"{% endif %}>
                                 {{ nav_page.title }}
                             </a>
                         </li>

@@ -4,7 +4,9 @@
     <!-- thumbnail -->
     {% if post.image %}
     <a href="{{ site.baseurl }}{{ post.url }}"
-       class="post-card__image">
+       class="post-card__image"
+       aria-hidden="true"
+       tabindex="-1">
         <img src="{{ site.baseurl }}{{ post.image }}"
              class="post-card__image-el"
              alt="{{ post.image_alt | default: post.title }}"/>
@@ -25,6 +27,6 @@
         {% include post-meta.html date=post.date reading_minutes=reading_minutes class_name="post-card__meta post-meta" %}
         {% assign tags = post.tags %}
         {% include post-tags.html %}
-        <a class="post-card__read-link" href="{{ site.baseurl }}{{ post.url }}">{{ read_article_label }} &rarr;</a>
+        <a class="post-card__read-link" href="{{ site.baseurl }}{{ post.url }}" aria-label="{{ read_article_label }}: {{ post.title }}">{{ read_article_label }} &rarr;</a>
     </div>
 </article>
