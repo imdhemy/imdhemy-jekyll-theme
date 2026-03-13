@@ -87,6 +87,7 @@ theme_search:
 ```
 
 - Search is client-side and reads from the generated `/assets/search.json` index.
+- The published theme ships the `assets/search.json` template, so `remote_theme` and gem consumers generate the index automatically during `jekyll build`.
 - The search box appears in the desktop navbar and inside the mobile menu.
 - Posts and pages are indexed by default.
 - Set `search: false` in front matter to exclude a page or post from the search index.
