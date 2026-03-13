@@ -1,0 +1,119 @@
+{% assign canonical_url = page.url | replace: 'index.html', '' | absolute_url %}
+{% assign meta_description = page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 %}
+{% assign site_name = site.title | default: '' %}
+{% assign seo_type = site.theme_seo.type | default: 'Person' %}
+{% assign seo_name = site.theme_seo.name | default: site.author.name | default: site_name %}
+{% assign default_image = site.theme_seo.default_image | default: site.social_image | default: site.favicon %}
+{% assign meta_image = page.image | default: default_image %}
+{% if meta_image %}
+{% assign meta_image_url = meta_image | absolute_url %}
+{% endif %}
+{% assign publisher_logo = site.theme_seo.logo | default: site.favicon %}
+{% if publisher_logo %}
+{% assign publisher_logo_url = publisher_logo | absolute_url %}
+{% endif %}
+{% assign article_published = page.date | default: page.created_at %}
+{% assign article_modified = page.last_modified_at | default: page.updated_at | default: article_published %}
+{% assign breadcrumb_blog_label = site.theme_text.blog_breadcrumb_label | default: 'Blog' %}
+{% capture search_term_placeholder %}{% raw %}{search_term_string}{% endraw %}{% endcapture %}
+{% capture search_target %}{{ site.url }}{{ site.baseurl }}/blog/?q={{ search_term_placeholder }}{% endcapture %}
+{% assign breadcrumb_items = '' | split: '' %}
+{% assign breadcrumb_home = '{"@type":"ListItem","position":1,"name":"Home","item":"' | append: site.url | append: site.baseurl | append: '/"}' %}
+{% assign breadcrumb_items = breadcrumb_items | push: breadcrumb_home %}
+{% assign current_position = 2 %}
+{% if page.layout == 'blog' %}
+{% capture current_item %}{"@type":"ListItem","position":{{ current_position }},"name":"{{ page.title | default: breadcrumb_blog_label | escape }}","item":"{{ canonical_url }}"}{% endcapture %}
+{% assign breadcrumb_items = breadcrumb_items | push: current_item %}
+{% elsif page.layout == 'archive' %}
+{% capture blog_item %}{"@type":"ListItem","position":{{ current_position }},"name":"{{ breadcrumb_blog_label | escape }}","item":"{{ '/blog' | absolute_url }}"}{% endcapture %}
+{% assign breadcrumb_items = breadcrumb_items | push: blog_item %}
+{% assign current_position = current_position | plus: 1 %}
+{% capture current_item %}{"@type":"ListItem","position":{{ current_position }},"name":"{{ page.title | escape }}","item":"{{ canonical_url }}"}{% endcapture %}
+{% assign breadcrumb_items = breadcrumb_items | push: current_item %}
+{% elsif page.layout == 'post' %}
+{% capture blog_item %}{"@type":"ListItem","position":{{ current_position }},"name":"{{ breadcrumb_blog_label | escape }}","item":"{{ '/blog' | absolute_url }}"}{% endcapture %}
+{% assign breadcrumb_items = breadcrumb_items | push: blog_item %}
+{% assign current_position = current_position | plus: 1 %}
+{% capture current_item %}{"@type":"ListItem","position":{{ current_position }},"name":"{{ page.title | escape }}","item":"{{ canonical_url }}"}{% endcapture %}
+{% assign breadcrumb_items = breadcrumb_items | push: current_item %}
+{% elsif page.title %}
+{% capture current_item %}{"@type":"ListItem","position":{{ current_position }},"name":"{{ page.title | escape }}","item":"{{ canonical_url }}"}{% endcapture %}
+{% assign breadcrumb_items = breadcrumb_items | push: current_item %}
+{% endif %}
+{% if page.layout == 'home' or page.url == '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ site_name | jsonify }},
+  "url": {{ site.url | append: site.baseurl | append: '/' | jsonify }},
+  "description": {{ meta_description | jsonify }},
+  {% if site.theme_search.enabled != false %}
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {{ search_target | jsonify }},
+    "query-input": "required name=search_term_string"
+  },
+  {% endif %}
+  "publisher": {
+    "@type": {{ seo_type | jsonify }},
+    "name": {{ seo_name | jsonify }}{% if publisher_logo_url %},
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ publisher_logo_url | jsonify }}
+    }{% endif %}{% if site.theme_seo.same_as %},
+    "sameAs": {{ site.theme_seo.same_as | jsonify }}{% endif %}
+  }
+}
+</script>
+{% endif %}
+{% if page.layout == 'post' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ meta_description | jsonify }},
+  "url": {{ canonical_url | jsonify }},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ canonical_url | jsonify }}
+  }{% if meta_image_url %},
+  "image": [{{ meta_image_url | jsonify }}]{% endif %}{% if article_published %},
+  "datePublished": {{ article_published | date_to_xmlschema | jsonify }}{% endif %}{% if article_modified %},
+  "dateModified": {{ article_modified | date_to_xmlschema | jsonify }}{% endif %},
+  "author": {
+    "@type": {{ seo_type | jsonify }},
+    "name": {{ seo_name | jsonify }}
+  },
+  "publisher": {
+    "@type": {{ seo_type | jsonify }},
+    "name": {{ seo_name | jsonify }}{% if publisher_logo_url %},
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ publisher_logo_url | jsonify }}
+    }{% endif %}
+  }
+}
+</script>
+{% endif %}
+{% if page.layout == 'blog' or page.layout == 'archive' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": {{ page.title | default: breadcrumb_blog_label | jsonify }},
+  "description": {{ meta_description | jsonify }},
+  "url": {{ canonical_url | jsonify }}
+}
+</script>
+{% endif %}
+{% if site.theme_seo.enable_breadcrumbs != false and breadcrumb_items.size > 1 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{{ breadcrumb_items | join: ',' }}]
+}
+</script>
+{% endif %}

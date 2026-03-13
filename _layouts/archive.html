@@ -1,6 +1,12 @@
 ---
 layout: default
 ---
+{% if page.description == nil or page.description == empty %}
+{% assign archive_type = page.type | default: page.collection | default: 'archive' %}
+{% capture page_description %}Browse posts in the {{ archive_type }} archive for {{ page.title }}.{% endcapture %}
+{% else %}
+{% assign page_description = page.description %}
+{% endif %}
 <article class="archive-hub">
     {% include archive-header.html %}
 

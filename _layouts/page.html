@@ -1,6 +1,11 @@
 ---
 layout: default
 ---
+{% if page.description == nil or page.description == empty %}
+{% assign page_description = page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 %}
+{% else %}
+{% assign page_description = page.description %}
+{% endif %}
 <article class="page-article">
     <header class="page-article__header">
         <div class="page-article__header-layout">

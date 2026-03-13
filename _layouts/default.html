@@ -5,10 +5,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-    <meta name="description"
-          content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-
+    {% include seo-meta.html %}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +31,6 @@
         }
     </style>
 
-    <link rel="canonical" href="{{ page.url | replace:'index.html', '' | absolute_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/main.css?v=' | append: site.github.build_revision | relative_url }}">
     {% if site.favicon %}
     <link rel="icon" type="image/png" href="{{ site.favicon | relative_url }}">
@@ -43,9 +39,7 @@
     {% include math.html %}
     {% endif %}
 
-    {% if page.layout == 'post' %}
-    {% include social-media-meta.html %}
-    {% endif %}
+    {% include structured-data.html %}
 
 </head>
 <body class="theme-body">

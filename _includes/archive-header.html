@@ -1,9 +1,20 @@
+{% assign archive_type = page.type | default: page.collection %}
+{% assign archive_label = 'archive' %}
+{% if archive_type == 'tag' or archive_type == 'tags' %}
+{% assign archive_label = 'tag' %}
+{% elsif archive_type == 'category' or archive_type == 'categories' %}
+{% assign archive_label = 'category' %}
+{% endif %}
+{% assign archive_description = page.description %}
+{% if archive_description == nil or archive_description == empty %}
+{% capture archive_description %}Browse all posts filed under {{ archive_label }} {{ page.title }}.{% endcapture %}
+{% endif %}
 <section class="page-header-wrap page-header-wrap--archive">
     <div class="page-header-wrap__container">
         <div class="page-header page-header--archive page-header--archive-hub">
             <div class="page-header__layout page-header__layout--stacked">
                 <h1 class="page-header__title page-header__title--centered">{{ page.title }}</h1>
-                <p class="page-header__description page-header__description--centered">Check out the <a
+                <p class="page-header__description page-header__description--centered">{{ archive_description }} Check out the <a
                         class="archive-header__blog-link"
                         href="{{ site.baseurl }}/blog">blog</a> for all
                     posts.</p>

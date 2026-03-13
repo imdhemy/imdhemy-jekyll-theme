@@ -100,6 +100,22 @@ theme_search:
   content_limit: 6000
   content_preview_length: 140
 
+theme_seo:
+  title_separator: "|"
+  default_image: "/images/social.png"
+  default_image_alt: "Imdhemy blog social preview"
+  twitter_site: "@imdhemy"
+  locale: "en_US"
+  type: "Person"
+  name: "Dhemy"
+  logo: "/images/theme/favicon.png"
+  same_as:
+    - "https://github.com/imdhemy"
+    - "https://twitter.com/imdhemy"
+    - "https://www.linkedin.com/in/imdhemy/"
+  robots_default: "index, follow"
+  enable_breadcrumbs: true
+
 theme_comments:
   enabled: true
   provider: "giscus"
