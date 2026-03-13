@@ -37,6 +37,22 @@
 {% assign meta_image = page.image | default: default_image %}
 {% if meta_image %}
 {% assign meta_image_url = meta_image | absolute_url %}
+{% assign meta_image_alt = page.image_alt | default: site.theme_seo.default_image_alt %}
+{% assign meta_image_secure_url = '' %}
+{% if meta_image_url contains 'https://' %}
+{% assign meta_image_secure_url = meta_image_url %}
+{% endif %}
+{% assign meta_image_path = meta_image | split: '?' | first | downcase %}
+{% assign meta_image_type = '' %}
+{% if meta_image_path contains '.jpg' or meta_image_path contains '.jpeg' %}
+{% assign meta_image_type = 'image/jpeg' %}
+{% elsif meta_image_path contains '.png' %}
+{% assign meta_image_type = 'image/png' %}
+{% elsif meta_image_path contains '.webp' %}
+{% assign meta_image_type = 'image/webp' %}
+{% elsif meta_image_path contains '.gif' %}
+{% assign meta_image_type = 'image/gif' %}
+{% endif %}
 {% endif %}
 {% assign twitter_card = 'summary' %}
 {% if meta_image_url %}
@@ -72,8 +88,14 @@
 <meta property="og:type" content="{{ og_type }}">
 {% if meta_image_url %}
 <meta property="og:image" content="{{ meta_image_url }}">
-{% if page.image_alt or site.theme_seo.default_image_alt %}
-<meta property="og:image:alt" content="{{ page.image_alt | default: site.theme_seo.default_image_alt | escape }}">
+{% if meta_image_secure_url != empty %}
+<meta property="og:image:secure_url" content="{{ meta_image_secure_url }}">
+{% endif %}
+{% if meta_image_type != empty %}
+<meta property="og:image:type" content="{{ meta_image_type }}">
+{% endif %}
+{% if meta_image_alt %}
+<meta property="og:image:alt" content="{{ meta_image_alt | escape }}">
 {% endif %}
 {% endif %}
 {% if page.layout == 'post' %}
@@ -102,4 +124,7 @@
 {% endif %}
 {% if meta_image_url %}
 <meta name="twitter:image" content="{{ meta_image_url }}">
+{% if meta_image_alt %}
+<meta name="twitter:image:alt" content="{{ meta_image_alt | escape }}">
+{% endif %}
 {% endif %}
