@@ -6,6 +6,13 @@ Jekyll theme for my personal website: [imdhemy.com](https://imdhemy.com).
 
 All documentation lives in the [`docs/`](./docs) directory.
 
+The theme also ships with a reusable SEO foundation:
+
+- canonical URLs
+- layout-aware meta descriptions and social previews
+- JSON-LD for home, posts, breadcrumbs, and collection pages
+- configurable robots and social image defaults
+
 - [Documentation Home](./docs/README.md)
 - [Getting Started](./docs/getting-started.md)
 - [Configuration Reference](./docs/configuration.md)

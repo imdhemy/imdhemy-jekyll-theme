@@ -13,3 +13,5 @@
 - Respect `prefers-reduced-motion` for new or updated motion effects.
 - Validate accessibility-sensitive interactions such as navigation menus, search, disclosures, pagination, and card links after changes.
 - Update this file and [the AI Design Guide](./docs/ai-design-guide.md) when introducing new accessibility patterns or requirements.
+- For SEO-related changes, preserve canonical URLs, metadata coverage, structured data validity, and crawl/indexation behavior across all layouts.
+- Treat SEO output as server-rendered theme behavior; do not move critical metadata generation into client-side JavaScript.

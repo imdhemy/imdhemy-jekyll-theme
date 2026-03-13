@@ -93,6 +93,61 @@ theme_search:
 - `content_limit` truncates indexed body text per document to reduce payload size.
 - `content_preview_length` controls the result snippet length shown in the UI.
 
+## SEO
+
+All keys are optional.
+
+```yaml
+theme_seo:
+  title_separator: "|"
+  default_image: "/images/social.png"
+  default_image_alt: "Site social preview"
+  twitter_site: "@your_handle"
+  locale: "en_US"
+  type: "Person"
+  name: "Your Name"
+  logo: "/images/theme/logo.png"
+  same_as:
+    - "https://github.com/your-user"
+    - "https://linkedin.com/in/your-user"
+  robots_default: "index, follow"
+  enable_breadcrumbs: true
+```
+
+Behavior:
+
+- SEO metadata is rendered for all layouts, not only posts.
+- Posts get `article:*` meta tags and `BlogPosting` structured data.
+- Home gets `WebSite` structured data.
+- Blog and archive pages get `CollectionPage` structured data.
+- Breadcrumb structured data is enabled by default.
+- `default_image` is used when a page or post does not provide `image`.
+
+Recommended post/page front matter:
+
+```yaml
+---
+title: "Post title"
+description: "Clear summary for search and social previews"
+image: "/images/posts/social-card.jpg"
+image_alt: "Meaningful description for the social preview image"
+keywords:
+  - payments
+  - laravel
+last_modified_at: 2026-03-13 12:00:00 +0000
+robots: "index, follow"
+noindex: false
+seo_title: "Optional custom title for SERP snippets"
+---
+```
+
+Notes:
+
+- `description` is strongly recommended for pages, posts, blog hubs, and archives.
+- Use `noindex: true` for pages that should stay crawlable but not be indexed.
+- `robots` overrides the default robots policy entirely for a page.
+- `seo_title` lets you shorten or refine the search snippet title without changing the on-page heading.
+
 ## Post Series Front Matter
 
 Use `list` in post front matter to group posts into a linked series.
