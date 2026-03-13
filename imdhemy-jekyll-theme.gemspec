@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
       _sass/**/*
       assets/css/**/*
       assets/js/dist/**/*
+      assets/*.json
       assets/images/**/*
       lib/**/*
       LICENSE.txt
