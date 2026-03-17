@@ -10,6 +10,7 @@ This directory contains the full user documentation for the theme.
 - [AI Design System Guide](./ai-design-guide.md)
 - [Components and Layouts](./components.md)
 - [Content Elements](./content-elements.md)
+- [Sitemap Setup](./getting-started.md#5-sitemap-setup)
 - [Upgrade Guide](../UPGRADE.md)
 
 ## Who Should Read What
