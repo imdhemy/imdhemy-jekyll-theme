@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Mohamad Eldhemy"]
   spec.email         = ["imdhemy@gmail.com"]
 
-  spec.summary       = "Write a short summary, because Rubygems requires one."
+  spec.summary       = "Jekyll blog theme with built-in SEO foundations."
   spec.homepage      = "https://imdhemy.com"
   spec.license       = "MIT"
   spec.bindir        = "exe"
@@ -35,4 +35,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "jekyll-feed", "~> 0.17.0"
   spec.add_runtime_dependency "jekyll-paginate", "~> 1.1"
   spec.add_runtime_dependency "jekyll-archives", "~> 2.2"
+  spec.add_runtime_dependency "jekyll-sitemap", "~> 1.4"
 end

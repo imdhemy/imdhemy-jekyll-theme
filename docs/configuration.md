@@ -139,6 +139,7 @@ keywords:
 last_modified_at: 2026-03-13 12:00:00 +0000
 robots: "index, follow"
 noindex: false
+sitemap: true
 seo_title: "Optional custom title for SERP snippets"
 ---
 ```
@@ -147,6 +148,8 @@ Notes:
 
 - `description` is strongly recommended for pages, posts, blog hubs, and archives.
 - Use `noindex: true` for pages that should stay crawlable but not be indexed.
+- Use `sitemap: false` to exclude a page or post from `sitemap.xml`.
+- If a page uses `noindex: true` and should also stay out of `sitemap.xml`, set `sitemap: false` as well.
 - `robots` overrides the default robots policy entirely for a page.
 - `seo_title` lets you shorten or refine the search snippet title without changing the on-page heading.
 

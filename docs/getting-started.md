@@ -16,6 +16,12 @@ Set it in `_config.yml`:
 
 ```yaml
 theme: imdhemy-jekyll-theme
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-archives
+  - jekyll-sitemap
 ```
 
 Then install dependencies:
@@ -38,6 +44,7 @@ Migrate to the gem setup:
 2. Add `theme: imdhemy-jekyll-theme` to `_config.yml`.
 3. Add `gem "imdhemy-jekyll-theme"` to your `Gemfile`.
 4. Run `bundle install`.
+5. Add `jekyll-sitemap` to your `plugins` list.
 
 ## 3. Minimal Site Configuration
 
@@ -59,6 +66,12 @@ navigation:
     url: /blog
   - title: About
     url: /about
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-archives
+  - jekyll-sitemap
 ```
 
 For all available options, see [Configuration Reference](./configuration.md).
@@ -82,7 +95,36 @@ description: Latest posts
 ---
 ```
 
-## 5. Home and Post Experience
+## 5. Sitemap Setup
+
+The theme supports sitemap generation through `jekyll-sitemap`.
+
+Requirements:
+
+- set `url` to your production site origin
+- keep `baseurl` accurate if the site is served from a subpath
+- add `jekyll-sitemap` to `plugins`
+
+Build output:
+
+- Jekyll generates `/sitemap.xml`
+- the sitemap contains absolute URLs suitable for Google and other search engines
+
+Exclude a document from the sitemap:
+
+```yaml
+---
+title: "Private landing page"
+sitemap: false
+---
+```
+
+Important:
+
+- `noindex: true` controls the page robots meta tag, but it does not automatically remove the page from `sitemap.xml`
+- if a page should be both non-indexed and absent from the sitemap, set both `noindex: true` and `sitemap: false`
+
+## 6. Home and Post Experience
 
 - Home uses `layout: home` and includes hero, contributions, testimonials, latest posts, and social section.
 - Posts use `layout: post` and include:
@@ -94,7 +136,7 @@ description: Latest posts
   - related posts
   - optional reading progress bar
 
-## 6. Local Development
+## 7. Local Development
 
 ### Prerequisites
 
@@ -134,7 +176,7 @@ npm run js:build  # JS production build
 npm run js:watch  # JS watcher only
 ```
 
-## 7. Optional Image Optimization
+## 8. Optional Image Optimization
 
 The gem ships an optional executable for downstream sites to optimize post images before publishing.
 

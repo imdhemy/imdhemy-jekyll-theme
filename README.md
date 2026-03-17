@@ -11,6 +11,7 @@ The theme also ships with a reusable SEO foundation:
 - canonical URLs
 - layout-aware meta descriptions and social previews
 - JSON-LD for home, posts, breadcrumbs, and collection pages
+- sitemap support via `jekyll-sitemap`
 - configurable robots and social image defaults
 
 - [Documentation Home](./docs/README.md)
@@ -40,7 +41,7 @@ A complete runnable example is available in [`example/`](./example).
 
 ## Development
 
-Use the local workflow documented in [Getting Started](./docs/getting-started.md#5-local-development).
+Use the local workflow documented in [Getting Started](./docs/getting-started.md#7-local-development).
 
 ## License
 
