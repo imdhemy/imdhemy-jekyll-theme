@@ -140,7 +140,7 @@ Important:
 
 ### Prerequisites
 
-- Ruby 3.3.4 + Bundler
+- Ruby 4.0.0 + Bundler
 - Node.js 24 + npm
 
 Version pins are defined in:
@@ -148,7 +148,6 @@ Version pins are defined in:
 - `.ruby-version`
 - `.nvmrc`
 - `.node-version`
-- `.tool-versions`
 
 ### Install dependencies
 
