@@ -9,7 +9,7 @@ layout: default
 {% if site.theme_features.reading_progress != false %}
 {% include reading-progress.html %}
 {% endif %}
-<article class="post-page">
+<article class="post-page{% if page.image %} post-page--with-image{% endif %}">
     {% include post-header.html %}
 
     {% include content.html %}
