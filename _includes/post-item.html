@@ -1,5 +1,4 @@
 {% assign reading_minutes = post.content | number_of_words | divided_by: 200 | at_least: 1 %}
-{% assign read_article_label = site.theme_text.read_article_label | default: "Read article" %}
 <article class="post-card{% if post.image %} post-card--with-image{% endif %}">
     <!-- thumbnail -->
     {% if post.image %}
@@ -20,13 +19,12 @@
                href="{{ site.baseurl }}{{ post.url }}">{{
                 post.title }}</a>
         </h2>
+        {% include post-meta.html date=post.date reading_minutes=reading_minutes class_name="post-card__meta post-meta" %}
         <!-- excerpt -->
         <div class="post-card__excerpt">
             {{ post.excerpt | strip_html | truncatewords: 20 }}
         </div>
-        {% include post-meta.html date=post.date reading_minutes=reading_minutes class_name="post-card__meta post-meta" %}
         {% assign tags = post.tags %}
         {% include post-tags.html %}
-        <a class="post-card__read-link" href="{{ site.baseurl }}{{ post.url }}" aria-label="{{ read_article_label }}: {{ post.title }}">{{ read_article_label }} &rarr;</a>
     </div>
 </article>

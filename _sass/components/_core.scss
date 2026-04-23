@@ -114,7 +114,6 @@
 .site-logo:focus-visible,
 .post-back-link:focus-visible,
 .post-card__title-link:focus-visible,
-.post-card__read-link:focus-visible,
 .tag-pill:focus-visible,
 .pagination-link:focus-visible,
 .archive-header__blog-link:focus-visible,
@@ -572,13 +571,7 @@
   border-bottom: 1px solid #e5e7eb;
   border-radius: 1rem;
   background: var(--color-surface);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.post-card:hover {
-  border-color: #c5d0ee;
-  box-shadow: 0 15px 35px -24px var(--color-shadow);
-  transform: translateY(-1px);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .post-card:focus-within {
@@ -614,7 +607,7 @@
 }
 
 .post-card__meta {
-  margin: 0.7rem 0 0.55rem;
+  margin: -0.35rem 0 0.75rem;
 }
 
 .post-meta {
@@ -697,14 +690,14 @@
 }
 
 .post-card .post-tags {
-  margin-bottom: 0.95rem;
+  margin: 0.9rem 0 0;
 }
 
-.post-card__read-link {
-  display: inline-block;
-  margin-top: 1rem;
-  font-weight: var(--font-weight-medium);
-  color: var(--color-brand);
+.post-card .tag-pill,
+.post-header__tags .tag-pill {
+  padding: 0.18rem 0.5rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
 }
 
 .post-header {
@@ -1435,7 +1428,6 @@
   }
 
   .primary-button:hover,
-  .post-card:hover,
   .post-navigation__item:hover,
   .related-posts__item:hover,
   .post-card__image:hover .post-card__image-el {
