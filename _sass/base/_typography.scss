@@ -20,5 +20,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Source Serif 4", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--font-tracking-normal);
 }

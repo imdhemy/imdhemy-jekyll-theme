@@ -1,8 +1,8 @@
-# AI Design System Guide
+# AI Design System Instructions
 
-This guide is for AI agents making design, UI, or UX changes in this theme. It is written primarily for Codex-style contributors working directly in the repository.
+These instructions apply to agents making design, UI, or UX changes in this theme.
 
-Use this document when changing Sass, templates, layout structure, interaction states, or content presentation.
+Use these instructions when changing Sass, templates, layout structure, interaction states, or content presentation.
 
 ## Primary Rules
 
@@ -22,7 +22,7 @@ The stylesheet entrypoint is [`assets/css/main.scss`](./../assets/css/main.scss)
 2. Utilities
 3. Components
 
-Relevant Sass areas:
+Use these Sass areas:
 
 - [`_sass/base/_reset.scss`](./../_sass/base/_reset.scss): browser normalization and foundational element defaults
 - [`_sass/base/_typography.scss`](./../_sass/base/_typography.scss): global type rendering choices
@@ -30,13 +30,36 @@ Relevant Sass areas:
 - [`_sass/components/_core.scss`](./../_sass/components/_core.scss): main site UI and content presentation
 - [`_sass/components/_highlight.scss`](./../_sass/components/_highlight.scss): code highlighting
 
-Prefer editing the semantic component styles in `_core.scss` or the appropriate partial instead of scattering one-off classes through templates.
+Prefer editing semantic component styles in `_core.scss` or the appropriate partial. Do not scatter one-off classes through templates when a semantic selector already exists.
 
 ## Design System Principles
 
+### Typography
+
+Use Inter as the primary interface and reading font for non-code typography.
+
+You must:
+
+- Use `--font-sans`, currently `"Inter", ui-sans-serif, system-ui, sans-serif`, for non-code typography.
+- Use generic `monospace` for code typography, including `code`, `kbd`, `pre`, `samp`, and syntax highlighting.
+- Use the shared text and heading tokens for font size, line height, weight, and tracking.
+- Prefer moderate emphasis: `400` for body text, `500` or `600` for labels and headings, and `700` only when strong emphasis is justified.
+- Keep the scale restrained like OpenAI Developers: default prose should use the medium text token, large text should be reserved for lead copy, and card/list titles should not jump to marketing-scale headings.
+- Because Inter renders visually heavier than OpenAI Sans, article and post headings should generally use `500` with normal tracking; reserve `600` for high-level marketing or section headings only.
+
+You must not:
+
+- Bundle or reference proprietary fonts such as `OpenAI Sans` unless a compatible license is verified and documented.
+- Reintroduce stale theme fonts such as `Manrope` or `Source Serif 4`.
+- Add hardcoded font stacks or one-off typography values when an existing token fits.
+
+Typography changes must preserve readability before visual novelty. On mobile, check line wrapping, heading balance, paragraph rhythm, and touch-adjacent label clarity before refining desktop scale.
+
 ### Content First
 
-This theme is primarily a reading experience for articles, pages, and structured content. Visual changes should support:
+Treat this theme primarily as a reading experience for articles, pages, and structured content.
+
+Visual changes must support:
 
 - fast scanning
 - comfortable long-form reading
@@ -44,22 +67,22 @@ This theme is primarily a reading experience for articles, pages, and structured
 - stable navigation
 - strong contrast between primary content and decorative surfaces
 
-Decorative ideas should not reduce clarity, reading width, spacing rhythm, or content discoverability.
+Decorative ideas must not reduce clarity, reading width, spacing rhythm, or content discoverability.
 
 ### Semantic Components Over Utility Sprawl
 
-The current theme uses semantic classes such as `.site-header`, `.hero-section`, `.post-card`, `.post-title`, `.content`, and `.primary-button`.
+Use semantic classes such as `.site-header`, `.hero-section`, `.post-card`, `.post-title`, `.content`, and `.primary-button`.
 
-When modifying the UI:
+When modifying the UI, you must:
 
-- prefer updating existing semantic selectors
-- add new semantic classes only when introducing a real new component or state
-- avoid reintroducing utility-first markup patterns into templates
-- avoid coupling templates to spacing-only or breakpoint-only class names unless there is already an established pattern for that element
+- Prefer updating existing semantic selectors.
+- Add new semantic classes only when introducing a real new component or state.
+- Avoid reintroducing utility-first markup patterns into templates.
+- Avoid coupling templates to spacing-only or breakpoint-only class names unless there is already an established pattern for that element.
 
 ### Reuse Existing Tokens and Visual Language
 
-The theme already exposes design tokens through CSS custom properties such as:
+Use the existing design tokens before adding new values. The theme exposes CSS custom properties such as:
 
 - `--color-bg`
 - `--color-surface`
@@ -71,36 +94,36 @@ The theme already exposes design tokens through CSS custom properties such as:
 - `--color-brand-soft`
 - `--color-brand-surface`
 
-When changing colors, emphasis, surfaces, or interaction states:
+When changing colors, emphasis, surfaces, or interaction states, you must:
 
-- reuse these tokens first
-- keep contrast strong enough for body copy, labels, links, and controls
-- keep the brand color as an accent, not a blanket fill for all UI
+- Reuse these tokens first.
+- Keep contrast strong enough for body copy, labels, links, and controls.
+- Keep the brand color as an accent, not a blanket fill for all UI.
 
 ## Responsive Strategy
 
 ### Mobile First Is Required
 
-All new UI work should begin from the smallest practical viewport and scale upward.
+Begin all new UI work from the smallest practical viewport and scale upward.
 
-Expected approach:
+Use this approach:
 
 1. Define the default component styles for mobile outside media queries.
 2. Add larger-screen enhancements with `min-width` queries.
 3. Use `max-width` queries only for narrow, justified exceptions.
 
-This theme already has a mostly mobile-first structure. Keep moving it in that direction rather than adding desktop-first overrides.
+Keep the theme mobile-first. Do not add desktop-first overrides when a mobile-first rule can solve the problem.
 
-When changing layout:
+When changing layout, you must:
 
-- assume touch-first interaction on small screens
-- keep navigation, buttons, cards, and content blocks usable at narrow widths
-- verify text wraps cleanly without horizontal scrolling
-- ensure media, tables, and math content do not break the viewport
+- Assume touch-first interaction on small screens.
+- Keep navigation, buttons, cards, and content blocks usable at narrow widths.
+- Verify text wraps cleanly without horizontal scrolling.
+- Ensure media, tables, and math content do not break the viewport.
 
 ### Breakpoints
 
-Current responsive utilities use these major breakpoints in [`_sass/utilities/_responsive.scss`](./../_sass/utilities/_responsive.scss):
+Use the established breakpoints from [`_sass/utilities/_responsive.scss`](./../_sass/utilities/_responsive.scss):
 
 - `640px`
 - `768px`
@@ -108,23 +131,23 @@ Current responsive utilities use these major breakpoints in [`_sass/utilities/_r
 - `1280px`
 - `1536px`
 
-Do not add new breakpoint values casually. Prefer reusing the existing set unless a component has a strong reason to diverge.
+Do not add new breakpoint values casually. Reuse the existing set unless a component has a strong reason to diverge.
 
 ### Layout Expectations
 
-Common layout behavior to preserve:
+Preserve these layout behaviors:
 
-- containers should remain visually centered and constrained
-- mobile spacing should feel compact but not cramped
-- desktop enhancements should increase structure, not just increase empty space
-- cards and article shells should keep readable widths
-- sticky or floating UI must not obstruct content on small screens
+- Containers must remain visually centered and constrained.
+- Mobile spacing must feel compact but not cramped.
+- Desktop enhancements must increase structure, not just increase empty space.
+- Cards and article shells must keep readable widths.
+- Sticky or floating UI must not obstruct content on small screens.
 
 ## Accessibility Requirements
 
-Accessibility is a required part of the design system, not an optional polish step.
+Treat accessibility as a required part of the design system, not an optional polish step.
 
-Every UI change should protect or improve:
+Every UI change must protect or improve:
 
 - keyboard access
 - focus visibility
@@ -151,7 +174,7 @@ Every UI change should protect or improve:
 - Use `aria-current` for active navigation and current-position patterns where applicable.
 - When multiple links in the same card target the same destination, make the screen-reader experience intentional and avoid repetitive, ambiguous link text.
 
-Existing examples in the theme:
+Preserve these existing accessibility patterns:
 
 - mobile nav toggle with `aria-controls` and `aria-expanded`
 - focus-visible styling on navigation and buttons
@@ -164,7 +187,7 @@ If a visual change introduces ambiguity for keyboard users or screen readers, re
 
 ### Header and Navigation
 
-The header is a stable orientation element. Changes should preserve:
+Treat the header as a stable orientation element. Changes must preserve:
 
 - clear brand visibility
 - obvious navigation hierarchy
@@ -175,34 +198,34 @@ Do not hide critical navigation behind hover-only behavior.
 
 ### Hero and Landing Sections
 
-The home page hero should keep:
+The home page hero must keep:
 
 - immediate value communication
 - a clear primary CTA
 - restrained decoration
 - centered, readable messaging on small screens
 
-Avoid adding dense visual clutter or multiple competing accent treatments.
+Do not add dense visual clutter or multiple competing accent treatments.
 
 ### Post Cards and Listings
 
-Listings should optimize scanability:
+Listings must optimize scanability:
 
 - title first
 - supporting metadata second
 - excerpt clarity over ornament
 - consistent spacing and alignment across cards
 
-Desktop card enhancements must still collapse cleanly to a stacked mobile layout.
+Desktop card enhancements must collapse cleanly to a stacked mobile layout.
 
-For post cards with thumbnails:
+For post cards with thumbnails, you must:
 
-- image-first cards are acceptable when the title remains the primary decision anchor
-- the thumbnail should support scanning, not overpower the title or excerpt
+- Keep the title as the primary decision anchor.
+- Use thumbnails to support scanning, not overpower the title or excerpt.
 
 ### Post Pages
 
-Post pages should preserve a strong reading-oriented hierarchy.
+Post pages must preserve a strong reading-oriented hierarchy.
 
 Required order:
 
@@ -214,26 +237,26 @@ Required order:
 6. Image
 7. Content
 
-Rules for post pages:
+For post pages, you must:
 
-- the title must remain the first dominant content element
-- series navigation is secondary context, not a pre-title block
-- featured images support the article and should not lead the hierarchy ahead of the title
-- comments should remain secondary to the article body
+- Keep the title as the first dominant content element.
+- Keep series navigation as secondary context, not a pre-title block.
+- Keep featured images supportive; they must not lead the hierarchy ahead of the title.
+- Keep comments secondary to the article body.
 
 ### Comments
 
-Comments are supporting engagement UI, not primary reading content.
+Treat comments as supporting engagement UI, not primary reading content.
 
-Preferred default:
+You must:
 
-- keep comments collapsed by default unless the product explicitly prioritizes discussion as the primary post-page goal
-- keep the collapsed state discoverable with clear heading and helper copy
-- preserve keyboard and screen-reader access to the toggle and panel
+- Keep comments collapsed by default unless the product explicitly prioritizes discussion as the primary post-page goal.
+- Keep the collapsed state discoverable with clear heading and helper copy.
+- Preserve keyboard and screen-reader access to the toggle and panel.
 
 ### Article and Page Content
 
-The `.content` area is core product UX. Protect:
+Treat the `.content` area as core product UX. You must protect:
 
 - readable line length
 - strong typography hierarchy
@@ -244,7 +267,7 @@ Do not apply decorative styles that make long-form reading slower or noisier.
 
 ## Working Rules for Codex and Other AI Agents
 
-When implementing UI changes:
+When implementing UI changes, you must:
 
 1. Inspect the existing component and surrounding layout before editing.
 2. Prefer modifying current Sass partials over inventing a parallel styling path.
@@ -254,36 +277,36 @@ When implementing UI changes:
 6. Keep changes local to the relevant component unless there is a clear shared-system reason to generalize.
 7. After accessibility-related changes, verify keyboard order, focus visibility, and reduced-motion behavior before considering the task complete.
 
-When introducing a new component:
+When introducing a new component, you must:
 
-- create a semantic class name
-- place styles in the most relevant Sass partial
-- define the mobile version first
-- add larger-screen enhancements second
-- include focus, hover, active, and disabled states where relevant
+- Create a semantic class name.
+- Place styles in the most relevant Sass partial.
+- Define the mobile version first.
+- Add larger-screen enhancements second.
+- Include focus, hover, active, and disabled states where relevant.
 
-Avoid:
+You must not introduce:
 
-- one-off inline styles
-- arbitrary new color values when tokens already exist
-- excessive motion
-- very light text on tinted backgrounds
-- hard-coded widths that break on mobile
-- visual-only fixes that ignore markup semantics
+- One-off inline styles.
+- Arbitrary new color values when tokens already exist.
+- Excessive motion.
+- Very light text on tinted backgrounds.
+- Hard-coded widths that break on mobile.
+- Visual-only fixes that ignore markup semantics.
 
 ## Verification Checklist
 
-Before finalizing a UI or UX change, verify:
+Before finalizing a UI or UX change, you must verify:
 
-- the component works at a narrow mobile viewport first
-- the component still works at tablet and desktop widths
-- there is no unintended horizontal scrolling
-- focus states remain visible
-- keyboard interaction still works
-- contrast remains readable
-- motion remains acceptable for reduced-motion users
-- content pages still feel readable after the change
-- homepage, blog/archive, and post/page layouts still feel like the same theme
+- The component works at a narrow mobile viewport first.
+- The component still works at tablet and desktop widths.
+- There is no unintended horizontal scrolling.
+- Focus states remain visible.
+- Keyboard interaction still works.
+- Contrast remains readable.
+- Motion remains acceptable for reduced-motion users.
+- Content pages still feel readable after the change.
+- Homepage, blog/archive, and post/page layouts still feel like the same theme.
 
 ## Related Docs
 
