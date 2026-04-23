@@ -46,7 +46,6 @@ theme_text:
   hero_secondary_cta_label: "About me"
   hero_secondary_cta_url: "/about"
   latest_posts_subtitle: "Fresh writing you can read in a few minutes."
-  read_article_label: "Read article"
   back_to_posts_label: "Back to all posts"
   previous_article_label: "Previous article"
   next_article_label: "Next article"
