@@ -34,6 +34,23 @@ Prefer editing the semantic component styles in `_core.scss` or the appropriate 
 
 ## Design System Principles
 
+### Typography
+
+The theme uses Inter as its primary interface and reading font. All UI text, headings, article prose, cards, metadata, navigation, buttons, and labels should use the shared sans-serif typography tokens instead of hardcoded font stacks.
+
+Required font direction:
+
+- Use `--font-sans`, currently `"Inter", ui-sans-serif, system-ui, sans-serif`, for non-code typography.
+- Keep code typography unchanged; `code`, `kbd`, `pre`, `samp`, and syntax highlighting continue to use the existing generic `monospace` behavior.
+- Do not bundle or reference proprietary fonts such as `OpenAI Sans` unless a compatible license is verified and documented.
+- Do not reintroduce stale theme fonts such as `Manrope` or `Source Serif 4`.
+- Use the shared text and heading tokens for font size, line height, weight, and tracking.
+- Prefer moderate emphasis: `400` for body text, `500` or `600` for labels and headings, and `700` only when strong emphasis is justified.
+- Keep the scale restrained like OpenAI Developers: default prose should use the medium text token, large text should be reserved for lead copy, and card/list titles should not jump to marketing-scale headings.
+- Because Inter renders visually heavier than OpenAI Sans, article and post headings should generally use `500` with normal tracking; reserve `600` for high-level marketing or section headings only.
+
+Typography should preserve readability before visual novelty. On mobile, check line wrapping, heading balance, paragraph rhythm, and touch-adjacent label clarity before refining desktop scale.
+
 ### Content First
 
 This theme is primarily a reading experience for articles, pages, and structured content. Visual changes should support:

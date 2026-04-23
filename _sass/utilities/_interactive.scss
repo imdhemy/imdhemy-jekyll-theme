@@ -76,12 +76,7 @@
 
 .before\:font-sans::before {
   content: var(--tw-content);
-  font-family: "Manrope", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.before\:font-serif::before {
-  content: var(--tw-content);
-  font-family: "Source Serif 4", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: var(--font-sans);
 }
 
 .before\:text-\[182px\]::before {
