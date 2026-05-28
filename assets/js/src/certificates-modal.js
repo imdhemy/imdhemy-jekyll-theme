@@ -17,7 +17,7 @@ export const init = () => {
   triggers.forEach((trigger) => {
     trigger.addEventListener('click', () => {
       const modal = document.getElementById(trigger.dataset.certificateOpen);
-      if (!modal || typeof modal.showModal !== 'function') {
+      if (!modal || typeof modal.showModal !== 'function' || modal.open) {
         return;
       }
 

@@ -11,11 +11,13 @@
                 {% for certificate in site.certificates %}
                 {% assign modal_id = "certificate-modal-" | append: forloop.index %}
                 {% assign modal_title_id = modal_id | append: "-title" %}
+                {% assign certificate_title = certificate.title | default: "Certificate" %}
                 <article class="certificate-card">
                     <button class="certificate-card__image-button"
                             type="button"
-                            aria-label="Preview {{ certificate.title }} certificate"
+                            aria-label="Preview {{ certificate_title }}"
                             aria-haspopup="dialog"
+                            aria-controls="{{ modal_id }}"
                             data-certificate-open="{{ modal_id }}">
                         <span class="certificate-card__image-frame">
                             <img class="certificate-card__image"
@@ -25,15 +27,15 @@
                     </button>
 
                     <div class="certificate-card__body">
-                        <h3 class="certificate-card__title">{{ certificate.title }}</h3>
+                        <h3 class="certificate-card__title">{{ certificate_title }}</h3>
 
                         <div class="certificate-card__issuer">
                             {% if certificate.issuer_logo %}
                             <img class="certificate-card__issuer-logo"
                                  src="{{ certificate.issuer_logo | relative_url }}"
                                  alt=""
-                                 width="32"
-                                 height="32">
+                                 width="44"
+                                 height="22">
                             {% endif %}
                             <div class="certificate-card__issuer-text">
                                 {% if certificate.issuer %}
@@ -63,7 +65,7 @@
                         data-certificate-modal>
                     <div class="certificate-modal__inner">
                         <div class="certificate-modal__header">
-                            <h3 class="certificate-modal__title" id="{{ modal_title_id }}">{{ certificate.title }}</h3>
+                            <h3 class="certificate-modal__title" id="{{ modal_title_id }}">{{ certificate_title }}</h3>
                             <button class="certificate-modal__close"
                                     type="button"
                                     aria-label="Close certificate preview"
@@ -73,7 +75,7 @@
                         </div>
                         <img class="certificate-modal__image"
                              src="{{ certificate.image | relative_url }}"
-                             alt="{{ certificate.image_alt | default: certificate.title }}">
+                             alt="{{ certificate.image_alt | default: certificate_title }}">
                     </div>
                 </dialog>
                 {% endfor %}

@@ -256,7 +256,8 @@ certificates:
     credential_url: "https://example.com/credential"
 ```
 
-- `title`, `image`, and `image_alt` are strongly recommended.
+- `title` and `image` are required.
+- `image_alt` is strongly recommended and falls back to `title` when omitted.
 - `issuer`, `issuer_logo`, `issue_date`, and `credential_url` are optional.
 - Certificate images open in a modal from the homepage card image.
 - Use `issue_date` as display text, such as `May 2026`, when exact date formatting is not needed.
