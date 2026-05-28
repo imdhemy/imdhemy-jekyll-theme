@@ -9,9 +9,14 @@
 
             <div class="certificates__grid">
                 {% for certificate in site.certificates %}
+                {% if certificate.image %}
                 {% assign modal_id = "certificate-modal-" | append: forloop.index %}
                 {% assign modal_title_id = modal_id | append: "-title" %}
                 {% assign certificate_title = certificate.title | default: "Certificate" %}
+                {% assign issuer_logo_alt = "" %}
+                {% unless certificate.issuer %}
+                {% assign issuer_logo_alt = "Issuer logo" %}
+                {% endunless %}
                 <article class="certificate-card">
                     <button class="certificate-card__image-button"
                             type="button"
@@ -33,7 +38,7 @@
                             {% if certificate.issuer_logo %}
                             <img class="certificate-card__issuer-logo"
                                  src="{{ certificate.issuer_logo | relative_url }}"
-                                 alt=""
+                                 alt="{{ issuer_logo_alt }}"
                                  width="44"
                                  height="22">
                             {% endif %}
@@ -78,6 +83,7 @@
                              alt="{{ certificate.image_alt | default: certificate_title }}">
                     </div>
                 </dialog>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
