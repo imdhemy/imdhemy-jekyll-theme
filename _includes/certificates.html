@@ -1,0 +1,84 @@
+{% if site.certificates.size > 0 %}
+{% assign certificates_title = site.theme_text.certificates_title | default: "Certificates" %}
+{% assign certificates_subtitle = site.theme_text.certificates_subtitle | default: "Credentials and professional learning milestones." %}
+<section class="certificates" id="certificates">
+    <div class="certificates__container">
+        <div class="certificates__inner">
+            <h2 class="certificates__title">{{ certificates_title }}</h2>
+            <p class="section-subtitle">{{ certificates_subtitle }}</p>
+
+            <div class="certificates__grid">
+                {% for certificate in site.certificates %}
+                {% assign modal_id = "certificate-modal-" | append: forloop.index %}
+                {% assign modal_title_id = modal_id | append: "-title" %}
+                <article class="certificate-card">
+                    <button class="certificate-card__image-button"
+                            type="button"
+                            aria-label="Preview {{ certificate.title }} certificate"
+                            aria-haspopup="dialog"
+                            data-certificate-open="{{ modal_id }}">
+                        <span class="certificate-card__image-frame">
+                            <img class="certificate-card__image"
+                                 src="{{ certificate.image | relative_url }}"
+                                 alt="">
+                        </span>
+                    </button>
+
+                    <div class="certificate-card__body">
+                        <h3 class="certificate-card__title">{{ certificate.title }}</h3>
+
+                        <div class="certificate-card__issuer">
+                            {% if certificate.issuer_logo %}
+                            <img class="certificate-card__issuer-logo"
+                                 src="{{ certificate.issuer_logo | relative_url }}"
+                                 alt=""
+                                 width="32"
+                                 height="32">
+                            {% endif %}
+                            <div class="certificate-card__issuer-text">
+                                {% if certificate.issuer %}
+                                <span class="certificate-card__issuer-name">{{ certificate.issuer }}</span>
+                                {% endif %}
+                                {% if certificate.issue_date %}
+                                <span class="certificate-card__date">{{ certificate.issue_date }}</span>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        {% if certificate.credential_url %}
+                        <a class="certificate-card__credential-link"
+                           href="{{ certificate.credential_url }}"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            View credential
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                        {% endif %}
+                    </div>
+                </article>
+
+                <dialog class="certificate-modal"
+                        id="{{ modal_id }}"
+                        aria-labelledby="{{ modal_title_id }}"
+                        data-certificate-modal>
+                    <div class="certificate-modal__inner">
+                        <div class="certificate-modal__header">
+                            <h3 class="certificate-modal__title" id="{{ modal_title_id }}">{{ certificate.title }}</h3>
+                            <button class="certificate-modal__close"
+                                    type="button"
+                                    aria-label="Close certificate preview"
+                                    data-certificate-close>
+                                <ion-icon name="close" aria-hidden="true"></ion-icon>
+                            </button>
+                        </div>
+                        <img class="certificate-modal__image"
+                             src="{{ certificate.image | relative_url }}"
+                             alt="{{ certificate.image_alt | default: certificate.title }}">
+                    </div>
+                </dialog>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

@@ -181,6 +181,8 @@ Preserve these existing accessibility patterns:
 - reduced-motion handling in `_core.scss`
 - skip-link support in the default layout and header shell
 
+For modal previews, prefer native `<dialog>` when it fits the interaction. Keep the trigger as a real button with an explicit accessible label, provide a visible close button, keep the dialog visually centered, and restore focus to the trigger after close.
+
 If a visual change introduces ambiguity for keyboard users or screen readers, revise the markup or interaction model before shipping it.
 
 ## UX Expectations By Area

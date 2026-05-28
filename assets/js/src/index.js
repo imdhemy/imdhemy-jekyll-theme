@@ -12,6 +12,7 @@ import {
   timeOutline,
 } from 'ionicons/icons';
 import { init as initBurgerMenu } from './burger-menu';
+import { init as initCertificatesModal } from './certificates-modal';
 import { init as initCommentsToggle } from './comments-toggle';
 import { init as initHeaderState } from './header-state';
 import { init as initPostSeries } from './post-series';
@@ -33,6 +34,7 @@ defineIonIcon();
 
 (() => {
   initBurgerMenu();
+  initCertificatesModal();
   initCommentsToggle();
   initHeaderState();
   initPostSeries();
