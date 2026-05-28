@@ -48,6 +48,31 @@ contributions:
     url: "https://imdhemy.com/laravel-iap-docs/"
     logo: "/images/theme/liap.png"
 
+certificates:
+  - title: "Cloud Architecture Fundamentals"
+    issuer: "Example Academy"
+    issuer_logo: "/images/theme/laravel.png"
+    issue_date: "May 2026"
+    image: "/images/certificates/certificate.png"
+    image_alt: "Cloud Architecture Fundamentals certificate issued by Example Academy"
+    credential_url: "https://example.com/credentials/cloud-architecture"
+
+  - title: "Data Engineering Essentials"
+    issuer: "Demo Institute"
+    issuer_logo: "/images/theme/spatie.png"
+    issue_date: "April 2026"
+    image: "/images/certificates/certificate.png"
+    image_alt: "Data Engineering Essentials certificate issued by Demo Institute"
+    credential_url: "https://example.com/credentials/data-engineering"
+
+  - title: "Secure Web Applications"
+    issuer: "Sample Learning"
+    issuer_logo: "/images/theme/siklid.png"
+    issue_date: "March 2026"
+    image: "/images/certificates/certificate.png"
+    image_alt: "Secure Web Applications certificate issued by Sample Learning"
+    credential_url: "https://example.com/credentials/secure-web-apps"
+
 testimonials:
   - name: "John Doe"
     description: "Product Manager"

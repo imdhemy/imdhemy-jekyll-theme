@@ -46,6 +46,8 @@ theme_text:
   hero_secondary_cta_label: "About me"
   hero_secondary_cta_url: "/about"
   latest_posts_subtitle: "Fresh writing you can read in a few minutes."
+  certificates_title: "Certificates"
+  certificates_subtitle: "Credentials and professional learning milestones."
   back_to_posts_label: "Back to all posts"
   previous_article_label: "Previous article"
   next_article_label: "Next article"
@@ -240,6 +242,26 @@ contributions:
     url: "https://example.com"
     logo: "/images/theme/project-logo.png"
 ```
+
+### Certificates
+
+```yaml
+certificates:
+  - title: "Certificate Name"
+    issuer: "Issuer Name"
+    issuer_logo: "/images/theme/issuer-logo.png"
+    issue_date: "May 2026"
+    image: "/images/certificates/certificate.png"
+    image_alt: "Certificate Name certificate issued by Issuer Name"
+    credential_url: "https://example.com/credential"
+```
+
+- `image` is required; certificate entries without an image are not rendered.
+- `title` is strongly recommended and falls back to `Certificate` when omitted.
+- `image_alt` is strongly recommended and falls back to the certificate title when omitted.
+- `issuer`, `issuer_logo`, `issue_date`, and `credential_url` are optional.
+- Certificate images open in a modal from the homepage card image.
+- Use `issue_date` as display text, such as `May 2026`, when exact date formatting is not needed.
 
 ### Testimonials
 
