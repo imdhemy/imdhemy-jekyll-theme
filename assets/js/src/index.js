@@ -1,7 +1,9 @@
 import { addIcons } from 'ionicons';
 import { defineCustomElement as defineIonIcon } from 'ionicons/components/ion-icon.js';
 import {
+  chevronBackOutline,
   chevronDownOutline,
+  chevronForwardOutline,
   close,
   logoGithub,
   logoLinkedin,
@@ -12,6 +14,7 @@ import {
   timeOutline,
 } from 'ionicons/icons';
 import { init as initBurgerMenu } from './burger-menu';
+import { init as initCarousel } from './carousel';
 import { init as initCertificatesModal } from './certificates-modal';
 import { init as initCommentsToggle } from './comments-toggle';
 import { init as initHeaderState } from './header-state';
@@ -20,7 +23,9 @@ import { init as initReadingProgress } from './reading-progress';
 import { init as initSearch } from './search';
 
 addIcons({
+  'chevron-back-outline': chevronBackOutline,
   'chevron-down-outline': chevronDownOutline,
+  'chevron-forward-outline': chevronForwardOutline,
   close,
   'logo-github': logoGithub,
   'logo-linkedin': logoLinkedin,
@@ -34,6 +39,7 @@ defineIonIcon();
 
 (() => {
   initBurgerMenu();
+  initCarousel();
   initCertificatesModal();
   initCommentsToggle();
   initHeaderState();
