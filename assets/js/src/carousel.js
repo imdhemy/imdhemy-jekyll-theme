@@ -34,7 +34,7 @@ const initCarousel = (carousel) => {
 
   let animationFrame = null;
   const scheduleUpdate = () => {
-    if (animationFrame) {
+    if (animationFrame !== null) {
       window.cancelAnimationFrame(animationFrame);
     }
 

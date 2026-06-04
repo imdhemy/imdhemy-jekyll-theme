@@ -270,5 +270,8 @@ testimonials:
   - name: "Person Name"
     description: "Role"
     image: "/images/theme/avatar.jpeg"
+    url: "https://example.com"
     content: "Testimonial text"
 ```
+
+- `url` is optional. When present, the testimonial name opens the URL in a new tab.

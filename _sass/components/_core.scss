@@ -116,6 +116,7 @@
 .certificate-card__image-button:focus-visible,
 .certificate-card__credential-link:focus-visible,
 .certificate-modal__close:focus-visible,
+.testimonial-card__name-link:focus-visible,
 .site-logo:focus-visible,
 .post-back-link:focus-visible,
 .post-card__title-link:focus-visible,
@@ -1767,6 +1768,14 @@
   font-family: var(--font-sans);
   font-size: var(--font-heading-sm-size);
   font-weight: var(--font-weight-semibold);
+}
+
+.testimonial-card__name-link {
+  color: inherit;
+}
+
+.testimonial-card__name-link:hover {
+  color: var(--color-brand-strong);
 }
 
 .testimonial-card__role {
