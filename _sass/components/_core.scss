@@ -1460,15 +1460,19 @@
 }
 
 .section-carousel__control {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 2.75rem;
   height: 2.75rem;
+  padding: 0;
   border: 1px solid color-mix(in srgb, var(--color-border) 75%, #ffffff 25%);
   border-radius: 0.5rem;
   color: var(--color-text);
+  line-height: 1;
   background: var(--color-surface);
+  cursor: pointer;
 }
 
 .section-carousel__control:hover:not(:disabled) {
