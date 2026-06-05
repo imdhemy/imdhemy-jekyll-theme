@@ -77,6 +77,7 @@ testimonials:
   - name: "John Doe"
     description: "Product Manager"
     image: "https://randomuser.me/api/portraits/med/men/9.jpg"
+    url: "https://example.com/testimonials/john-doe"
     content: |
       lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 

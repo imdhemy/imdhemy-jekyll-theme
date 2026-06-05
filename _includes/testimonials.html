@@ -3,33 +3,59 @@
     <div class="testimonials__container">
         <div class="testimonials__inner">
             <h2 class="testimonials__title">Testimonials</h2>
-            <div class="testimonials__grid">
-                {% for testimonial in site.testimonials %}
-                <!-- Item start -->
-                <div class="testimonial-card-wrap">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card__header">
-                            <div class="testimonial-card__avatar-frame">
-                                <img width="40px" height="40px"
-                                     class="testimonial-card__avatar"
-                                     src="{{ testimonial.image }}"
-                                     alt=""/>
-                            </div>
-                            <div>
-                                <h3 class="testimonial-card__name">
-                                    <a href="#">{{ testimonial.name }}</a>
-                                </h3>
-                                <p class="testimonial-card__role">{{ testimonial.description }}</p>
+            <div class="section-carousel testimonials__carousel" data-carousel>
+                <div class="section-carousel__controls" role="group" aria-label="Testimonials carousel controls">
+                    <button class="section-carousel__control"
+                            type="button"
+                            aria-label="Previous testimonials"
+                            data-carousel-prev>
+                        <ion-icon name="chevron-back-outline" aria-hidden="true"></ion-icon>
+                    </button>
+                    <button class="section-carousel__control"
+                            type="button"
+                            aria-label="Next testimonials"
+                            data-carousel-next>
+                        <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                    </button>
+                </div>
+
+                <div class="section-carousel__viewport">
+                    <div class="section-carousel__track" data-carousel-track>
+                        {% for testimonial in site.testimonials %}
+                        <!-- Item start -->
+                        <div class="testimonial-card-wrap">
+                            <div class="testimonial-card">
+                                <div class="testimonial-card__header">
+                                    <div class="testimonial-card__avatar-frame">
+                                        <img width="40" height="40"
+                                             class="testimonial-card__avatar"
+                                             src="{{ testimonial.image }}"
+                                             alt=""/>
+                                    </div>
+                                    <div>
+                                        <h3 class="testimonial-card__name">
+                                            {% if testimonial.url %}
+                                            <a class="testimonial-card__name-link"
+                                               href="{{ testimonial.url }}"
+                                               target="_blank"
+                                               rel="noopener noreferrer">{{ testimonial.name }}</a>
+                                            {% else %}
+                                            {{ testimonial.name }}
+                                            {% endif %}
+                                        </h3>
+                                        <p class="testimonial-card__role">{{ testimonial.description }}</p>
+                                    </div>
+                                </div>
+
+                                <p class="testimonial-card__content">
+                                    {{ testimonial.content }}
+                                </p>
                             </div>
                         </div>
-
-                        <p class="testimonial-card__content">
-                            {{ testimonial.content }}
-                        </p>
+                        <!-- Item end -->
+                        {% endfor %}
                     </div>
                 </div>
-                <!-- Item end -->
-                {% endfor %}
             </div>
         </div>
     </div>

@@ -19,10 +19,12 @@
 
 - `header.html`: desktop/mobile nav, active link state.
 - `hero.html`: main home hero and primary/secondary CTA.
+- `certificates.html`: certificates carousel with manual horizontal controls and certificate previews.
 - `latest-posts.html`: latest post list with card items.
 - `post-item.html`: reusable post card.
 - `post-header.html`: title, author, read time, tags, image.
 - `post-series.html`: series heading + ordered links for posts sharing `list`, with collapsible/overflow controls.
+- `testimonials.html`: testimonials carousel with manual horizontal controls.
 - `giscus-comments.html`: configurable Giscus reactions and comments.
 - `post-navigation.html`: previous/next post links.
 - `related-posts.html`: tag-aware related posts.
@@ -31,6 +33,8 @@
 ## JS Modules
 
 - `burger-menu.js`: mobile nav toggle + close behaviors.
+- `carousel.js`: manual horizontal controls for scroll-snap carousels.
+- `certificates-modal.js`: certificate preview dialog behavior.
 - `header-state.js`: applies `is-scrolled` header state.
 - `post-series.js`: handles post series collapse/expand and overflow reveal.
 - `reading-progress.js`: updates progress bar while reading.
